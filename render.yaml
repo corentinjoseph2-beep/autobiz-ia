@@ -1,0 +1,29 @@
+services:
+  - type: web
+    name: autobiz-ia-webhook
+    runtime: python
+    plan: free
+    region: frankfurt
+    buildCommand: "pip install -r modules/04_distribution_ventes/requirements.txt gunicorn"
+    startCommand: "gunicorn --chdir modules/04_distribution_ventes webhook_listener:app --bind 0.0.0.0:$PORT --workers 2"
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
+      - key: STRIPE_SECRET_KEY
+        sync: false
+      - key: STRIPE_WEBHOOK_SECRET
+        sync: false
+      - key: FROM_EMAIL
+        value: AutoBiz IA <contact@autobiz-ia.fr>
+      - key: SUPPORT_EMAIL
+        value: contact@autobiz-ia.fr
+      - key: SMTP_HOST
+        sync: false
+      - key: SMTP_PORT
+        value: 587
+      - key: SMTP_USER
+        sync: false
+      - key: SMTP_PASSWORD
+        sync: false

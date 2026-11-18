@@ -1,0 +1,6 @@
+# Dépendances Module 04 : Paiement Stripe & Livraison Automatique
+flask>=2.3.0
+stripe>=8.0.0
+requests>=2.31.0
+python-dotenv>=1.0.0
+pypdf>=4.0.0

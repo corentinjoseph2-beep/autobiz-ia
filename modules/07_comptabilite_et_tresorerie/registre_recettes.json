@@ -1,0 +1,22 @@
+[
+  {
+    "numero_facture": "FAC-2026-0001",
+    "date_paiement": "18/11/2026 à 20:19",
+    "date_iso": "2026-11-18T20:19:58.197424",
+    "client_nom": "Boulangerie Saint-Honoré",
+    "client_email": "contact@sainthonore.fr",
+    "client_etablissement": "Boulangerie Saint-Honoré (Paris)",
+    "designation": "Audit Stratégique Complet & Plan d'Action Local — Google Business Profile",
+    "montant_ht": 49.0,
+    "montant_tva": 0.0,
+    "montant_ttc": 49.0,
+    "mode_reglement": "Carte Bancaire (Stripe)",
+    "reference_stripe": "cs_test_20261118201958",
+    "frais_stripe": 0.98,
+    "cout_ia": 0.15,
+    "net_encaisse": 48.02,
+    "marge_nette": 47.87,
+    "fichier_pdf": "/Users/corentinjoseph/Documents/PERSO/automatisation d'un projet/modules/07_comptabilite_et_tresorerie/factures_emises/facture_fac_2026_0001.pdf",
+    "fichier_html": "/Users/corentinjoseph/Documents/PERSO/automatisation d'un projet/modules/07_comptabilite_et_tresorerie/factures_emises/facture_fac_2026_0001.html"
+  }
+]

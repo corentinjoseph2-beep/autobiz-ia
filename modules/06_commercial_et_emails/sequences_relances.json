@@ -1,0 +1,257 @@
+[
+  {
+    "index": 1,
+    "business_name": "Bicycl'eau Plombier à vélo - William",
+    "primary_email": "contact@bicycleau.fr",
+    "client_reference_id": "BATCH1_LEAD_01_BICYCLEAUPLO",
+    "stripe_url": "https://buy.stripe.com/5kQ5kDeuJ6BJ2js7YE8N201?client_reference_id=BATCH1_LEAD_01_BICYCLEAUPLO",
+    "j3": {
+      "subject": "Re: Fiche Google Bicycl'eau Plombier à vélo - William (remarque rapide)",
+      "body_file": "modules/06_commercial_et_emails/relances/lead_01_J3.md",
+      "body_preview": "Bonjour,\n\nJe fais suite à mon message concernant votre visibilité à Bordeaux.\n\nFaites ce test rapide depuis votre téléphone : tapez simplement \"plombi..."
+    },
+    "j7": {
+      "subject": "Dernier message / Bicycl'eau Plombier à vélo - William",
+      "body_file": "modules/06_commercial_et_emails/relances/lead_01_J7.md",
+      "body_preview": "Bonjour,\n\nJe me permets ce dernier mot et je ne vous relancerai plus ensuite.\n\nSi votre carnet de rendez-vous à Bordeaux est déjà complet pour les 6 p..."
+    }
+  },
+  {
+    "index": 2,
+    "business_name": "Napoléon Plomberie Climatisation Bordeaux",
+    "primary_email": "contact@napoleon-plomberie.com",
+    "client_reference_id": "BATCH1_LEAD_02_NAPOLONPLOMB",
+    "stripe_url": "https://buy.stripe.com/5kQ5kDeuJ6BJ2js7YE8N201?client_reference_id=BATCH1_LEAD_02_NAPOLONPLOMB",
+    "j3": {
+      "subject": "Re: Fiche Google Napoléon Plomberie Climatisation Bordeaux (remarque rapide)",
+      "body_file": "modules/06_commercial_et_emails/relances/lead_02_J3.md",
+      "body_preview": "Bonjour,\n\nJe fais suite à mon message concernant votre visibilité à Bordeaux.\n\nFaites ce test rapide depuis votre téléphone : tapez simplement \"plombi..."
+    },
+    "j7": {
+      "subject": "Dernier message / Napoléon Plomberie Climatisation Bordeaux",
+      "body_file": "modules/06_commercial_et_emails/relances/lead_02_J7.md",
+      "body_preview": "Bonjour,\n\nJe me permets ce dernier mot et je ne vous relancerai plus ensuite.\n\nSi votre carnet de rendez-vous à Bordeaux est déjà complet pour les 6 p..."
+    }
+  },
+  {
+    "index": 3,
+    "business_name": "Cafonso Serrurier - Bordeaux",
+    "primary_email": "caciano.afonso028@gmail.com",
+    "client_reference_id": "BATCH1_LEAD_03_CAFONSOSERRU",
+    "stripe_url": "https://buy.stripe.com/5kQ5kDeuJ6BJ2js7YE8N201?client_reference_id=BATCH1_LEAD_03_CAFONSOSERRU",
+    "j3": {
+      "subject": "Re: Fiche Google Cafonso Serrurier - Bordeaux (remarque rapide)",
+      "body_file": "modules/06_commercial_et_emails/relances/lead_03_J3.md",
+      "body_preview": "Bonjour,\n\nJe fais suite à mon message concernant votre visibilité à Bordeaux.\n\nFaites ce test rapide depuis votre téléphone : tapez simplement \"serrur..."
+    },
+    "j7": {
+      "subject": "Dernier message / Cafonso Serrurier - Bordeaux",
+      "body_file": "modules/06_commercial_et_emails/relances/lead_03_J7.md",
+      "body_preview": "Bonjour,\n\nJe me permets ce dernier mot et je ne vous relancerai plus ensuite.\n\nSi votre carnet de rendez-vous à Bordeaux est déjà complet pour les 6 p..."
+    }
+  },
+  {
+    "index": 4,
+    "business_name": "MGB Serrurier Bordeaux",
+    "primary_email": "mgb33000@gmail.com",
+    "client_reference_id": "BATCH1_LEAD_04_MGBSERRURIER",
+    "stripe_url": "https://buy.stripe.com/5kQ5kDeuJ6BJ2js7YE8N201?client_reference_id=BATCH1_LEAD_04_MGBSERRURIER",
+    "j3": {
+      "subject": "Re: Fiche Google MGB Serrurier Bordeaux (remarque rapide)",
+      "body_file": "modules/06_commercial_et_emails/relances/lead_04_J3.md",
+      "body_preview": "Bonjour,\n\nJe fais suite à mon message concernant votre visibilité à Bordeaux.\n\nFaites ce test rapide depuis votre téléphone : tapez simplement \"serrur..."
+    },
+    "j7": {
+      "subject": "Dernier message / MGB Serrurier Bordeaux",
+      "body_file": "modules/06_commercial_et_emails/relances/lead_04_J7.md",
+      "body_preview": "Bonjour,\n\nJe me permets ce dernier mot et je ne vous relancerai plus ensuite.\n\nSi votre carnet de rendez-vous à Bordeaux est déjà complet pour les 6 p..."
+    }
+  },
+  {
+    "index": 5,
+    "business_name": "Clés Stop Dépanne - Serrurier Bordeaux",
+    "primary_email": "clesstop.contact@gmail.com",
+    "client_reference_id": "BATCH1_LEAD_05_CLSSTOPDPANN",
+    "stripe_url": "https://buy.stripe.com/5kQ5kDeuJ6BJ2js7YE8N201?client_reference_id=BATCH1_LEAD_05_CLSSTOPDPANN",
+    "j3": {
+      "subject": "Re: Fiche Google Clés Stop Dépanne - Serrurier Bordeaux (remarque rapide)",
+      "body_file": "modules/06_commercial_et_emails/relances/lead_05_J3.md",
+      "body_preview": "Bonjour,\n\nJe fais suite à mon message concernant votre visibilité à Bordeaux.\n\nFaites ce test rapide depuis votre téléphone : tapez simplement \"serrur..."
+    },
+    "j7": {
+      "subject": "Dernier message / Clés Stop Dépanne - Serrurier Bordeaux",
+      "body_file": "modules/06_commercial_et_emails/relances/lead_05_J7.md",
+      "body_preview": "Bonjour,\n\nJe me permets ce dernier mot et je ne vous relancerai plus ensuite.\n\nSi votre carnet de rendez-vous à Bordeaux est déjà complet pour les 6 p..."
+    }
+  },
+  {
+    "index": 6,
+    "business_name": "B&L Plomberie Bordeaux",
+    "primary_email": "louis.barlemont@gmail.com",
+    "client_reference_id": "BATCH1_LEAD_06_BLPLOMBERIEB",
+    "stripe_url": "https://buy.stripe.com/5kQ5kDeuJ6BJ2js7YE8N201?client_reference_id=BATCH1_LEAD_06_BLPLOMBERIEB",
+    "j3": {
+      "subject": "Re: Fiche Google B&L Plomberie Bordeaux (remarque rapide)",
+      "body_file": "modules/06_commercial_et_emails/relances/lead_06_J3.md",
+      "body_preview": "Bonjour,\n\nJe fais suite à mon message concernant votre visibilité à Bordeaux.\n\nFaites ce test rapide depuis votre téléphone : tapez simplement \"plombi..."
+    },
+    "j7": {
+      "subject": "Dernier message / B&L Plomberie Bordeaux",
+      "body_file": "modules/06_commercial_et_emails/relances/lead_06_J7.md",
+      "body_preview": "Bonjour,\n\nJe me permets ce dernier mot et je ne vous relancerai plus ensuite.\n\nSi votre carnet de rendez-vous à Bordeaux est déjà complet pour les 6 p..."
+    }
+  },
+  {
+    "index": 7,
+    "business_name": "Serrurerie Bacci",
+    "primary_email": "contact@serrurerie-bacci.com",
+    "client_reference_id": "BATCH1_LEAD_07_SERRURERIEBA",
+    "stripe_url": "https://buy.stripe.com/5kQ5kDeuJ6BJ2js7YE8N201?client_reference_id=BATCH1_LEAD_07_SERRURERIEBA",
+    "j3": {
+      "subject": "Re: Fiche Google Serrurerie Bacci (remarque rapide)",
+      "body_file": "modules/06_commercial_et_emails/relances/lead_07_J3.md",
+      "body_preview": "Bonjour,\n\nJe fais suite à mon message concernant votre visibilité à Bordeaux.\n\nFaites ce test rapide depuis votre téléphone : tapez simplement \"serrur..."
+    },
+    "j7": {
+      "subject": "Dernier message / Serrurerie Bacci",
+      "body_file": "modules/06_commercial_et_emails/relances/lead_07_J7.md",
+      "body_preview": "Bonjour,\n\nJe me permets ce dernier mot et je ne vous relancerai plus ensuite.\n\nSi votre carnet de rendez-vous à Bordeaux est déjà complet pour les 6 p..."
+    }
+  },
+  {
+    "index": 8,
+    "business_name": "SERLOCK",
+    "primary_email": "contact@serlock.fr",
+    "client_reference_id": "BATCH1_LEAD_08_SERLOCK",
+    "stripe_url": "https://buy.stripe.com/5kQ5kDeuJ6BJ2js7YE8N201?client_reference_id=BATCH1_LEAD_08_SERLOCK",
+    "j3": {
+      "subject": "Re: Fiche Google SERLOCK (remarque rapide)",
+      "body_file": "modules/06_commercial_et_emails/relances/lead_08_J3.md",
+      "body_preview": "Bonjour,\n\nJe fais suite à mon message concernant votre visibilité à Bordeaux.\n\nFaites ce test rapide depuis votre téléphone : tapez simplement \"serrur..."
+    },
+    "j7": {
+      "subject": "Dernier message / SERLOCK",
+      "body_file": "modules/06_commercial_et_emails/relances/lead_08_J7.md",
+      "body_preview": "Bonjour,\n\nJe me permets ce dernier mot et je ne vous relancerai plus ensuite.\n\nSi votre carnet de rendez-vous à Bordeaux est déjà complet pour les 6 p..."
+    }
+  },
+  {
+    "index": 9,
+    "business_name": "Serrurerie Bordelaise",
+    "primary_email": "contact@serrurerie-bordelaise.com",
+    "client_reference_id": "BATCH1_LEAD_09_SERRURERIEBO",
+    "stripe_url": "https://buy.stripe.com/5kQ5kDeuJ6BJ2js7YE8N201?client_reference_id=BATCH1_LEAD_09_SERRURERIEBO",
+    "j3": {
+      "subject": "Re: Fiche Google Serrurerie Bordelaise (remarque rapide)",
+      "body_file": "modules/06_commercial_et_emails/relances/lead_09_J3.md",
+      "body_preview": "Bonjour,\n\nJe fais suite à mon message concernant votre visibilité à Bordeaux.\n\nFaites ce test rapide depuis votre téléphone : tapez simplement \"serrur..."
+    },
+    "j7": {
+      "subject": "Dernier message / Serrurerie Bordelaise",
+      "body_file": "modules/06_commercial_et_emails/relances/lead_09_J7.md",
+      "body_preview": "Bonjour,\n\nJe me permets ce dernier mot et je ne vous relancerai plus ensuite.\n\nSi votre carnet de rendez-vous à Bordeaux est déjà complet pour les 6 p..."
+    }
+  },
+  {
+    "index": 10,
+    "business_name": "Abeille Services - Serrurier Bordeaux",
+    "primary_email": "contact@abeille-depannage.com",
+    "client_reference_id": "BATCH1_LEAD_10_ABEILLESERVI",
+    "stripe_url": "https://buy.stripe.com/5kQ5kDeuJ6BJ2js7YE8N201?client_reference_id=BATCH1_LEAD_10_ABEILLESERVI",
+    "j3": {
+      "subject": "Re: Fiche Google Abeille Services - Serrurier Bordeaux (remarque rapide)",
+      "body_file": "modules/06_commercial_et_emails/relances/lead_10_J3.md",
+      "body_preview": "Bonjour Frédéric Le Chevert,\n\nJe fais suite à mon message concernant votre visibilité à Bordeaux.\n\nFaites ce test rapide depuis votre téléphone : tape..."
+    },
+    "j7": {
+      "subject": "Dernier message / Abeille Services - Serrurier Bordeaux",
+      "body_file": "modules/06_commercial_et_emails/relances/lead_10_J7.md",
+      "body_preview": "Bonjour Frédéric Le Chevert,\n\nJe me permets ce dernier mot et je ne vous relancerai plus ensuite.\n\nSi votre carnet de rendez-vous à Bordeaux est déjà ..."
+    }
+  },
+  {
+    "index": 11,
+    "business_name": "JT 33 Serrurier Bordeaux",
+    "primary_email": "torresj33@outlook.fr",
+    "client_reference_id": "BATCH1_LEAD_11_JT33SERRURIE",
+    "stripe_url": "https://buy.stripe.com/5kQ5kDeuJ6BJ2js7YE8N201?client_reference_id=BATCH1_LEAD_11_JT33SERRURIE",
+    "j3": {
+      "subject": "Re: Fiche Google JT 33 Serrurier Bordeaux (remarque rapide)",
+      "body_file": "modules/06_commercial_et_emails/relances/lead_11_J3.md",
+      "body_preview": "Bonjour,\n\nJe fais suite à mon message concernant votre visibilité à Bordeaux.\n\nFaites ce test rapide depuis votre téléphone : tapez simplement \"serrur..."
+    },
+    "j7": {
+      "subject": "Dernier message / JT 33 Serrurier Bordeaux",
+      "body_file": "modules/06_commercial_et_emails/relances/lead_11_J7.md",
+      "body_preview": "Bonjour,\n\nJe me permets ce dernier mot et je ne vous relancerai plus ensuite.\n\nSi votre carnet de rendez-vous à Bordeaux est déjà complet pour les 6 p..."
+    }
+  },
+  {
+    "index": 12,
+    "business_name": "PENA - Fermetures, Serrurier, Sécurité, Point Fort Fichet, Bordeaux",
+    "primary_email": "info@pena-serrurerie.com",
+    "client_reference_id": "BATCH1_LEAD_12_PENAFERMETUR",
+    "stripe_url": "https://buy.stripe.com/5kQ5kDeuJ6BJ2js7YE8N201?client_reference_id=BATCH1_LEAD_12_PENAFERMETUR",
+    "j3": {
+      "subject": "Re: Fiche Google PENA - Fermetures, Serrurier, Sécurité, Point Fort Fichet, Bordeaux (remarque rapide)",
+      "body_file": "modules/06_commercial_et_emails/relances/lead_12_J3.md",
+      "body_preview": "Bonjour,\n\nJe fais suite à mon message concernant votre visibilité à Bordeaux.\n\nFaites ce test rapide depuis votre téléphone : tapez simplement \"serrur..."
+    },
+    "j7": {
+      "subject": "Dernier message / PENA - Fermetures, Serrurier, Sécurité, Point Fort Fichet, Bordeaux",
+      "body_file": "modules/06_commercial_et_emails/relances/lead_12_J7.md",
+      "body_preview": "Bonjour,\n\nJe me permets ce dernier mot et je ne vous relancerai plus ensuite.\n\nSi votre carnet de rendez-vous à Bordeaux est déjà complet pour les 6 p..."
+    }
+  },
+  {
+    "index": 13,
+    "business_name": "Selfcity Bordeaux - Plombier Chauffagiste Climatisation",
+    "primary_email": "contact@selfcity.fr",
+    "client_reference_id": "BATCH1_LEAD_13_SELFCITYBORD",
+    "stripe_url": "https://buy.stripe.com/5kQ5kDeuJ6BJ2js7YE8N201?client_reference_id=BATCH1_LEAD_13_SELFCITYBORD",
+    "j3": {
+      "subject": "Re: Fiche Google Selfcity Bordeaux - Plombier Chauffagiste Climatisation (remarque rapide)",
+      "body_file": "modules/06_commercial_et_emails/relances/lead_13_J3.md",
+      "body_preview": "Bonjour Chérif Mili,\n\nJe fais suite à mon message concernant votre visibilité à Bordeaux.\n\nFaites ce test rapide depuis votre téléphone : tapez simple..."
+    },
+    "j7": {
+      "subject": "Dernier message / Selfcity Bordeaux - Plombier Chauffagiste Climatisation",
+      "body_file": "modules/06_commercial_et_emails/relances/lead_13_J7.md",
+      "body_preview": "Bonjour Chérif Mili,\n\nJe me permets ce dernier mot et je ne vous relancerai plus ensuite.\n\nSi votre carnet de rendez-vous à Bordeaux est déjà complet ..."
+    }
+  },
+  {
+    "index": 14,
+    "business_name": "BL Plomberie",
+    "primary_email": "contact@blplomberie.fr",
+    "client_reference_id": "BATCH1_LEAD_14_BLPLOMBERIE",
+    "stripe_url": "https://buy.stripe.com/5kQ5kDeuJ6BJ2js7YE8N201?client_reference_id=BATCH1_LEAD_14_BLPLOMBERIE",
+    "j3": {
+      "subject": "Re: Fiche Google BL Plomberie (remarque rapide)",
+      "body_file": "modules/06_commercial_et_emails/relances/lead_14_J3.md",
+      "body_preview": "Bonjour,\n\nJe fais suite à mon message concernant votre visibilité à Lyon.\n\nFaites ce test rapide depuis votre téléphone : tapez simplement \"plombier L..."
+    },
+    "j7": {
+      "subject": "Dernier message / BL Plomberie",
+      "body_file": "modules/06_commercial_et_emails/relances/lead_14_J7.md",
+      "body_preview": "Bonjour,\n\nJe me permets ce dernier mot et je ne vous relancerai plus ensuite.\n\nSi votre carnet de rendez-vous à Lyon est déjà complet pour les 6 proch..."
+    }
+  },
+  {
+    "index": 15,
+    "business_name": "MK Plomberie - Plombier à Lyon",
+    "primary_email": "contact@mk-plomberie.com",
+    "client_reference_id": "BATCH1_LEAD_15_MKPLOMBERIEP",
+    "stripe_url": "https://buy.stripe.com/5kQ5kDeuJ6BJ2js7YE8N201?client_reference_id=BATCH1_LEAD_15_MKPLOMBERIEP",
+    "j3": {
+      "subject": "Re: Fiche Google MK Plomberie - Plombier à Lyon (remarque rapide)",
+      "body_file": "modules/06_commercial_et_emails/relances/lead_15_J3.md",
+      "body_preview": "Bonjour,\n\nJe fais suite à mon message concernant votre visibilité à Lyon.\n\nFaites ce test rapide depuis votre téléphone : tapez simplement \"plombier L..."
+    },
+    "j7": {
+      "subject": "Dernier message / MK Plomberie - Plombier à Lyon",
+      "body_file": "modules/06_commercial_et_emails/relances/lead_15_J7.md",
+      "body_preview": "Bonjour,\n\nJe me permets ce dernier mot et je ne vous relancerai plus ensuite.\n\nSi votre carnet de rendez-vous à Lyon est déjà complet pour les 6 proch..."
+    }
+  }
+]

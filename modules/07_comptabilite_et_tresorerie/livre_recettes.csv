@@ -1,0 +1,2 @@
+Date Encaissement;Numéro Facture;Nom Client / Raison Sociale;Nature Prestation;Montant HT (€);TVA (€);Montant TTC (€);Mode Règlement;Réf. Transaction Stripe;Frais Stripe Estimés (€);Net Encaissé (€)
+18/11/2026 à 20:19;FAC-2026-0001;Boulangerie Saint-Honoré;Audit Stratégique Complet & Plan d'Action Local — Google Business Profile;49,00;0,00;49,00;Carte Bancaire (Stripe);cs_test_20261118201958;0,98;48,02

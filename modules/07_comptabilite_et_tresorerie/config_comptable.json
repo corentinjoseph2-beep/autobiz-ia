@@ -1,0 +1,65 @@
+{
+  "emetteur": {
+    "nom_commercial": "OptiLocal Audits",
+    "raison_sociale": "AutoBiz IA — OptiLocal Services",
+    "forme_juridique": "Micro-entreprise",
+    "siren": "987 654 321",
+    "siret": "987 654 321 00012",
+    "code_ape": "6202A - Conseil en systèmes et logiciels informatiques",
+    "rcs": "RCS Paris 987 654 321",
+    "adresse": "10 Rue de la Paix",
+    "code_postal": "75002",
+    "ville": "Paris",
+    "pays": "France",
+    "email": "contact@optilocal.fr",
+    "support_email": "vumavuma148@gmail.com",
+    "site_web": "https://optilocal.fr"
+  },
+  "fiscalite": {
+    "regime_tva": "franchise_en_base",
+    "mention_exoneration_tva": "TVA non applicable, art. 293 B du Code Général des Impôts (CGI)",
+    "taux_tva_pourcent": 0.0,
+    "taux_penalites_retard": "Taux d'intérêt légal majoré de 10 points de pourcentage",
+    "indemnite_forfaitaire_recouvrement_eur": 40.0
+  },
+  "produit": {
+    "code": "AUDIT-GBP-49",
+    "designation": "Audit Stratégique Complet & Plan d'Action Local — Google Business Profile",
+    "description": "Diagnostic 360° de la visibilité locale, benchmark concurrentiel, plan d'action correctif et recommandations SEO opérationnelles.",
+    "prix_unitaire_ttc": 49.0,
+    "devise": "EUR"
+  },
+  "parametres_financiers": {
+    "frais_stripe_pourcentage": 1.5,
+    "frais_stripe_fixe_eur": 0.25,
+    "cout_ia_moyen_eur": 0.15,
+    "budget_initial_eur": 50.0,
+    "objectif_ca_eur": 1000.0,
+    "ventes_cibles": 21
+  },
+  "sequence_facturation": {
+    "prefixe": "FAC-2026-",
+    "prochain_numero": 2,
+    "longueur_chiffres": 4
+  },
+  "paliers_reinvestissement": [
+    {
+      "palier_ca_eur": 200.0,
+      "titre": "Palier 1 : Identité & Délivrabilité Pro",
+      "allocation_estimee_eur": 35.0,
+      "description": "Nom de domaine pro (.com / .fr) + messagerie pro Google Workspace / Infomaniak (DKIM, SPF, DMARC 100%)."
+    },
+    {
+      "palier_ca_eur": 500.0,
+      "titre": "Palier 2 : Infrastructure 24/7 & Quota IA Premium",
+      "allocation_estimee_eur": 80.0,
+      "description": "Déploiement serveur cloud permanent (Fly.io / VPS Scaleway) + API Gemini/OpenAI avec crédits prépayés."
+    },
+    {
+      "palier_ca_eur": 1000.0,
+      "titre": "Palier 3 : Scale & Scraping B2B National",
+      "allocation_estimee_eur": 250.0,
+      "description": "Accès aux bases de données Sirene/Google Maps enrichies et industrialisation multi-villes."
+    }
+  ]
+}

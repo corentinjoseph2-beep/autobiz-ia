@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="fr" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau de Bord Trésorerie & Facturation — AutoBiz IA</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#eff6ff',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen font-sans antialiased pb-16">
+
+    <!-- NAVIGATION HEADER -->
+    <header class="border-b border-slate-800 bg-slate-900/50 backdrop-blur sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-lg bg-blue-600 flex items-center justify-center font-black text-xl shadow-lg shadow-blue-500/20">
+                    ⚡
+                </div>
+                <div>
+                    <h1 class="text-lg font-bold text-white">AutoBiz IA — Module 07</h1>
+                    <p class="text-xs text-slate-400">Comptabilité, Facturation & Trésorerie</p>
+                </div>
+            </div>
+            <div class="flex items-center gap-4 text-xs text-slate-400">
+                <span class="flex items-center gap-1.5">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                    Système Opérationnel
+                </span>
+                <span class="hidden sm:inline text-slate-600">|</span>
+                <span class="hidden sm:inline">Actualisé le 18/11/2026 à 20:21</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 space-y-8">
+
+        <!-- HERO : JAUGE DES 1 000 € -->
+        <section class="bg-gradient-to-br from-slate-900 via-slate-900 to-blue-950/40 p-6 sm:p-8 rounded-2xl border border-slate-800 shadow-xl">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-6">
+                <div>
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-blue-500/10 text-blue-400 border border-blue-500/20 mb-3">
+                        🎯 OBJECTIF PHASE 1 : 1 000 € DE CHIFFRE D'AFFAIRES
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+                        49.00 € <span class="text-slate-500 font-medium text-2xl">/ 1000.00 €</span>
+                    </h2>
+                    <p class="text-slate-400 text-sm mt-1">
+                        <strong>1</strong> ventes d'audits réalisées sur 21 visées. Plus que <strong>20 ventes</strong> pour boucler le cap.
+                    </p>
+                </div>
+                <div class="text-right">
+                    <div class="text-4xl sm:text-5xl font-black text-blue-400">
+                        4.9%
+                    </div>
+                    <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider mt-1">
+                        Taux d'accomplissement
+                    </div>
+                </div>
+            </div>
+
+            <!-- BARRE DE PROGRESSION -->
+            <div class="w-full bg-slate-800/80 rounded-full h-4 p-1 overflow-hidden border border-slate-700/50">
+                <div class="bg-gradient-to-r from-blue-600 via-indigo-500 to-emerald-400 h-full rounded-full transition-all duration-700 shadow-sm" style="width: 4.9%;"></div>
+            </div>
+        </section>
+
+        <!-- KPI CARDS -->
+        <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            <!-- CARTE 1 -->
+            <div class="bg-slate-900/60 p-5 rounded-xl border border-slate-800 shadow">
+                <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Trésorerie Disponible</p>
+                <div class="flex items-baseline gap-2">
+                    <span class="text-3xl font-extrabold text-emerald-400">98.02 €</span>
+                </div>
+                <p class="text-xs text-slate-400 mt-2">Cash-in disponible (Budget 50 € inclus)</p>
+            </div>
+
+            <!-- CARTE 2 -->
+            <div class="bg-slate-900/60 p-5 rounded-xl border border-slate-800 shadow">
+                <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Marge Nette Encaissée</p>
+                <div class="flex items-baseline gap-2">
+                    <span class="text-3xl font-extrabold text-white">47.87 €</span>
+                    <span class="text-xs font-bold text-emerald-400">(97.7%)</span>
+                </div>
+                <p class="text-xs text-slate-400 mt-2">Après frais Stripe & coûts serveurs</p>
+            </div>
+
+            <!-- CARTE 3 -->
+            <div class="bg-slate-900/60 p-5 rounded-xl border border-slate-800 shadow">
+                <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Frais Stripe Déduits</p>
+                <div class="flex items-baseline gap-2">
+                    <span class="text-3xl font-extrabold text-rose-400">-0.98 €</span>
+                </div>
+                <p class="text-xs text-slate-400 mt-2">1,5% + 0,25 € par encaissement</p>
+            </div>
+
+            <!-- CARTE 4 -->
+            <div class="bg-slate-900/60 p-5 rounded-xl border border-slate-800 shadow">
+                <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Coûts de Calcul IA</p>
+                <div class="flex items-baseline gap-2">
+                    <span class="text-3xl font-extrabold text-amber-400">-0.15 €</span>
+                </div>
+                <p class="text-xs text-slate-400 mt-2">~0,15 € par génération de rapport</p>
+            </div>
+        </section>
+
+        <!-- FEUILLE DE ROUTE RÉINVESTISSEMENT -->
+        <section class="space-y-4">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h3 class="text-xl font-bold text-white">🚀 Plan de Réinvestissement des 1 000 €</h3>
+                    <p class="text-sm text-slate-400">Allocation stratégique 100% autofinancée par les ventes</p>
+                </div>
+                <span class="text-xs font-bold px-3 py-1 bg-slate-800 text-slate-300 rounded-full">
+                    Total Réinvesti Prévu : 0 €
+                </span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+                
+        <div class="p-5 rounded-xl border border-slate-800 bg-slate-900/60 transition-all">
+            <div class="flex items-center justify-between mb-2">
+                <span class="text-xs font-bold text-blue-400 uppercase tracking-wider">Objectif : 200 € de CA</span>
+                <span class="px-2.5 py-1 text-xs font-semibold rounded-md bg-slate-800 text-slate-400">Progression : 24.5%</span>
+            </div>
+            <h4 class="text-lg font-bold text-white mb-1">Palier 1 : Identité & Délivrabilité Pro</h4>
+            <p class="text-sm text-slate-400 mb-3">Nom de domaine pro (.com / .fr) + messagerie pro Google Workspace / Infomaniak (DKIM, SPF, DMARC 100%).</p>
+            <div class="flex items-center justify-between text-xs text-slate-400 pt-2 border-t border-slate-800">
+                <span>Budget réinvestissement :</span>
+                <span class="font-bold text-emerald-400 text-sm">~35 €</span>
+            </div>
+        </div>
+        
+        <div class="p-5 rounded-xl border border-slate-800 bg-slate-900/60 transition-all">
+            <div class="flex items-center justify-between mb-2">
+                <span class="text-xs font-bold text-blue-400 uppercase tracking-wider">Objectif : 500 € de CA</span>
+                <span class="px-2.5 py-1 text-xs font-semibold rounded-md bg-slate-800 text-slate-400">Progression : 9.8%</span>
+            </div>
+            <h4 class="text-lg font-bold text-white mb-1">Palier 2 : Infrastructure 24/7 & Quota IA Premium</h4>
+            <p class="text-sm text-slate-400 mb-3">Déploiement serveur cloud permanent (Fly.io / VPS Scaleway) + API Gemini/OpenAI avec crédits prépayés.</p>
+            <div class="flex items-center justify-between text-xs text-slate-400 pt-2 border-t border-slate-800">
+                <span>Budget réinvestissement :</span>
+                <span class="font-bold text-emerald-400 text-sm">~80 €</span>
+            </div>
+        </div>
+        
+        <div class="p-5 rounded-xl border border-slate-800 bg-slate-900/60 transition-all">
+            <div class="flex items-center justify-between mb-2">
+                <span class="text-xs font-bold text-blue-400 uppercase tracking-wider">Objectif : 1000 € de CA</span>
+                <span class="px-2.5 py-1 text-xs font-semibold rounded-md bg-slate-800 text-slate-400">Progression : 4.9%</span>
+            </div>
+            <h4 class="text-lg font-bold text-white mb-1">Palier 3 : Scale & Scraping B2B National</h4>
+            <p class="text-sm text-slate-400 mb-3">Accès aux bases de données Sirene/Google Maps enrichies et industrialisation multi-villes.</p>
+            <div class="flex items-center justify-between text-xs text-slate-400 pt-2 border-t border-slate-800">
+                <span>Budget réinvestissement :</span>
+                <span class="font-bold text-emerald-400 text-sm">~250 €</span>
+            </div>
+        </div>
+        
+            </div>
+        </section>
+
+        <!-- REGISTRE DES VENTES & FACTURES -->
+        <section class="bg-slate-900/60 rounded-xl border border-slate-800 overflow-hidden shadow">
+            <div class="p-5 border-b border-slate-800 flex items-center justify-between">
+                <div>
+                    <h3 class="text-lg font-bold text-white">🧾 Journal des Ventes & Factures Emises</h3>
+                    <p class="text-xs text-slate-400">Livre officiel des recettes synchronisé</p>
+                </div>
+                <span class="text-xs font-mono bg-slate-800 text-blue-400 px-3 py-1 rounded-md border border-slate-700">
+                    1 enregistrements
+                </span>
+            </div>
+
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="border-b border-slate-800 bg-slate-950/40 text-xs font-bold uppercase tracking-wider text-slate-400">
+                            <th class="py-3 px-4">N° Facture</th>
+                            <th class="py-3 px-4">Date</th>
+                            <th class="py-3 px-4">Client</th>
+                            <th class="py-3 px-4">Établissement</th>
+                            <th class="py-3 px-4 text-right">Montant TTC</th>
+                            <th class="py-3 px-4 text-right">Frais Stripe</th>
+                            <th class="py-3 px-4 text-right">Net</th>
+                            <th class="py-3 px-4 text-center">Statut</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+        <tr class="hover:bg-slate-800/50 transition-colors border-b border-slate-800">
+            <td class="py-3 px-4 font-mono text-blue-400 font-semibold">FAC-2026-0001</td>
+            <td class="py-3 px-4 text-slate-300 text-sm">18/11/2026 à 20:19</td>
+            <td class="py-3 px-4 font-medium text-white">Boulangerie Saint-Honoré</td>
+            <td class="py-3 px-4 text-slate-400 text-sm">Boulangerie Saint-Honoré (Paris)</td>
+            <td class="py-3 px-4 font-bold text-white text-right">49.00 €</td>
+            <td class="py-3 px-4 text-rose-400 text-right text-sm">-0.98 €</td>
+            <td class="py-3 px-4 font-bold text-emerald-400 text-right">+48.02 €</td>
+            <td class="py-3 px-4 text-center">
+                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                    Payée
+                </span>
+            </td>
+        </tr>
+        
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+</body>
+</html>

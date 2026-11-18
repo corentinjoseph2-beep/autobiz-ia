@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rapport d'Audit Visibilité Locale — Bistrot & Comptoir du Marché</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap');
+
+    :root {
+      --primary: #1e3a8a;
+      --primary-light: #2563eb;
+      --primary-soft: #eff6ff;
+      --dark: #0f172a;
+      --slate: #334155;
+      --muted: #64748b;
+      --light-bg: #f8fafc;
+      --card-border: #e2e8f0;
+      --danger: #dc2626;
+      --danger-bg: #fef2f2;
+      --danger-border: #fecaca;
+      --warning: #d97706;
+      --warning-bg: #fffbeb;
+      --warning-border: #fde68a;
+      --success: #16a34a;
+      --success-bg: #f0fdf4;
+      --success-border: #bbf7d0;
+      --accent: #4f46e5;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: var(--slate);
+      background-color: #ffffff;
+      line-height: 1.45;
+      font-size: 13px;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    @page {
+      size: A4 portrait;
+      margin: 12mm 14mm 12mm 14mm;
+    }
+
+    .page {
+      position: relative;
+      background: #ffffff;
+      width: 100%;
+      height: 271mm;
+      box-sizing: border-box;
+      page-break-after: always;
+      break-after: page;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+    }
+
+    .page:last-child {
+      page-break-after: avoid;
+      break-after: avoid;
+    }
+
+    /* Header Bar */
+    .header-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #e2e8f0;
+      margin-bottom: 16px;
+    }
+
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-logo-badge {
+      width: 32px;
+      height: 32px;
+      background: linear-gradient(135deg, #2563eb, #1d4ed8);
+      color: white;
+      font-weight: 800;
+      font-size: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.2);
+    }
+
+    .brand-title {
+      font-size: 13.5px;
+      font-weight: 800;
+      color: var(--dark);
+      letter-spacing: -0.3px;
+      text-transform: uppercase;
+    }
+
+    .brand-sub {
+      font-size: 10px;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .audit-meta-tag {
+      text-align: right;
+    }
+
+    .audit-ref {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10.5px;
+      font-weight: 700;
+      color: var(--primary);
+      background: var(--primary-soft);
+      padding: 3px 8px;
+      border-radius: 6px;
+      display: inline-block;
+    }
+
+    .audit-date {
+      font-size: 10px;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    /* Page Footer */
+    .page-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 8px;
+      border-top: 1px solid var(--card-border);
+      font-size: 9.5px;
+      color: var(--muted);
+      margin-top: auto;
+    }
+
+    /* Target Banner */
+    .target-banner {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      color: #ffffff;
+      border-radius: 12px;
+      padding: 18px 22px;
+      margin-bottom: 18px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .target-subtitle {
+      font-size: 10.5px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #93c5fd;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .target-name {
+      font-size: 22px;
+      font-weight: 800;
+      color: #ffffff;
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+    }
+
+    .target-details {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 11.5px;
+      color: #cbd5e1;
+    }
+
+    .target-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: rgba(255, 255, 255, 0.08);
+      padding: 4px 10px;
+      border-radius: 6px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    /* Score Section Grid */
+    .score-overview-grid {
+      display: grid;
+      grid-template-columns: 190px 1fr;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+
+    .score-gauge-card {
+      background: var(--light-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 16px 12px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .gauge-wrapper {
+      position: relative;
+      width: 114px;
+      height: 114px;
+      margin-bottom: 8px;
+    }
+
+    .gauge-svg {
+      transform: rotate(-90deg);
+      width: 114px;
+      height: 114px;
+    }
+
+    .gauge-bg {
+      fill: none;
+      stroke: #e2e8f0;
+      stroke-width: 10;
+    }
+
+    .gauge-meter {
+      fill: none;
+      stroke: #d97706;
+      stroke-width: 10;
+      stroke-linecap: round;
+      stroke-dasharray: 283;
+      stroke-dashoffset: 99.0;
+    }
+
+    .gauge-number {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 26px;
+      font-weight: 800;
+      color: var(--dark);
+      letter-spacing: -1px;
+    }
+
+    .gauge-max {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--muted);
+    }
+
+    .gauge-status-label {
+      font-size: 10.5px;
+      font-weight: 700;
+      color: #d97706;
+      background: #fffbeb;
+      border: 1px solid #fde68a;
+      padding: 3px 10px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .score-metrics-panel {
+      background: #ffffff;
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 14px 18px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .metric-row {
+      margin-bottom: 8px;
+    }
+
+    .metric-row:last-child {
+      margin-bottom: 0;
+    }
+
+    .metric-header {
+      display: flex;
+      justify-content: space-between;
+      font-size: 11.5px;
+      font-weight: 600;
+      margin-bottom: 4px;
+      color: var(--dark);
+    }
+
+    .metric-score-val {
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 700;
+    }
+
+    .progress-track {
+      height: 6px;
+      background-color: #f1f5f9;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      border-radius: 10px;
+    }
+
+    /* Loss Impact Callout */
+    .impact-callout {
+      background: #fff1f2;
+      border-left: 4px solid #e11d48;
+      border-radius: 0 10px 10px 0;
+      padding: 12px 16px;
+      margin-bottom: 18px;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .impact-icon {
+      font-size: 18px;
+      line-height: 1;
+    }
+
+    .impact-text h4 {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: #9f1239;
+      margin-bottom: 2px;
+    }
+
+    .impact-text p {
+      font-size: 11.5px;
+      color: #881337;
+      line-height: 1.4;
+    }
+
+    /* Executive summary cards on page 1 */
+    .summary-cards-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .summary-card {
+      background: var(--light-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 10px;
+      padding: 12px 14px;
+      text-align: left;
+    }
+
+    .summary-card-val {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--dark);
+      letter-spacing: -0.5px;
+      margin-bottom: 2px;
+    }
+
+    .summary-card-title {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--slate);
+      margin-bottom: 4px;
+    }
+
+    .summary-card-desc {
+      font-size: 10px;
+      color: var(--muted);
+      line-height: 1.35;
+    }
+
+    /* Section Titles */
+    .section-title {
+      font-size: 14.5px;
+      font-weight: 800;
+      color: var(--dark);
+      letter-spacing: -0.3px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .section-title-badge {
+      background: var(--primary-soft);
+      color: var(--primary);
+      font-size: 9.5px;
+      font-weight: 800;
+      padding: 2px 7px;
+      border-radius: 5px;
+      text-transform: uppercase;
+    }
+
+    /* Critical Flaws Cards */
+    .flaws-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .flaw-card {
+      border: 1px solid var(--danger-border);
+      background: #ffffff;
+      border-radius: 10px;
+      padding: 12px 14px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+    }
+
+    .flaw-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 5px;
+    }
+
+    .flaw-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 9.5px;
+      font-weight: 800;
+      text-transform: uppercase;
+      padding: 2px 6px;
+      border-radius: 4px;
+      background: var(--danger-bg);
+      color: var(--danger);
+    }
+
+    .flaw-severity {
+      font-size: 10.5px;
+      font-weight: 700;
+      color: #b91c1c;
+    }
+
+    .flaw-title {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 3px;
+    }
+
+    .flaw-desc {
+      font-size: 11.5px;
+      color: var(--slate);
+      margin-bottom: 6px;
+      line-height: 1.35;
+    }
+
+    .flaw-remedy {
+      background: var(--light-bg);
+      border-radius: 6px;
+      padding: 6px 10px;
+      font-size: 11px;
+      color: var(--dark);
+      border-left: 3px solid var(--primary-light);
+    }
+
+    .flaw-remedy strong {
+      color: var(--primary);
+    }
+
+    /* Benchmark Table */
+    .benchmark-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 11px;
+      margin-bottom: 18px;
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .benchmark-table th {
+      background: #f1f5f9;
+      color: var(--dark);
+      font-weight: 700;
+      padding: 8px 10px;
+      text-align: left;
+      border-bottom: 1px solid var(--card-border);
+    }
+
+    .benchmark-table td {
+      padding: 8px 10px;
+      border-bottom: 1px solid #f1f5f9;
+    }
+
+    .benchmark-table tr.highlighted {
+      background: #eff6ff;
+      font-weight: 700;
+    }
+
+    .benchmark-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* 7-Step Roadmap (Page 3) */
+    .roadmap-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .step-item {
+      display: grid;
+      grid-template-columns: 28px 1fr 105px;
+      align-items: center;
+      gap: 10px;
+      background: #ffffff;
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      padding: 9px 12px;
+    }
+
+    .step-number {
+      width: 26px;
+      height: 26px;
+      background: var(--primary-soft);
+      color: var(--primary);
+      font-weight: 800;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11.5px;
+    }
+
+    .step-content h5 {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 2px;
+    }
+
+    .step-content p {
+      font-size: 10.5px;
+      color: var(--muted);
+      line-height: 1.35;
+    }
+
+    .step-tags {
+      text-align: right;
+    }
+
+    .pill-impact {
+      font-size: 9px;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 4px;
+      display: inline-block;
+      margin-bottom: 2px;
+    }
+
+    .impact-high {
+      background: #dcfce7;
+      color: #15803d;
+    }
+
+    .impact-medium {
+      background: #fef3c7;
+      color: #b45309;
+    }
+
+    .pill-time {
+      font-size: 9.5px;
+      color: var(--muted);
+      display: block;
+    }
+
+    /* Response Templates (Page 4) */
+    .template-box {
+      border: 1px solid var(--card-border);
+      background: var(--light-bg);
+      border-radius: 8px;
+      padding: 10px 12px;
+      margin-bottom: 12px;
+    }
+
+    .template-badge {
+      display: inline-block;
+      font-size: 9.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 2px 7px;
+      border-radius: 4px;
+      margin-bottom: 6px;
+    }
+
+    .badge-crisis {
+      background: #fee2e2;
+      color: #991b1b;
+    }
+
+    .badge-positive {
+      background: #dcfce7;
+      color: #166534;
+    }
+
+    .badge-neutral {
+      background: #fef3c7;
+      color: #92400e;
+    }
+
+    .template-context {
+      font-size: 10.5px;
+      font-weight: 600;
+      color: var(--dark);
+      margin-bottom: 5px;
+    }
+
+    .template-code {
+      background: #ffffff;
+      border: 1px dashed #cbd5e1;
+      border-radius: 6px;
+      padding: 8px 10px;
+      font-family: inherit;
+      font-size: 10.5px;
+      color: #1e293b;
+      line-height: 1.4;
+      white-space: pre-line;
+    }
+
+    .checklist-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .check-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 10.5px;
+      background: #ffffff;
+      border: 1px solid var(--card-border);
+      padding: 7px 10px;
+      border-radius: 6px;
+      line-height: 1.35;
+    }
+
+    .check-icon {
+      color: var(--success);
+      font-weight: 800;
+    }
+
+    .methodology-box {
+      background: #f8fafc;
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      padding: 10px 14px;
+      font-size: 10px;
+      color: var(--muted);
+      line-height: 1.4;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==================== PAGE 1 : DIAGNOSTIC EXÉCUTIF & SCORE ==================== -->
+  <div class="page">
+    <div>
+      <!-- Header -->
+      <div class="header-bar">
+        <div class="brand-group">
+          <div class="brand-logo-badge">⚡</div>
+          <div>
+            <div class="brand-title">LocalAudit Pro — Intelligence Locale</div>
+            <div class="brand-sub">Rapport d'Audit de Visibilité Algorithmique Google</div>
+          </div>
+        </div>
+        <div class="audit-meta-tag">
+          <div class="audit-ref">RÉF : AUD-202611-7837</div>
+          <div class="audit-date">Inspection du 18/11/2026</div>
+        </div>
+      </div>
+
+      <!-- Target Banner -->
+      <div class="target-banner">
+        <div class="target-subtitle">Établissement Audité</div>
+        <div class="target-name">Bistrot & Comptoir du Marché</div>
+        <div class="target-details">
+          <div class="target-pill">📍 3 Rue Gambetta, 33000 Bordeaux</div>
+          <div class="target-pill">🏢 Catégorie : Bistrot traditionnel / Cuisine du marché</div>
+          <div class="target-pill">⭐ Note actuelle : 4.1/5 (52 avis)</div>
+        </div>
+      </div>
+
+      <!-- Score & Metrics -->
+      <div class="score-overview-grid">
+        <div class="score-gauge-card">
+          <div class="gauge-wrapper">
+            <svg class="gauge-svg" viewBox="0 0 100 100">
+              <circle class="gauge-bg" cx="50" cy="50" r="45"></circle>
+              <circle class="gauge-meter" cx="50" cy="50" r="45"></circle>
+            </svg>
+            <div class="gauge-number">65<span class="gauge-max">/100</span></div>
+          </div>
+          <div class="gauge-status-label">Optimisation Nécessaire</div>
+        </div>
+
+        <div class="score-metrics-panel">
+          <div class="metric-row">
+            <div class="metric-header">
+              <span>Complétude Fiche & Données Essentielles</span>
+              <span class="metric-score-val" style="color: #d97706">55%</span>
+            </div>
+            <div class="progress-track">
+              <div class="progress-fill" style="width: 55%; background-color: #d97706"></div>
+            </div>
+          </div>
+
+          <div class="metric-row">
+            <div class="metric-header">
+              <span>E-Réputation & Dynamique d'Avis Clients</span>
+              <span class="metric-score-val" style="color: #d97706">65%</span>
+            </div>
+            <div class="progress-track">
+              <div class="progress-fill" style="width: 65%; background-color: #d97706"></div>
+            </div>
+          </div>
+
+          <div class="metric-row">
+            <div class="metric-header">
+              <span>Fraîcheur des Contenus & Signaux d'Activité</span>
+              <span class="metric-score-val" style="color: #dc2626">30%</span>
+            </div>
+            <div class="progress-track">
+              <div class="progress-fill" style="width: 30%; background-color: #dc2626"></div>
+            </div>
+          </div>
+
+          <div class="metric-row">
+            <div class="metric-header">
+              <span>Optimisation Sémantique & Mots-Clés Métier</span>
+              <span class="metric-score-val" style="color: #d97706">52%</span>
+            </div>
+            <div class="progress-track">
+              <div class="progress-fill" style="width: 52%; background-color: #d97706"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Business Loss Warning -->
+      <div class="impact-callout">
+        <div class="impact-icon">⚠️</div>
+        <div class="impact-text">
+          <h4>Estimation du Manque à Gagner Local</h4>
+          <p>Votre établissement perd environ 60 à 95 couverts et réservations chaque mois au profit des adresses concurrentes de Bordeaux. Avec un ticket moyen de 28 € à 42 € par personne, le manque à gagner direct est évalué à 2 100 € — 3 800 € de chiffre d'affaires mensuel.</p>
+        </div>
+      </div>
+
+      <!-- Summary Diagnostic Cards -->
+      <div class="section-title">
+        <span>Synthèse du Diagnostic Algorithmique</span>
+        <span class="section-title-badge">Vue 360°</span>
+      </div>
+
+      <div class="summary-cards-grid">
+        <div class="summary-card">
+          <div class="summary-card-val" style="color: #dc2626;">18%</div>
+          <div class="summary-card-title">Taux de réponse avis</div>
+          <div class="summary-card-desc">Très inférieur au seuil recommandé par Google (80%). Les avis négatifs non traités pénalisent votre conversion.</div>
+        </div>
+
+        <div class="summary-card">
+          <div class="summary-card-val" style="color: #d97706;">Position #6 à #9 (Hors du Top 3 Maps)</div>
+          <div class="summary-card-title">Visibilité "Local Pack"</div>
+          <div class="summary-card-desc">En dehors des 3 premiers résultats affichés sur mobile pour les recherches locales stratégiques.</div>
+        </div>
+
+        <div class="summary-card">
+          <div class="summary-card-val" style="color: #2563eb;">+65%</div>
+          <div class="summary-card-title">Potentiel d'appels directs</div>
+          <div class="summary-card-desc">Estimation du surplus de contacts entrants réalisable dès l'application du plan correctif sous 30 jours.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Page 1 -->
+    <div class="page-footer">
+      <span>LocalAudit Pro &copy; 2026 — Rapport Confidentiel généré pour Bistrot & Comptoir du Marché.</span>
+      <span>Page 1 / 4</span>
+    </div>
+  </div>
+
+  <!-- ==================== PAGE 2 : BENCHMARK & FAILLES CRITIQUES ==================== -->
+  <div class="page">
+    <div>
+      <!-- Header -->
+      <div class="header-bar">
+        <div class="brand-group">
+          <div class="brand-logo-badge">⚡</div>
+          <div>
+            <div class="brand-title">LocalAudit Pro — Intelligence Locale</div>
+            <div class="brand-sub">Benchmark Territorial & Diagnostic des Failles Bloquantes</div>
+          </div>
+        </div>
+        <div class="audit-meta-tag">
+          <div class="audit-ref">RÉF : AUD-202611-7837</div>
+          <div class="audit-date">Bistrot & Comptoir du Marché</div>
+        </div>
+      </div>
+
+      <!-- Benchmark Local -->
+      <div class="section-title">
+        <span>Positionnement Face aux Concurrents Directs</span>
+        <span class="section-title-badge">Zone de Chalandise</span>
+      </div>
+
+      <table class="benchmark-table">
+        <thead>
+          <tr>
+            <th>Établissement</th>
+            <th>Note Google</th>
+            <th>Nb d'Avis</th>
+            <th>Taux de Réponse</th>
+            <th>Activité Récente</th>
+            <th>Pack 3 Google</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="highlighted">
+            <td>👉 <strong>Bistrot & Comptoir du Marché (Vous)</strong></td>
+            <td>4.1/5</td>
+            <td>52 avis</td>
+            <td>18%</td>
+            <td>Faible activité récente</td>
+            <td><span style="color: #dc2626; font-weight:700;">Position #6 à #9 (Hors du Top 3 Maps)</span></td>
+          </tr>
+          <tr>
+            <td>🥇 Leader Concurrent Bordeaux</td>
+            <td>4.8/5</td>
+            <td>104 avis</td>
+            <td>94%</td>
+            <td>Actif (< 7j)</td>
+            <td><span style="color: #16a34a; font-weight:700;">Position #1</span></td>
+          </tr>
+          <tr>
+            <td>🥈 Second Concurrent Bordeaux</td>
+            <td>4.6/5</td>
+            <td>78 avis</td>
+            <td>81%</td>
+            <td>Actif (< 15j)</td>
+            <td><span style="color: #16a34a; font-weight:700;">Position #2</span></td>
+          </tr>
+          <tr>
+            <td>🥉 Moyenne du Top 3 Local</td>
+            <td>4.7/5</td>
+            <td>88 avis</td>
+            <td>87%</td>
+            <td>Mise à jour régulière</td>
+            <td>Top 3 permanent</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Critical Flaws -->
+      <div class="section-title">
+        <span>Les 3 Failles Critiques Bloquantes</span>
+        <span class="section-title-badge">Pénalités Algorithmiques</span>
+      </div>
+
+      <div class="flaws-grid">
+        <!-- Flaw 1 -->
+        <div class="flaw-card">
+          <div class="flaw-header">
+            <span class="flaw-badge">Faille Majeure #1</span>
+            <span class="flaw-severity">Priorité Critique 🔴</span>
+          </div>
+          <div class="flaw-title">82% des avis clients sans réponse</div>
+          <div class="flaw-desc">Les commentaires portant sur le service ou l'attente en salle n'ont pas reçu de réponse. 89% des clients indécis lisent les réponses de la direction avant de réserver une table.</div>
+          <div class="flaw-remedy"><strong>Impact algorithmique :</strong> Pénalité sur l'attractivité immédiate et rétrogradation dans les suggestions 'Où manger à proximité'.</div>
+        </div>
+
+        <!-- Flaw 2 -->
+        <div class="flaw-card">
+          <div class="flaw-header">
+            <span class="flaw-badge">Faille Majeure #2</span>
+            <span class="flaw-severity">Priorité Majeure 🟠</span>
+          </div>
+          <div class="flaw-title">Menu, carte des prix & spécialités du chef non intégrés</div>
+          <div class="flaw-desc">L'onglet 'Menu' officiel de Google est vide ou renvoie vers un lien externe non mobile. Les clients mobiles veulent voir les formules midi, les prix et les options végétariennes en 1 clic.</div>
+          <div class="flaw-remedy"><strong>Impact algorithmique :</strong> Perte de visibilité sur les recherches ciblées comme 'menu du jour', 'terrasse Bordeaux' ou 'plat maison'.</div>
+        </div>
+
+        <!-- Flaw 3 -->
+        <div class="flaw-card">
+          <div class="flaw-header">
+            <span class="flaw-badge">Faille Majeure #3</span>
+            <span class="flaw-severity">Priorité Modérée 🟡</span>
+          </div>
+          <div class="flaw-title">Galerie photo dominée par des clichés clients de qualité inégale</div>
+          <div class="flaw-desc">Absence de photos professionnelles valorisant les assiettes signature, la fraîcheur des ingrédients, la salle et l'accueil en terrasse.</div>
+          <div class="flaw-remedy"><strong>Impact algorithmique :</strong> Baisse de 38% du taux de clics vers l'itinéraire GPS et l'appel direct.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Page 2 -->
+    <div class="page-footer">
+      <span>LocalAudit Pro &copy; 2026 — Analyse Algorithmique & Benchmark Territorial.</span>
+      <span>Page 2 / 4</span>
+    </div>
+  </div>
+
+  <!-- ==================== PAGE 3 : PLAN D'ACTION EN 7 ÉTAPES ==================== -->
+  <div class="page">
+    <div>
+      <!-- Header -->
+      <div class="header-bar">
+        <div class="brand-group">
+          <div class="brand-logo-badge">⚡</div>
+          <div>
+            <div class="brand-title">LocalAudit Pro — Intelligence Locale</div>
+            <div class="brand-sub">Plan Correctif Opérationnel en 7 Étapes</div>
+          </div>
+        </div>
+        <div class="audit-meta-tag">
+          <div class="audit-ref">RÉF : AUD-202611-7837</div>
+          <div class="audit-date">Bistrot & Comptoir du Marché</div>
+        </div>
+      </div>
+
+      <!-- 7 Steps Action Plan -->
+      <div class="section-title">
+        <span>Feuille de Route Corrective sous 30 Jours</span>
+        <span class="section-title-badge">Actions à Fort ROI</span>
+      </div>
+
+      <div class="roadmap-list">
+        <!-- Step 1 -->
+        <div class="step-item">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h5>Activer l'onglet 'Menu' officiel de Google avec les tarifs du moment</h5>
+            <p>Saisir les entrées, plats, desserts phares et formules midi avec descriptifs gourmands et prix nets.</p>
+          </div>
+          <div class="step-tags">
+            <span class="pill-impact impact-high">Impact Immédiat</span>
+            <span class="pill-time">⏱️ 10 min</span>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="step-item">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h5>Configurer les attributs clés (Terrasse, À emporter, Réservation, Options végé)</h5>
+            <p>Cocher l'ensemble des attributs de restauration recherchés par les consommateurs sur smartphone.</p>
+          </div>
+          <div class="step-tags">
+            <span class="pill-impact impact-high">Impact Élevé</span>
+            <span class="pill-time">⏱️ 15 min</span>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="step-item">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h5>Mettre en avant le 'Fait maison' et la provenance des produits dans la description</h5>
+            <p>Raconter l'histoire de la maison, l'ambiance chaleureuse et la localisation idéale au cœur de Bordeaux.</p>
+          </div>
+          <div class="step-tags">
+            <span class="pill-impact impact-high">Impact SEO</span>
+            <span class="pill-time">⏱️ 20 min</span>
+          </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="step-item">
+          <div class="step-number">4</div>
+          <div class="step-content">
+            <h5>Placer un chevalet QR Code Google sur les tables et au moment de l'addition</h5>
+            <p>Inviter chaleureusement les convives ravis à partager leur expérience pour engranger 8 à 15 avis 5 étoiles par semaine.</p>
+          </div>
+          <div class="step-tags">
+            <span class="pill-impact impact-high">Acquisition Avis</span>
+            <span class="pill-time">⏱️ 15 min</span>
+          </div>
+        </div>
+
+        <!-- Step 5 -->
+        <div class="step-item">
+          <div class="step-number">5</div>
+          <div class="step-content">
+            <h5>Répondre avec élégance et bienveillance à l'ensemble des avis sous 24h</h5>
+            <p>Utiliser le script restauration pour désamorcer les déceptions d'attente lors des soirs de forte affluence.</p>
+          </div>
+          <div class="step-tags">
+            <span class="pill-impact impact-medium">Réputation</span>
+            <span class="pill-time">⏱️ 25 min</span>
+          </div>
+        </div>
+
+        <!-- Step 6 -->
+        <div class="step-item">
+          <div class="step-number">6</div>
+          <div class="step-content">
+            <h5>Publier chaque semaine une photo HD du plat du jour ou de la suggestion du chef</h5>
+            <p>Stimuler l'appétit des actifs de la zone avant midi avec un visuel attractif et l'horaire de service.</p>
+          </div>
+          <div class="step-tags">
+            <span class="pill-impact impact-medium">Fraîcheur</span>
+            <span class="pill-time">⏱️ 5 min / sem.</span>
+          </div>
+        </div>
+
+        <!-- Step 7 -->
+        <div class="step-item">
+          <div class="step-number">7</div>
+          <div class="step-content">
+            <h5>Mettre à jour les horaires spéciaux (Jours fériés, ouvertures d'été)</h5>
+            <p>Éviter les avis 1 étoile évitables causés par des clients trouvant porte close un jour férié non renseigné.</p>
+          </div>
+          <div class="step-tags">
+            <span class="pill-impact impact-high">Conversion</span>
+            <span class="pill-time">⏱️ 20 min</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Page 3 -->
+    <div class="page-footer">
+      <span>LocalAudit Pro &copy; 2026 — Plan d'Action Opérationnel sous 30 jours.</span>
+      <span>Page 3 / 4</span>
+    </div>
+  </div>
+
+  <!-- ==================== PAGE 4 : MODÈLES DE RÉPONSES & BONNES PRATIQUES ==================== -->
+  <div class="page">
+    <div>
+      <!-- Header -->
+      <div class="header-bar">
+        <div class="brand-group">
+          <div class="brand-logo-badge">⚡</div>
+          <div>
+            <div class="brand-title">LocalAudit Pro — Intelligence Locale</div>
+            <div class="brand-sub">Boîte à Outils : Modèles de Réponses Personnalisés</div>
+          </div>
+        </div>
+        <div class="audit-meta-tag">
+          <div class="audit-ref">RÉF : AUD-202611-7837</div>
+          <div class="audit-date">Bistrot & Comptoir du Marché</div>
+        </div>
+      </div>
+
+      <div class="section-title">
+        <span>Scripts de Réponse Prêts à Copier-Coller</span>
+        <span class="section-title-badge">Copywriting Persuasif</span>
+      </div>
+
+      <!-- Template 1 : Negative review mitigation -->
+      <div class="template-box">
+        <div class="template-badge badge-crisis">Cas 1 : Avis Négatif (1 à 2 étoiles) — Désamorçage & Crédibilité</div>
+        <div class="template-context">Objectif : Montrer votre réactivité et professionnalisme aux futurs clients sans polémique.</div>
+        <div class="template-code">« Bonjour [Prénom du client],
+
+Nous vous remercions d'avoir pris le temps de nous écrire. Nous sommes sincèrement désolés que votre repas chez Bistrot & Comptoir du Marché n'ait pas comblé vos attentes.
+
+Notre équipe met un point d'honneur à régaler ses convives avec des produits frais et un service attentionné. Lors des fortes affluences, des imprévus peuvent survenir et nous en sommes désolés. Nous serions ravis d'échanger avec vous par email à direction@bistrot&comptoirdumarché.fr pour vous réinviter à découvrir notre vraie cuisine.
+
+— L'équipe de Bistrot & Comptoir du Marché »</div>
+      </div>
+
+      <!-- Template 2 : Neutral / mixed review -->
+      <div class="template-box">
+        <div class="template-badge badge-neutral">Cas 2 : Avis Mitigé (3 étoiles) — Écoute & Amélioration Continue</div>
+        <div class="template-context">Objectif : Transformer un avis tiède en témoignage de votre recherche d'excellence.</div>
+        <div class="template-code">« Bonjour [Prénom du client],
+
+Merci pour votre visite chez Bistrot & Comptoir du Marché à Bordeaux et pour votre retour !
+
+Nous sommes heureux que vous ayez apprécié l'ambiance et la cuisine, mais nous notons vos remarques pour progresser encore. Au plaisir de vous surprendre lors de votre prochaine venue avec nos nouvelles suggestions de saison !
+
+— Bistrot & Comptoir du Marché »</div>
+      </div>
+
+      <!-- Template 3 : 5-star SEO review -->
+      <div class="template-box">
+        <div class="template-badge badge-positive">Cas 3 : Avis 5 Étoiles — Effet de Levier SEO & Réassurance</div>
+        <div class="template-context">Objectif : Récompenser le client et injecter naturellement un mot-clé stratégique géolocalisé.</div>
+        <div class="template-code">« Bonjour [Prénom du client],
+
+Toute l'équipe vous remercie infiniment pour ce magnifique commentaire et cette note 5 étoiles ! ⭐⭐⭐⭐⭐
+
+Savoir que vous vous êtes régalé avec nos plats et que vous avez passé un agréable moment à Bordeaux est notre plus belle fierté. Nous travaillons chaque jour des produits frais et passionnés pour vous offrir cette expérience.
+
+Au plaisir de vous régaler très bientôt !
+— L'équipe de Bistrot & Comptoir du Marché »</div>
+      </div>
+
+      <!-- Best Practices Checklist -->
+      <div class="section-title" style="margin-top: 12px;">
+        <span>Checklist d'Or du Propriétaire de Fiche</span>
+        <span class="section-title-badge">Bonnes Pratiques</span>
+      </div>
+
+      <div class="checklist-grid">
+        <div class="check-item">
+          <span class="check-icon">✓</span>
+          <span><strong>Ne jamais citer le nom de concurrents</strong> dans vos réponses (risque de déclassement algorithmique).</span>
+        </div>
+        <div class="check-item">
+          <span class="check-icon">✓</span>
+          <span><strong>Insérer 1 mot-clé métier géolocalisé</strong> dans chaque avis 5 étoiles (ex: cuisine maison et restaurant à Bordeaux).</span>
+        </div>
+        <div class="check-item">
+          <span class="check-icon">✓</span>
+          <span><strong>Ajouter 3 photos mensuelles</strong> prises depuis un smartphone avec géolocalisation active.</span>
+        </div>
+        <div class="check-item">
+          <span class="check-icon">✓</span>
+          <span><strong>Répondre sous 48h</strong> : la réactivité est l'un des signaux d'activité les plus forts pour Google.</span>
+        </div>
+      </div>
+
+      <!-- Methodology Note -->
+      <div class="methodology-box">
+        <strong>Méthodologie & Déontologie :</strong> Rapport élaboré par LocalAudit Pro à partir des données publiques officielles Google Business Profile et des signaux de pertinence, distance et proéminence. L'application scrupuleuse des 7 étapes produit une progression mesurable sous 14 à 28 jours.
+      </div>
+    </div>
+
+    <!-- Footer Page 4 -->
+    <div class="page-footer">
+      <span>LocalAudit Pro &copy; 2026 — Rapport Confidentiel & Certifié. Page 4 / 4</span>
+      <span>Fin de document</span>
+    </div>
+  </div>
+
+</body>
+</html>

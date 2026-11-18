@@ -1,0 +1,42 @@
+[
+  {
+    "business_name": "Électricité & Rénovation IDF",
+    "address": "8 Rue Paul Vaillant-Couturier, 94200 Ivry-sur-Seine",
+    "category": "Électricien / Dépannage & Rénovation électrique",
+    "rating": 4.0,
+    "review_count": 19,
+    "response_rate": 10
+  },
+  {
+    "business_name": "Trattoria Bella Napoli",
+    "address": "24 Rue Mercière, 69002 Lyon",
+    "category": "Restaurant italien / Pizzeria au feu de bois",
+    "rating": 4.2,
+    "review_count": 68,
+    "response_rate": 22
+  },
+  {
+    "business_name": "Studio Coiffure & Spa Végétal",
+    "address": "14 Rue de la Liberté, 31000 Toulouse",
+    "category": "Salon de coiffure & soins capillaires bien-être",
+    "rating": 4.3,
+    "review_count": 31,
+    "response_rate": 15
+  },
+  {
+    "business_name": "Toiture & Façade des Hauts-de-France",
+    "address": "45 Boulevard de la Liberté, 59000 Lille",
+    "category": "Couvreur zingueur / Rénovation toiture",
+    "rating": 3.9,
+    "review_count": 14,
+    "response_rate": 0
+  },
+  {
+    "business_name": "Bistrot & Comptoir du Marché",
+    "address": "3 Rue Gambetta, 33000 Bordeaux",
+    "category": "Bistrot traditionnel / Cuisine du marché",
+    "rating": 4.1,
+    "review_count": 52,
+    "response_rate": 18
+  }
+]
