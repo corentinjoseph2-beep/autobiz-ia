@@ -1,13 +1,14 @@
 # Statut du Module 02 : Prospection & Outbound Automatique
 
-- **État général** : 🟢 100% Opérationnel & Automatisé
-- **Dernière mise à jour** : 18/11/2026 - Déploiement de la routine cron quotidienne autonome
+- **État général** : 🟢 100% Opérationnel & Catalogue Élargi
+- **Dernière mise à jour** : 18/11/2026 - Intégration de la directive stratégique "Villes moyennes & Préfectures"
 - **Composants réalisés** :
   - [x] `scraper_google_maps.py` : Moteur Playwright Chromium autonome (0 € de frais d'API, auto-scroll, contournement du consentement RGPD Google, calcul de l'Opportunity Score sur 100 et détection des failles critiques).
   - [x] `enrichisseur_contact.py` : Crawler web multi-threads pour l'extraction automatique des emails professionnels, dirigeants et numéros SIREN/SIRET depuis le site et les mentions légales avec liste noire anti-faux positifs renforcée.
   - [x] `cold_email_sequences.md` : Guide complet et templates des 3 séquences email (J+0 Teaser Micro-audit, J+3 Démonstration smartphone, J+7 Break-up) avec psychologie de conversion et conformité stricte CPCE / RGPD.
   - [x] `pipeline_prospection.py` : Orchestrateur bout en bout reliant le sourcing Maps, l'enrichissement et la génération automatique des emails d'accroche personnalisés prêts à l'envoi avec le lien Stripe officiel (`https://buy.stripe.com/5kQ5kDeuJ6BJ2js7YE8N201`).
-  - [x] `cron_prospection_quotidienne.py` : Routine autonome quotidienne avec rotation géographique automatique (Nantes ➔ Toulouse ➔ Marseille ➔ Montpellier ➔ Lille...), base anti-doublon persistante (`database_leads.json`), extraction de lots de 20 fiches défaillantes et génération des fichiers de campagne horodatés (JSON et CSV).
+  - [x] `cron_prospection_quotidienne.py` : Routine autonome quotidienne intégrant un catalogue élargi de **36 villes cibles prioritaires** axé sur les villes moyennes (20k à 90k habitants : Angoulême, Périgueux, Agen, Albi, Montauban, Cholet, Niort, Pau, Tarbes, Roanne, Chalon-sur-Saône, etc.) pour maximiser le taux de conversion et éviter la sur-sollicitation des métropoles.
+  - [x] Base anti-doublon persistante (`database_leads.json`) et suivi d'état de rotation (`state_cron.json`).
 
 - **Métriques & Performance constatées** :
   - **Coût de sourcing récurrent** : **0,00 €** (aucun abonnement payant nécessaire).

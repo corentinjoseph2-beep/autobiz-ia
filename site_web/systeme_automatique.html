@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Observatoire de la Visibilité Locale — Méthodologie d'Analyse & Audit de Référencement</title>
+  <meta name="description" content="Découvrez notre protocole d'analyse propriétaire en 4 piliers et notre benchmark concurrentiel approfondi. Audit complet et plan d'action d'optimisation sous 24h.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    .font-mono-code { font-family: 'JetBrains Mono', monospace; }
+    .gradient-border {
+      background: linear-gradient(60deg, #3b82f6, #1d4ed8, #0f172a);
+    }
+    input[type=range]::-webkit-slider-thumb {
+      appearance: none;
+      height: 20px;
+      width: 20px;
+      border-radius: 9999px;
+      background: #3b82f6;
+      cursor: pointer;
+      border: 2px solid #ffffff;
+      box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+    }
+  </style>
+</head>
+<body class="bg-[#0B1120] text-slate-200 antialiased selection:bg-blue-600 selection:text-white">
+
+  <!-- TOP BAR ACCREDITATION -->
+  <div class="bg-slate-900/90 border-b border-slate-800 text-xs text-slate-400 py-2">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-2">
+      <div class="flex items-center gap-2">
+        <span class="inline-block w-2 h-2 rounded-full bg-emerald-500"></span>
+        <span class="font-medium text-slate-300">Observatoire de la Visibilité Locale</span>
+        <span class="text-slate-600 hidden md:inline">|</span>
+        <span class="hidden md:inline text-slate-400">Protocole d'audit algorithmique indépendant & benchmark territorial</span>
+      </div>
+      <div class="flex items-center gap-4 text-slate-400">
+        <span>Norme d'évaluation v4.2</span>
+        <span class="text-slate-600">•</span>
+        <span>Délai d'instruction : 24h</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION HEADER -->
+  <header class="border-b border-slate-800/80 bg-[#0B1120]/90 backdrop-blur-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center text-white shadow-lg shadow-blue-500/20">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+          </svg>
+        </div>
+        <div>
+          <span class="text-lg font-bold tracking-tight text-white block leading-tight">Observatoire <span class="text-blue-400">Visibilité</span></span>
+          <span class="text-[10px] tracking-wider uppercase text-slate-400 font-semibold">Cabinet d'Audit & Études Locales</span>
+        </div>
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-slate-300">
+        <a href="#protocole" class="hover:text-blue-400 transition-colors">Protocole d'Audit</a>
+        <a href="#piliers" class="hover:text-blue-400 transition-colors">Les 4 Piliers</a>
+        <a href="#benchmark" class="hover:text-blue-400 transition-colors">Benchmark Concurrentiel</a>
+        <a href="#simulateur" class="hover:text-blue-400 transition-colors">Simulateur</a>
+        <a href="#livrables" class="hover:text-blue-400 transition-colors">Livrable & Rapport</a>
+        <a href="#faq" class="hover:text-blue-400 transition-colors">Méthodologie FAQ</a>
+      </nav>
+
+      <div class="flex items-center gap-4">
+        <a href="#simulateur" class="hidden sm:inline-flex text-xs font-semibold uppercase tracking-wider text-slate-300 hover:text-white px-3 py-2">
+          Tester mon profil
+        </a>
+        <a href="https://buy.stripe.com/5kQ5kDeuJ6BJ2js7YE8N201" target="_blank" class="px-5 py-2.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-semibold text-sm transition-all shadow-lg shadow-blue-600/30 flex items-center gap-2">
+          <span>Commander l'Audit (49 €)</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="relative pt-20 pb-20 overflow-hidden border-b border-slate-800">
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-20%,rgba(59,130,246,0.15),rgba(255,255,255,0))]"></div>
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+      <div class="text-center max-w-3xl mx-auto">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-blue-500/30 bg-blue-500/10 text-blue-300 text-xs font-semibold uppercase tracking-wider mb-6">
+          <svg class="w-3.5 h-3.5 text-blue-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+          Méthodologie Propriétaire d'Audit & Benchmark Territorial
+        </div>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight mb-6">
+          Mesurez la rigueur de votre référencement face à vos <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-300">concurrents directs.</span>
+        </h1>
+        <p class="text-lg sm:text-xl text-slate-300 mb-8 leading-relaxed font-normal">
+          Notre protocole d'inspection analyse <strong>47 points de contrôle algorithmiques</strong> répartis sur 4 piliers d'autorité. Recevez sous 24h un audit complet, un benchmark territorial de votre zone de chalandise et votre plan d'action d'optimisation.
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="#simulateur" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-blue-600 hover:bg-blue-500 font-bold text-white shadow-xl shadow-blue-600/30 transition text-center flex items-center justify-center gap-2">
+            <span>Évaluer ma fiche dans le Simulateur</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </a>
+          <a href="#piliers" class="w-full sm:w-auto px-8 py-4 rounded-xl border border-slate-700 bg-slate-900/60 hover:bg-slate-800 font-semibold text-slate-300 transition text-center">
+            Consulter les 4 Piliers
+          </a>
+        </div>
+      </div>
+
+      <!-- KEY METHODOLOGY STATS -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16 max-w-5xl mx-auto">
+        <div class="p-5 rounded-xl border border-slate-800 bg-slate-900/40 backdrop-blur">
+          <div class="text-3xl font-extrabold text-white font-mono-code mb-1">47</div>
+          <div class="text-xs font-semibold uppercase tracking-wider text-blue-400 mb-1">Points de Contrôle</div>
+          <div class="text-xs text-slate-400">Évaluation algorithmique exhaustive et sans complaisance.</div>
+        </div>
+        <div class="p-5 rounded-xl border border-slate-800 bg-slate-900/40 backdrop-blur">
+          <div class="text-3xl font-extrabold text-white font-mono-code mb-1">Top 3</div>
+          <div class="text-xs font-semibold uppercase tracking-wider text-blue-400 mb-1">Benchmark Local</div>
+          <div class="text-xs text-slate-400">Confrontation directe aux 3 leaders de votre secteur.</div>
+        </div>
+        <div class="p-5 rounded-xl border border-slate-800 bg-slate-900/40 backdrop-blur">
+          <div class="text-3xl font-extrabold text-white font-mono-code mb-1">&lt; 24h</div>
+          <div class="text-xs font-semibold uppercase tracking-wider text-blue-400 mb-1">Délai d'Instruction</div>
+          <div class="text-xs text-slate-400">Rapport complet de 4 pages transmis par voie électronique.</div>
+        </div>
+        <div class="p-5 rounded-xl border border-slate-800 bg-slate-900/40 backdrop-blur">
+          <div class="text-3xl font-extrabold text-white font-mono-code mb-1">49 €</div>
+          <div class="text-xs font-semibold uppercase tracking-wider text-blue-400 mb-1">Forfait Unique</div>
+          <div class="text-xs text-slate-400">Investissement net, sans engagement ni reconduction.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 1: LE PROTOCOLE D'AUDIT EN 4 ÉTAPES -->
+  <section id="protocole" class="py-20 border-b border-slate-800 bg-slate-950">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-xs font-bold uppercase tracking-widest text-blue-400 block mb-2">Protocole Opérationnel</span>
+        <h2 class="text-3xl font-extrabold text-white">Comment notre cabinet instruit votre dossier</h2>
+        <p class="text-sm text-slate-400 mt-3">Un cheminement rigoureux en 4 phases successives pour garantir une objectivité totale et des préconisations immédiatement actionnables.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6 relative">
+        <!-- Step 1 -->
+        <div class="p-6 rounded-2xl border border-slate-800 bg-slate-900/60 relative flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-lg bg-blue-900/50 border border-blue-700/50 text-blue-400 font-mono-code font-bold flex items-center justify-center mb-5">
+              01
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">Cartographie & Collecte Périmétrique</h3>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Scan intégral des données publiques de votre profil d'établissement : cohérence NAP (Nom, Adresse, Téléphone), attributs déclarés, géocodage précis et cartographie de votre rayon d'attractivité de 0 à 5 km.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-800/80 text-[11px] font-mono-code text-slate-400 flex items-center gap-1.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span> Collecte brute sans intrusion
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="p-6 rounded-2xl border border-slate-800 bg-slate-900/60 relative flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-lg bg-indigo-900/50 border border-indigo-700/50 text-indigo-400 font-mono-code font-bold flex items-center justify-center mb-5">
+              02
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">Scoring Algorithmique des 4 Piliers</h3>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Évaluation pondérée sur nos 47 points de contrôle : exhaustivité technique, réputation & engagement client, dynamique d'actualisation et positionnement sémantique localisé.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-800/80 text-[11px] font-mono-code text-indigo-400 flex items-center gap-1.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-indigo-400"></span> Notation normalisée /100
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="p-6 rounded-2xl border border-slate-800 bg-slate-900/60 relative flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-lg bg-violet-900/50 border border-violet-700/50 text-violet-400 font-mono-code font-bold flex items-center justify-center mb-5">
+              03
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">Benchmark Territorial Confronté</h3>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Mise en perspective avec les 3 leaders actuels du "Pack 3" sur votre requête principale. Mesure précise du différentiel d'autorité et chiffrage des pertes d'appels entrants et de consultations.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-800/80 text-[11px] font-mono-code text-violet-400 flex items-center gap-1.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-violet-400"></span> Comparatif concurrentiel direct
+          </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="p-6 rounded-2xl border border-slate-800 bg-slate-900/60 relative flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-lg bg-emerald-900/50 border border-emerald-700/50 text-emerald-400 font-mono-code font-bold flex items-center justify-center mb-5">
+              04
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">Plan d'Action Correctif & Modèles</h3>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Élaboration d'une feuille de route opérationnelle en 7 étapes chronométrées, accompagnée de modèles de réponses diplomatiques prêts à l'emploi pour neutraliser l'impact des avis critiques.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-800/80 text-[11px] font-mono-code text-emerald-400 flex items-center gap-1.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Livrable PDF 4 pages sous 24h
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: LA MÉTHODOLOGIE EN 4 PILIERS DÉTAILLÉE -->
+  <section id="piliers" class="py-24 border-b border-slate-800 bg-[#0B1120]">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-widest text-blue-400 block mb-2">Cadre d'Évaluation</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white">La Méthodologie en 4 Piliers Fondamentaux</h2>
+          <p class="text-slate-400 text-sm mt-3 max-w-2xl">
+            L'algorithme de classement local de Google repose sur trois signaux majeurs : <em>Pertinence</em>, <em>Distance</em> et <em>Proéminence</em>. Notre cadre d'analyse décompose ces signaux en 4 piliers mesurables.
+          </p>
+        </div>
+        <div class="bg-slate-900/80 border border-slate-800 px-4 py-2 rounded-xl text-xs text-slate-300 font-mono-code">
+          Pondération certifiée : 25% | 30% | 20% | 25%
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Pilier 1 -->
+        <div class="p-8 rounded-2xl border border-slate-800 bg-slate-900/40 hover:border-blue-500/50 transition-all">
+          <div class="flex items-center justify-between mb-6">
+            <div class="flex items-center gap-3">
+              <div class="w-12 h-12 rounded-xl bg-blue-950 border border-blue-800 flex items-center justify-center text-blue-400">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+              </div>
+              <div>
+                <span class="text-xs font-mono-code font-bold text-blue-400">PILIER 01 • PONDÉRATION 25%</span>
+                <h3 class="text-xl font-bold text-white">Exhaustivité & Conformité Technique</h3>
+              </div>
+            </div>
+            <span class="px-2.5 py-1 rounded-md bg-blue-950 text-blue-300 text-xs font-mono-code border border-blue-800/60">12 points</span>
+          </div>
+          <p class="text-sm text-slate-300 mb-6 leading-relaxed">
+            Contrôle structurel de la fiche. Les moteurs d'indexation pénalisent sévèrement les profils incomplets ou porteurs de signaux contradictoires.
+          </p>
+          <ul class="space-y-3 text-xs text-slate-400">
+            <li class="flex items-start gap-2.5">
+              <svg class="w-4 h-4 text-blue-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              <span><strong>Catégorie principale & secondaires :</strong> vérification de l'adéquation exacte avec la nomenclature officielle.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <svg class="w-4 h-4 text-blue-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              <span><strong>Cohérence NAP (Name, Address, Phone) :</strong> concordance absolue avec le Registre du Commerce et les annuaires d'autorité.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <svg class="w-4 h-4 text-blue-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              <span><strong>Catalogue d'actes et de prestations :</strong> présence des libellés de services détaillés et des liens de prise de contact directe.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <svg class="w-4 h-4 text-blue-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              <span><strong>Renseignements horaires étendus :</strong> gestion des plages régulières, fermetures exceptionnelles et jours fériés.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Pilier 2 -->
+        <div class="p-8 rounded-2xl border border-slate-800 bg-slate-900/40 hover:border-indigo-500/50 transition-all">
+          <div class="flex items-center justify-between mb-6">
+            <div class="flex items-center gap-3">
+              <div class="w-12 h-12 rounded-xl bg-indigo-950 border border-indigo-800 flex items-center justify-center text-indigo-400">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"></path></svg>
+              </div>
+              <div>
+                <span class="text-xs font-mono-code font-bold text-indigo-400">PILIER 02 • PONDÉRATION 30%</span>
+                <h3 class="text-xl font-bold text-white">Réputation & Engagement Client</h3>
+              </div>
+            </div>
+            <span class="px-2.5 py-1 rounded-md bg-indigo-950 text-indigo-300 text-xs font-mono-code border border-indigo-800/60">15 points</span>
+          </div>
+          <p class="text-sm text-slate-300 mb-6 leading-relaxed">
+            Mesure de la confiance publique perçue. Il s'agit du critère ayant la plus forte élasticité sur le taux de conversion et le clic d'appel.
+          </p>
+          <ul class="space-y-3 text-xs text-slate-400">
+            <li class="flex items-start gap-2.5">
+              <svg class="w-4 h-4 text-indigo-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              <span><strong>Moyenne pondérée & volumétrie critique :</strong> analyse de l'écart face au seuil d'éligibilité du secteur (cible : note &gt; 4.6).</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <svg class="w-4 h-4 text-indigo-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              <span><strong>Taux et délai de réponse aux avis :</strong> détection des avis laissés sans réponse (facteur critique de fuite vers la concurrence).</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <svg class="w-4 h-4 text-indigo-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              <span><strong>Vélocité d'acquisition :</strong> régularité du flux d'avis entrants sur les 90 derniers jours.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <svg class="w-4 h-4 text-indigo-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              <span><strong>Index sémantique des retours :</strong> présence naturelle des mots-clés de spécialité dans les témoignages rédigés.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Pilier 3 -->
+        <div class="p-8 rounded-2xl border border-slate-800 bg-slate-900/40 hover:border-violet-500/50 transition-all">
+          <div class="flex items-center justify-between mb-6">
+            <div class="flex items-center gap-3">
+              <div class="w-12 h-12 rounded-xl bg-violet-950 border border-violet-800 flex items-center justify-center text-violet-400">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+              </div>
+              <div>
+                <span class="text-xs font-mono-code font-bold text-violet-400">PILIER 03 • PONDÉRATION 20%</span>
+                <h3 class="text-xl font-bold text-white">Dynamisme, Fraîcheur & Actualisation</h3>
+              </div>
+            </div>
+            <span class="px-2.5 py-1 rounded-md bg-violet-950 text-violet-300 text-xs font-mono-code border border-violet-800/60">10 points</span>
+          </div>
+          <p class="text-sm text-slate-300 mb-6 leading-relaxed">
+            Audit de l'activité éditoriale et visuelle. Un profil figé est déclassé progressivement au profit d'établissements communiquant activement.
+          </p>
+          <ul class="space-y-3 text-xs text-slate-400">
+            <li class="flex items-start gap-2.5">
+              <svg class="w-4 h-4 text-violet-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              <span><strong>Fraîcheur iconographique :</strong> date de téléversement des dernières photos intérieures, extérieures et techniques.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <svg class="w-4 h-4 text-violet-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              <span><strong>Publications & Actualités d'Établissement :</strong> récence des articles, nouveautés et annonces saisonnières.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <svg class="w-4 h-4 text-violet-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              <span><strong>Dernier horodatage de modification :</strong> identification du temps d'inactivité cumulé (seuil d'alerte à &gt; 90 jours).</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <svg class="w-4 h-4 text-violet-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              <span><strong>Diversité des formats visuels :</strong> photos d'équipe, certifications, équipements de pointe, rassurance visuelle.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Pilier 4 -->
+        <div class="p-8 rounded-2xl border border-slate-800 bg-slate-900/40 hover:border-emerald-500/50 transition-all">
+          <div class="flex items-center justify-between mb-6">
+            <div class="flex items-center gap-3">
+              <div class="w-12 h-12 rounded-xl bg-emerald-950 border border-emerald-800 flex items-center justify-center text-emerald-400">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+              </div>
+              <div>
+                <span class="text-xs font-mono-code font-bold text-emerald-400">PILIER 04 • PONDÉRATION 25%</span>
+                <h3 class="text-xl font-bold text-white">Référencement & Positionnement Local</h3>
+              </div>
+            </div>
+            <span class="px-2.5 py-1 rounded-md bg-emerald-950 text-emerald-300 text-xs font-mono-code border border-emerald-800/60">10 points</span>
+          </div>
+          <p class="text-sm text-slate-300 mb-6 leading-relaxed">
+            Positionnement dans l'écosystème territorial de recherche. 78% des interactions mobiles se concentrent exclusivement sur le Local Pack Top 3.
+          </p>
+          <ul class="space-y-3 text-xs text-slate-400">
+            <li class="flex items-start gap-2.5">
+              <svg class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              <span><strong>Présence dans le Local Pack (Top 3) :</strong> visibilité directe sur la carte sans déroulement de liste supplémentaire.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <svg class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              <span><strong>Couverture des requêtes à intention forte :</strong> pertinence sur les requêtes d'urgence ou de proximité immédiate.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <svg class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              <span><strong>Analyse de la zone de chalandise :</strong> taux d'éviction par rapport aux établissements du même code postal.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <svg class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              <span><strong>Modélisation de la déperdition de clientèle :</strong> estimation chiffrée des prises de contact captées par les confrères.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: DÉMONSTRATEUR VISUEL & BENCHMARK CONCURRENTIEL -->
+  <section id="benchmark" class="py-24 border-b border-slate-800 bg-slate-950">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs font-bold uppercase tracking-widest text-blue-400 block mb-2">Démonstrateur Visuel d'Audit</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Cas Pratique : Benchmark Territorial Réel</h2>
+        <p class="text-slate-400 text-sm mt-3">
+          Voici comment notre méthodologie analyse et confronte un établissement en déficit de visibilité face aux deux leaders immédiats de sa zone de chalandise.
+        </p>
+
+        <!-- SECTORS SWITCHER -->
+        <div class="inline-flex items-center gap-2 p-1.5 rounded-xl bg-slate-900 border border-slate-800 mt-8">
+          <button onclick="switchCase('sante')" id="btn-sante" class="case-btn px-4 py-2 rounded-lg text-xs font-bold transition-all bg-blue-600 text-white shadow-md">
+            Cabinet Médical / Dentaire
+          </button>
+          <button onclick="switchCase('batiment')" id="btn-batiment" class="case-btn px-4 py-2 rounded-lg text-xs font-bold transition-all text-slate-400 hover:text-white">
+            Artisan Bâtiment / Plomberie
+          </button>
+          <button onclick="switchCase('restauration')" id="btn-restauration" class="case-btn px-4 py-2 rounded-lg text-xs font-bold transition-all text-slate-400 hover:text-white">
+            Restauration & Métiers de Bouche
+          </button>
+        </div>
+      </div>
+
+      <!-- BENCHMARK DISPLAY CARD -->
+      <div class="rounded-2xl border border-slate-800 bg-[#0B1120] overflow-hidden shadow-2xl">
+        <!-- Card Header with metadata -->
+        <div class="p-6 border-b border-slate-800 bg-slate-900/40 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+          <div>
+            <div class="flex items-center gap-2 mb-1">
+              <span id="case-badge" class="px-2.5 py-0.5 rounded text-[11px] font-bold bg-amber-500/10 text-amber-400 border border-amber-500/20">
+                Dossier d'expertise #AUD-69007
+              </span>
+              <span class="text-slate-500 text-xs">•</span>
+              <span id="case-sector" class="text-xs text-slate-300">Périmètre : Chirurgie Dentaire • Lyon 7ème</span>
+            </div>
+            <h3 id="case-title" class="text-xl font-bold text-white">Audit Comparatif : Cabinet Dr Sarah Benali vs Zone Gambetta</h3>
+          </div>
+          <div class="text-right">
+            <span class="text-xs text-slate-400 block">Perte de consultations estimée</span>
+            <span id="case-loss" class="text-base font-extrabold text-rose-400 font-mono-code">2 400 € — 4 200 € / mois</span>
+          </div>
+        </div>
+
+        <!-- Table of Comparison -->
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-xs">
+            <thead class="bg-slate-900/80 text-slate-400 uppercase tracking-wider text-[11px] font-mono-code border-b border-slate-800">
+              <tr>
+                <th class="py-4 px-6">Critères d'Audit Analysés</th>
+                <th class="py-4 px-6 text-amber-400 bg-amber-500/5 border-x border-slate-800">Établissement Audité</th>
+                <th class="py-4 px-6 text-slate-300">Leader Local #1 (Pack 3)</th>
+                <th class="py-4 px-6 text-slate-300">Concurrent Direct #2</th>
+                <th class="py-4 px-6 text-slate-400">Diagnostic d'Expertise</th>
+              </tr>
+            </thead>
+            <tbody id="case-tbody" class="divide-y divide-slate-800 text-slate-300">
+              <!-- Content loaded dynamically via JS -->
+            </tbody>
+          </table>
+        </div>
+
+        <!-- 3 Critical Flaws Detected -->
+        <div class="p-8 border-t border-slate-800 bg-slate-950/60">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="w-2.5 h-2.5 rounded-full bg-rose-500 animate-pulse"></span>
+            <h4 class="text-sm font-bold uppercase tracking-wider text-white">Synthèse des 3 Défaillances Critiques Identifiées</h4>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="case-flaws">
+            <!-- Loaded dynamically -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: LE SIMULATEUR D'ÉVALUATION INTERACTIF -->
+  <section id="simulateur" class="py-24 border-b border-slate-800 bg-[#0B1120] relative">
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(59,130,246,0.1),transparent_50%)]"></div>
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs font-bold uppercase tracking-widest text-blue-400 block mb-2">Simulateur d'Audit en Temps Réel</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Calculez l'Indice d'Autorité de Votre Fiche</h2>
+        <p class="text-slate-300 text-sm mt-3">
+          Ajustez les paramètres de votre établissement pour modéliser instantanément votre note selon notre cadre méthodologique et évaluer votre exposition concurrentielle.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <!-- Controls Panel (Left / Col 7) -->
+        <div class="lg:col-span-7 p-8 rounded-2xl border border-slate-800 bg-slate-900/50 backdrop-blur">
+          <h3 class="text-base font-bold text-white mb-6 flex items-center gap-2">
+            <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path></svg>
+            Paramètres Actuels de Votre Fiche
+          </h3>
+
+          <div class="space-y-6">
+            <!-- Sector Selection -->
+            <div>
+              <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Secteur d'activité</label>
+              <select id="sim-sector" onchange="runSimulation()" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-blue-500 transition">
+                <option value="artisan">Artisanat du Bâtiment (Plomberie, Électricité, Chauffage, Rénovation)</option>
+                <option value="sante" selected>Professions Médicales & Cabinets de Soins (Dentiste, Kiné, Ostéo...)</option>
+                <option value="restauration">Restauration, Métiers de Bouche & Commerces Alimentaires</option>
+                <option value="beaute">Beauté, Coiffure & Bien-être</option>
+                <option value="services">Services Juridiques, Comptabilité & Conseil</option>
+              </select>
+            </div>
+
+            <!-- Slider Note Google -->
+            <div>
+              <div class="flex justify-between items-center mb-2">
+                <label class="text-xs font-semibold text-slate-300 uppercase tracking-wider">Note Google actuelle</label>
+                <span id="display-rating" class="text-sm font-mono-code font-bold text-amber-400 bg-slate-950 px-2 py-0.5 rounded border border-slate-800">3.9 ★</span>
+              </div>
+              <input type="range" id="sim-rating" min="2.5" max="5.0" step="0.1" value="3.9" oninput="runSimulation()" class="w-full bg-slate-800 h-2 rounded-lg appearance-none cursor-pointer">
+              <div class="flex justify-between text-[10px] text-slate-500 mt-1 font-mono-code">
+                <span>2.5 ★ (Critique)</span>
+                <span>4.0 ★ (Moyen)</span>
+                <span>5.0 ★ (Idéal)</span>
+              </div>
+            </div>
+
+            <!-- Slider Review Count -->
+            <div>
+              <div class="flex justify-between items-center mb-2">
+                <label class="text-xs font-semibold text-slate-300 uppercase tracking-wider">Nombre d'avis déposés</label>
+                <span id="display-reviews" class="text-sm font-mono-code font-bold text-blue-400 bg-slate-950 px-2 py-0.5 rounded border border-slate-800">27 avis</span>
+              </div>
+              <input type="range" id="sim-reviews" min="0" max="250" step="5" value="27" oninput="runSimulation()" class="w-full bg-slate-800 h-2 rounded-lg appearance-none cursor-pointer">
+              <div class="flex justify-between text-[10px] text-slate-500 mt-1 font-mono-code">
+                <span>0 avis</span>
+                <span>50 avis (Seuil standard)</span>
+                <span>250+ avis</span>
+              </div>
+            </div>
+
+            <!-- Select Response Rate -->
+            <div>
+              <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Taux & Délai de Réponse aux Avis</label>
+              <select id="sim-response" onchange="runSimulation()" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-blue-500 transition">
+                <option value="none">Moins de 20% des avis reçoivent une réponse (ou aucun)</option>
+                <option value="partial">Réponse occasionnelle (entre 20% et 60%)</option>
+                <option value="good">Réponse systématique (&gt; 80% sous 48h avec mots-clés)</option>
+              </select>
+            </div>
+
+            <!-- Select Photo Freshness -->
+            <div>
+              <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Dynamique des Photos & Actualités</label>
+              <select id="sim-freshness" onchange="runSimulation()" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-blue-500 transition">
+                <option value="stale">Inactif : aucune photo récente depuis plus de 6 mois</option>
+                <option value="moderate">Modéré : quelques photos ajoutées dans l'année</option>
+                <option value="active">Actif : ajouts mensuels réguliers et actualités publiées</option>
+              </select>
+            </div>
+
+            <!-- Select Completeness -->
+            <div>
+              <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Catalogue de Services & Catégories Secondaires</label>
+              <select id="sim-completeness" onchange="runSimulation()" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-blue-500 transition">
+                <option value="basic">Fiche basique : seule la catégorie principale est renseignée</option>
+                <option value="partial">Fiche intermédiaire : quelques services listés sans description</option>
+                <option value="complete">Fiche exhaustive : 4+ catégories secondaires et actes détaillés</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Results Panel (Right / Col 5) -->
+        <div class="lg:col-span-5 p-8 rounded-2xl border border-slate-800 bg-slate-900/80 backdrop-blur sticky top-28 shadow-2xl">
+          <div class="flex items-center justify-between border-b border-slate-800 pb-4 mb-6">
+            <div>
+              <span class="text-[10px] font-mono-code uppercase tracking-wider text-slate-400">Diagnostic Préliminaire</span>
+              <h4 class="text-sm font-bold text-white">Indice de Visibilité Simulé</h4>
+            </div>
+            <div id="status-pill" class="px-2.5 py-1 rounded-full text-xs font-bold bg-rose-500/10 text-rose-400 border border-rose-500/20">
+              Vigilance Critique
+            </div>
+          </div>
+
+          <!-- Score Gauge & Circle -->
+          <div class="text-center my-6">
+            <div class="inline-flex items-baseline gap-1">
+              <span id="score-val" class="text-6xl font-black font-mono-code text-white">41</span>
+              <span class="text-xl font-bold text-slate-500">/100</span>
+            </div>
+            <p id="score-summary" class="text-xs text-rose-400 mt-2 font-medium">
+              Profil invisible dans le pack 3 local • Forte déperdition
+            </p>
+          </div>
+
+          <!-- 4 Pillars Breakdown Bars -->
+          <div class="space-y-3 pt-2 pb-6 border-b border-slate-800">
+            <div>
+              <div class="flex justify-between text-xs mb-1">
+                <span class="text-slate-400">P1. Conformité Technique</span>
+                <span id="bar-p1-val" class="font-mono-code text-slate-200">50%</span>
+              </div>
+              <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
+                <div id="bar-p1" class="h-full bg-blue-500 rounded-full transition-all duration-300" style="width: 50%;"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between text-xs mb-1">
+                <span class="text-slate-400">P2. Réputation & Engagement</span>
+                <span id="bar-p2-val" class="font-mono-code text-slate-200">38%</span>
+              </div>
+              <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
+                <div id="bar-p2" class="h-full bg-indigo-500 rounded-full transition-all duration-300" style="width: 38%;"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between text-xs mb-1">
+                <span class="text-slate-400">P3. Dynamisme & Actualisation</span>
+                <span id="bar-p3-val" class="font-mono-code text-slate-200">22%</span>
+              </div>
+              <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
+                <div id="bar-p3" class="h-full bg-violet-500 rounded-full transition-all duration-300" style="width: 22%;"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between text-xs mb-1">
+                <span class="text-slate-400">P4. Positionnement Local</span>
+                <span id="bar-p4-val" class="font-mono-code text-slate-200">54%</span>
+              </div>
+              <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
+                <div id="bar-p4" class="h-full bg-emerald-500 rounded-full transition-all duration-300" style="width: 54%;"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Estimated Loss Impact -->
+          <div class="p-4 rounded-xl bg-rose-950/20 border border-rose-900/30 my-6">
+            <div class="flex items-start gap-2.5">
+              <svg class="w-4 h-4 text-rose-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+              <div>
+                <span class="text-[11px] font-bold text-rose-300 uppercase tracking-wider block">Déperdition estimée de clientèle</span>
+                <p id="loss-estimate-text" class="text-xs text-rose-200/90 mt-1 leading-relaxed">
+                  Environ <strong>14 à 20 contacts qualifiés perdus chaque mois</strong> au bénéfice des confrères du Top 3 local.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- CTA Command Button -->
+          <div>
+            <a href="https://buy.stripe.com/5kQ5kDeuJ6BJ2js7YE8N201" target="_blank" class="w-full py-4 px-6 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-extrabold text-sm shadow-xl shadow-blue-600/30 transition text-center flex items-center justify-center gap-2">
+              <span>Commander l'Audit Approfondi — 49 €</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+            </a>
+            <div class="flex items-center justify-center gap-3 text-[11px] text-slate-400 mt-3 text-center">
+              <span>🔒 Paiement sécurisé Stripe</span>
+              <span>•</span>
+              <span>📄 Rapport officiel sous 24h</span>
+              <span>•</span>
+              <span>🛡️ Garantie 14 jours</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: CE QUE CONTIENT LE RAPPORT OFFICIEL (LE LIVRABLE) -->
+  <section id="livrables" class="py-24 border-b border-slate-800 bg-slate-950">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs font-bold uppercase tracking-widest text-blue-400 block mb-2">Livrable Contractuel</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Un Rapport d'Expertise de 4 Pages Haute Définition</h2>
+        <p class="text-slate-400 text-sm mt-3">
+          Chaque audit commandé est instruit selon notre cahier des charges et restitué sous la forme d'un document PDF professionnel, immédiatement exploitable par vos équipes.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Page 1 -->
+        <div class="rounded-xl border border-slate-800 bg-[#0B1120] p-6 flex flex-col justify-between">
+          <div>
+            <div class="text-xs font-mono-code font-bold text-blue-400 mb-2">SECTION 01</div>
+            <h3 class="text-base font-bold text-white mb-2">Diagnostic Exécutif & Indice Global</h3>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Vue synthétique de votre niveau de conformité, score global sur 100 et décomposition des 4 piliers d'autorité.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-800 text-[11px] text-slate-400 font-medium">
+            ✓ Cartographie de la zone de chalandise
+          </div>
+        </div>
+
+        <!-- Page 2 -->
+        <div class="rounded-xl border border-slate-800 bg-[#0B1120] p-6 flex flex-col justify-between">
+          <div>
+            <div class="text-xs font-mono-code font-bold text-indigo-400 mb-2">SECTION 02</div>
+            <h3 class="text-base font-bold text-white mb-2">Benchmark Concurrentiel Territorial</h3>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Tableau comparatif exhaustif face aux 3 leaders de votre secteur : volume d'avis, vélocité, services déclarés et mots-clés dominants.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-800 text-[11px] text-slate-400 font-medium">
+            ✓ Chiffrage de l'écart d'autorité
+          </div>
+        </div>
+
+        <!-- Page 3 -->
+        <div class="rounded-xl border border-slate-800 bg-[#0B1120] p-6 flex flex-col justify-between">
+          <div>
+            <div class="text-xs font-mono-code font-bold text-rose-400 mb-2">SECTION 03</div>
+            <h3 class="text-base font-bold text-white mb-2">Failles Critiques & Impact Financier</h3>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Identification formelle des 3 freins majeurs causant la perte de vos prospects locaux, avec estimation de la déperdition de CA.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-800 text-[11px] text-slate-400 font-medium">
+            ✓ Analyse d'impact sur le clic d'appel
+          </div>
+        </div>
+
+        <!-- Page 4 -->
+        <div class="rounded-xl border border-slate-800 bg-[#0B1120] p-6 flex flex-col justify-between">
+          <div>
+            <div class="text-xs font-mono-code font-bold text-emerald-400 mb-2">SECTION 04</div>
+            <h3 class="text-base font-bold text-white mb-2">Plan d'Action 7 Étapes & Scripts</h3>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Feuille de route chronométrée pour combler les failles, accompagnée de modèles de réponses et de scripts de relance prêts à copier-coller.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-800 text-[11px] text-slate-400 font-medium">
+            ✓ Modèles de réponses diplomatiques
+          </div>
+        </div>
+      </div>
+
+      <!-- Trust banner -->
+      <div class="mt-12 p-6 rounded-2xl border border-slate-800 bg-slate-900/60 max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
+        <div class="flex items-center gap-4">
+          <div class="w-12 h-12 rounded-xl bg-emerald-950 border border-emerald-800 flex items-center justify-center text-emerald-400 shrink-0">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+          </div>
+          <div>
+            <h4 class="text-sm font-bold text-white">Garantie Intégrale Satisfait ou Remboursé sous 14 jours</h4>
+            <p class="text-xs text-slate-400 mt-0.5">Si l'audit ne vous apporte pas une compréhension nette de vos blocages locaux, nous vous remboursons intégralement sur simple demande par email.</p>
+          </div>
+        </div>
+        <a href="https://buy.stripe.com/5kQ5kDeuJ6BJ2js7YE8N201" target="_blank" class="shrink-0 px-6 py-3 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs transition">
+          Commander (49 €)
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 6: FAQ MÉTHODOLOGIQUE -->
+  <section id="faq" class="py-24 border-b border-slate-800 bg-[#0B1120]">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <span class="text-xs font-bold uppercase tracking-widest text-blue-400 block mb-2">Transparence Méthodologique</span>
+        <h2 class="text-3xl font-extrabold text-white">Questions Fréquentes sur notre Audit</h2>
+      </div>
+
+      <div class="space-y-4">
+        <div class="p-6 rounded-xl border border-slate-800 bg-slate-900/40">
+          <h3 class="text-base font-bold text-white mb-2">Pourquoi cet audit est-il facturé 49 € alors que certains outils en ligne sont gratuits ?</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Les outils gratuits se limitent à vérifier si votre adresse ou votre numéro de téléphone sont renseignés. Notre méthodologie d'audit procède à une analyse approfondie et individualisée : nous cartographions vos 3 concurrents directs dans votre périmètre géographique exact, nous inspectons la sémantique de vos avis récents et nous calibrons les recommandations spécifiquement selon les exigences de votre métier (santé, bâtiment, restauration...).
+          </p>
+        </div>
+
+        <div class="p-6 rounded-xl border border-slate-800 bg-slate-900/40">
+          <h3 class="text-base font-bold text-white mb-2">Avez-vous besoin de mes identifiants ou d'un accès administrateur à ma fiche ?</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Non, aucun accès n'est requis. Notre protocole d'inspection repose exclusivement sur l'analyse des données publiques et des signaux captés par les moteurs de recherche et les utilisateurs finaux. Cela garantit une totale neutralité d'analyse et préserve la sécurité de vos comptes.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-xl border border-slate-800 bg-slate-900/40">
+          <h3 class="text-base font-bold text-white mb-2">Sous quel délai le rapport est-il transmis ?</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Votre rapport d'expertise complet vous est transmis sous 24 heures ouvrées directement par email, au format PDF haute définition prêt à imprimer ou à transmettre à votre responsable de communication.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-xl border border-slate-800 bg-slate-900/40">
+          <h3 class="text-base font-bold text-white mb-2">Que se passe-t-il après la commande ?</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Dès validation de votre règlement sur notre plateforme sécurisée Stripe, votre établissement est automatiquement inscrit au registre d'instruction de l'Observatoire. L'analyse périmétrique et le benchmark concurrentiel sont lancés dans la foulée.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL DE COMMANDE -->
+  <section class="py-20 bg-gradient-to-b from-[#0B1120] to-slate-950 text-center relative overflow-hidden">
+    <div class="max-w-4xl mx-auto px-6 relative z-10">
+      <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight mb-6">
+        Sécurisez votre position locale face à vos concurrents dès cette semaine.
+      </h2>
+      <p class="text-slate-300 text-base max-w-2xl mx-auto mb-10 leading-relaxed">
+        Commandez votre audit complet de 4 pages pour 49 € TTC. Rapport remis sous 24 heures avec plan d'action opérationnel et modèles de réponses.
+      </p>
+      <a href="https://buy.stripe.com/5kQ5kDeuJ6BJ2js7YE8N201" target="_blank" class="inline-flex items-center gap-3 px-10 py-5 rounded-xl bg-blue-600 hover:bg-blue-500 font-extrabold text-white text-base shadow-2xl shadow-blue-600/40 transition">
+        <span>Commander mon Audit Complet — 49 €</span>
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+      </a>
+      <p class="text-xs text-slate-400 mt-4">Paiement unique sans abonnement • Facture conforme avec TVA déductible</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-slate-800 bg-slate-950 py-12 text-xs text-slate-400">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center text-white font-bold">O</div>
+        <div>
+          <span class="text-white font-bold block">Observatoire de la Visibilité Locale</span>
+          <span class="text-slate-400 text-[11px]">Protocole d'audit et benchmark territorial indépendant</span>
+        </div>
+      </div>
+      <div class="flex flex-wrap items-center gap-6">
+        <a href="#piliers" class="hover:text-slate-200 transition">Méthodologie en 4 Piliers</a>
+        <a href="#benchmark" class="hover:text-slate-200 transition">Benchmark Concurrentiel</a>
+        <a href="#simulateur" class="hover:text-slate-200 transition">Simulateur</a>
+        <a href="#faq" class="hover:text-slate-200 transition">FAQ</a>
+      </div>
+      <div>
+        <p>© 2026 Observatoire de la Visibilité Locale. Tous droits réservés.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPT DU SIMULATEUR & DU DÉMONSTRATEUR D'ÉTUDES DE CAS -->
+  <script>
+    // DATA CASES FOR BENCHMARK SHOWCASE
+    const caseData = {
+      sante: {
+        badge: "Dossier d'expertise #AUD-69007",
+        sector: "Périmètre : Chirurgie Dentaire & Soins • Lyon 7ème",
+        title: "Audit Comparatif : Cabinet Dentaire Dr Sarah Benali vs Zone Gambetta",
+        loss: "2 400 € — 4 200 € / mois",
+        rows: [
+          { critere: "Note moyenne & Volume d'avis", audite: "3.9 ★ (27 avis)", comp1: "4.9 ★ (184 avis)", comp2: "4.7 ★ (96 avis)", diag: "Déficit de confiance : sous le seuil critique de 4.5★" },
+          { critere: "Taux de réponse aux avis récents", audite: "11% de réponses", comp1: "98% (sous 24h)", comp2: "85% (sous 48h)", diag: "Alerte : 89% des avis laissés sans réponse officielle" },
+          { critere: "Catalogue des actes / soins", audite: "Inexistant (onglet vide)", comp1: "14 actes détaillés", comp2: "8 actes renseignés", diag: "Perte des recherches sur les soins à forte valeur ajoutée" },
+          { critere: "Positionnement Pack 3 Local", audite: "Rang #7 (Hors carte)", comp1: "Rang #1 (Affiché)", comp2: "Rang #2 (Affiché)", diag: "Éviction totale des consultations d'urgence sur smartphone" },
+          { critere: "Fraîcheur iconographique", audite: "Façade Street View floue", comp1: "28 photos pro (plateau)", comp2: "15 photos cabinet", diag: "Déficit d'attractivité visuelle (-42% de clics d'appel)" }
+        ],
+        flaws: [
+          { title: "89% des avis laissés sans réponse", desc: "Deux avis critiques sur les délais d'attente n'ont jamais reçu d'explication. Facteur n°1 de fuite vers les confrères.", badge: "Priorité Critique 🔴" },
+          { title: "Actes et soins non renseignés", desc: "Les actes majeurs (implants, blanchiment, urgences) ne sont pas déclarés dans les services Google.", badge: "Priorité Majeure 🟠" },
+          { title: "Déficit de rassurance visuelle", desc: "Absence totale de photos du plateau technique moderne et de l'accueil du cabinet.", badge: "Priorité Modérée 🟡" }
+        ]
+      },
+      batiment: {
+        badge: "Dossier d'expertise #AUD-33000",
+        sector: "Périmètre : Dépannage Plomberie Chauffage • Bordeaux Centre",
+        title: "Audit Comparatif : Établissement Artisanal vs Leaders Bordeaux",
+        loss: "3 500 € — 6 000 € / mois",
+        rows: [
+          { critere: "Note moyenne & Volume d'avis", audite: "4.1 ★ (19 avis)", comp1: "4.8 ★ (142 avis)", comp2: "4.7 ★ (88 avis)", diag: "Volume insuffisant pour rivaliser sur 'urgence plomberie'" },
+          { critere: "Taux de réponse aux avis récents", audite: "0% (aucun suivi)", comp1: "95% avec mots-clés", comp2: "78% de réponses", diag: "Pénalité algorithmique sur la réactivité locale" },
+          { critere: "Services d'urgence déclarés", audite: "Générique 'Plombier'", comp1: "Recherche de fuite, Débouchage", comp2: "Chauffe-eau, Rénovation", diag: "Absence de positionnement sur les interventions d'urgence" },
+          { critere: "Positionnement Pack 3 Local", audite: "Rang #9 (Invisible)", comp1: "Rang #1 (Pack 3)", comp2: "Rang #3 (Pack 3)", diag: "Captation de 65% des appels par le concurrent direct #1" },
+          { critere: "Zone de desserte configurée", audite: "Non paramétrée", comp1: "12 communes ciblées", comp2: "8 codes postaux", diag: "Périmètre géographique restreint de manière pénalisante par Google" }
+        ],
+        flaws: [
+          { title: "Zéro réponse aux avis récents", desc: "L'absence de réponse signale à Google un profil abandonné, dégradant le positionnement mobile.", badge: "Priorité Critique 🔴" },
+          { title: "Prestations d'urgence non isolées", desc: "Le débouchage express et la recherche de fuite ne sont pas identifiés en tant que services distincts.", badge: "Priorité Majeure 🟠" },
+          { title: "Absence de photos d'interventions", desc: "Aucune photo de chantiers récents, véhicules floqués ou attestations d'assurance décennale.", badge: "Priorité Modérée 🟡" }
+        ]
+      },
+      restauration: {
+        badge: "Dossier d'expertise #AUD-75009",
+        sector: "Périmètre : Restauration Traditionnelle & Bistrot • Paris 9ème",
+        title: "Audit Comparatif : Bistrot & Comptoir vs Leaders du Quartier",
+        loss: "4 000 € — 7 500 € / mois",
+        rows: [
+          { critere: "Note moyenne & Volume d'avis", audite: "4.2 ★ (64 avis)", comp1: "4.8 ★ (380 avis)", comp2: "4.6 ★ (215 avis)", diag: "Écart de volume de 1 à 6 face aux tables référentes" },
+          { critere: "Taux de réponse aux avis récents", audite: "18% de réponses", comp1: "92% (ton soigné)", comp2: "80% de réponses", diag: "Manque d'engagement sur les commentaires de touristes et résidents" },
+          { critere: "Lien de réservation directe", audite: "Lien manquant", comp1: "Module TheFork & Téléphone", comp2: "Réservation Google intégrée", diag: "Friction majeure au moment de la décision du client" },
+          { critere: "Positionnement Pack 3 Local", audite: "Rang #6 (Hors pack)", comp1: "Rang #1 (Pack 3)", comp2: "Rang #2 (Pack 3)", diag: "Perte des réservations de dernière minute du soir" },
+          { critere: "Fraîcheur des menus et photos", audite: "Carte datant de 2024", comp1: "Photos de plats quotidiennes", comp2: "Menu de saison à jour", diag: "Confusion sur les tarifs réels et l'offre du moment" }
+        ],
+        flaws: [
+          { title: "Lien de réservation absent", desc: "Le prospect intéressé doit chercher un contact ou abandonne vers un établissement réservable en un clic.", badge: "Priorité Critique 🔴" },
+          { title: "Menu et tarifs obsolètes", desc: "Des photos d'anciens prix postées par des clients créent des frictions et des avis déçus.", badge: "Priorité Majeure 🟠" },
+          { title: "Inactivité éditoriale depuis 4 mois", desc: "Aucun post Google sur les plats du jour ou les horaires d'été.", badge: "Priorité Modérée 🟡" }
+        ]
+      }
+    };
+
+    function switchCase(sector) {
+      document.querySelectorAll('.case-btn').forEach(btn => {
+        btn.classList.remove('bg-blue-600', 'text-white', 'shadow-md');
+        btn.classList.add('text-slate-400');
+      });
+      const activeBtn = document.getElementById('btn-' + sector);
+      activeBtn.classList.add('bg-blue-600', 'text-white', 'shadow-md');
+      activeBtn.classList.remove('text-slate-400');
+
+      const data = caseData[sector];
+      document.getElementById('case-badge').textContent = data.badge;
+      document.getElementById('case-sector').textContent = data.sector;
+      document.getElementById('case-title').textContent = data.title;
+      document.getElementById('case-loss').textContent = data.loss;
+
+      // Render table
+      const tbody = document.getElementById('case-tbody');
+      tbody.innerHTML = '';
+      data.rows.forEach(r => {
+        const tr = document.createElement('tr');
+        tr.className = "hover:bg-slate-900/40 transition-colors";
+        tr.innerHTML = `
+          <td class="py-3.5 px-6 font-semibold text-white">${r.critere}</td>
+          <td class="py-3.5 px-6 font-bold text-amber-300 bg-amber-500/5 border-x border-slate-800">${r.audite}</td>
+          <td class="py-3.5 px-6 text-slate-300">${r.comp1}</td>
+          <td class="py-3.5 px-6 text-slate-400">${r.comp2}</td>
+          <td class="py-3.5 px-6 text-slate-400 italic">${r.diag}</td>
+        `;
+        tbody.appendChild(tr);
+      });
+
+      // Render flaws
+      const flawsContainer = document.getElementById('case-flaws');
+      flawsContainer.innerHTML = '';
+      data.flaws.forEach(f => {
+        const div = document.createElement('div');
+        div.className = "p-4 rounded-xl border border-slate-800 bg-slate-900/40";
+        div.innerHTML = `
+          <span class="text-[10px] font-mono-code font-bold uppercase tracking-wider block mb-1 text-slate-300">${f.badge}</span>
+          <h5 class="text-xs font-bold text-white mb-1">${f.title}</h5>
+          <p class="text-[11px] text-slate-400 leading-relaxed">${f.desc}</p>
+        `;
+        flawsContainer.appendChild(div);
+      });
+    }
+
+    // SIMULATOR CALCULATION ENGINE
+    function runSimulation() {
+      const rating = parseFloat(document.getElementById('sim-rating').value);
+      const reviews = parseInt(document.getElementById('sim-reviews').value);
+      const response = document.getElementById('sim-response').value;
+      const freshness = document.getElementById('sim-freshness').value;
+      const completeness = document.getElementById('sim-completeness').value;
+      const sector = document.getElementById('sim-sector').value;
+
+      document.getElementById('display-rating').textContent = rating.toFixed(1) + ' ★';
+      document.getElementById('display-reviews').textContent = reviews + ' avis';
+
+      // P1: Completeness (12 pts base)
+      let p1 = 40;
+      if (completeness === 'partial') p1 = 65;
+      if (completeness === 'complete') p1 = 95;
+
+      // P2: Reputation (15 pts base)
+      let ratingFactor = ((rating - 2.5) / 2.5) * 50; // 0 to 50
+      let reviewFactor = Math.min(reviews / 100, 1.0) * 30; // 0 to 30
+      let responseFactor = (response === 'good' ? 20 : (response === 'partial' ? 10 : 0));
+      let p2 = Math.min(Math.round(ratingFactor + reviewFactor + responseFactor), 100);
+
+      // P3: Freshness / Dynamic (10 pts base)
+      let p3 = 25;
+      if (freshness === 'moderate') p3 = 60;
+      if (freshness === 'active') p3 = 95;
+
+      // P4: Local SEO (Rank)
+      let p4 = Math.round((p1 * 0.3) + (p2 * 0.5) + (p3 * 0.2));
+
+      // Global Score / 100
+      let globalScore = Math.round((p1 * 0.25) + (p2 * 0.30) + (p3 * 0.20) + (p4 * 0.25));
+      if (globalScore < 20) globalScore = 20;
+      if (globalScore > 98) globalScore = 98;
+
+      // Update UI
+      document.getElementById('score-val').textContent = globalScore;
+      document.getElementById('bar-p1').style.width = p1 + '%';
+      document.getElementById('bar-p1-val').textContent = p1 + '%';
+      document.getElementById('bar-p2').style.width = p2 + '%';
+      document.getElementById('bar-p2-val').textContent = p2 + '%';
+      document.getElementById('bar-p3').style.width = p3 + '%';
+      document.getElementById('bar-p3-val').textContent = p3 + '%';
+      document.getElementById('bar-p4').style.width = p4 + '%';
+      document.getElementById('bar-p4-val').textContent = p4 + '%';
+
+      // Status pill & loss assessment
+      const pill = document.getElementById('status-pill');
+      const summary = document.getElementById('score-summary');
+      const lossText = document.getElementById('loss-estimate-text');
+
+      if (globalScore < 50) {
+        pill.className = "px-2.5 py-1 rounded-full text-xs font-bold bg-rose-500/10 text-rose-400 border border-rose-500/20";
+        pill.textContent = "Vigilance Critique";
+        summary.className = "text-xs text-rose-400 mt-2 font-medium";
+        summary.textContent = "Profil invisible dans le pack 3 local • Forte déperdition";
+        lossText.innerHTML = "Environ <strong>15 à 25 contacts qualifiés perdus chaque mois</strong> au profit des confrères du Top 3 local.";
+      } else if (globalScore < 75) {
+        pill.className = "px-2.5 py-1 rounded-full text-xs font-bold bg-amber-500/10 text-amber-400 border border-amber-500/20";
+        pill.textContent = "Potentiel Inexploité";
+        summary.className = "text-xs text-amber-400 mt-2 font-medium";
+        summary.textContent = "Présence instable • Vulnérable aux concurrents actifs";
+        lossText.innerHTML = "Environ <strong>8 à 14 contacts mensuels captés</strong> par des établissements mieux configurés à proximité.";
+      } else {
+        pill.className = "px-2.5 py-1 rounded-full text-xs font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20";
+        pill.textContent = "Autorité Solide";
+        summary.className = "text-xs text-emerald-400 mt-2 font-medium";
+        summary.textContent = "Bon positionnement • Optimisations de marge nécessaires";
+        lossText.innerHTML = "Déperdition modérée (3 à 6 contacts/mois). L'audit permettra de verrouiller définitivement votre 1ère place.";
+      }
+    }
+
+    // Initialize on load
+    document.addEventListener('DOMContentLoaded', () => {
+      switchCase('sante');
+      runSimulation();
+    });
+  </script>
+</body>
+</html>

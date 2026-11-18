@@ -39,7 +39,7 @@
   },
   "sequence_facturation": {
     "prefixe": "FA-2026-",
-    "prochain_numero": 4,
+    "prochain_numero": 5,
     "longueur_chiffres": 3
   },
   "paliers_reinvestissement": [

@@ -136,16 +136,25 @@ def process_paid_session(session: Dict[str, Any]) -> Dict[str, Any]:
     customer_email = customer_details.get("email") or session.get("customer_email")
     customer_name = customer_details.get("name") or "Client"
     
-    # Extraction du nom d'établissement depuis les custom_fields du Payment Link
+    # Extraction du nom d'établissement et de l'adresse depuis les custom_fields du Payment Link
     business_name = None
+    business_address = None
     custom_fields = session.get("custom_fields", [])
     for field in custom_fields:
-        if field.get("key") in ("business_name", "nom_etablissement", "etablissement"):
-            business_name = field.get("text", {}).get("value")
-            break
-        # Si la clé est vide mais qu'il y a un champ texte
-        if field.get("type") == "text" and not business_name:
-            business_name = field.get("text", {}).get("value")
+        key = field.get("key")
+        val = field.get("text", {}).get("value")
+        if key in ("business_name", "nom_etablissement", "etablissement"):
+            business_name = val
+        elif key in ("business_address", "adresse_etablissement", "adresse", "address"):
+            business_address = val
+        elif field.get("type") == "text" and not business_name:
+            business_name = val
+
+    # Extraction de l'adresse de facturation si présente
+    if not business_address and customer_details.get("address"):
+        addr = customer_details.get("address")
+        parts = [addr.get("line1"), addr.get("postal_code"), addr.get("city")]
+        business_address = ", ".join(p for p in parts if p)
 
     # Fallback si absent des custom_fields : vérifie les métadonnées ou le nom du client
     metadata = session.get("metadata") or {}
@@ -163,6 +172,7 @@ def process_paid_session(session: Dict[str, Any]) -> Dict[str, Any]:
     logger.info(f"   • Montant      : {amount_total:.2f} {currency}")
     logger.info(f"   • Client       : {customer_name} <{customer_email}>")
     logger.info(f"   • Entreprise   : {business_name}")
+    logger.info(f"   • Adresse      : {business_address or 'Non spécifiée'}")
     logger.info(f"   • Réf prospect : {client_ref}")
     logger.info("=" * 60)
 
@@ -181,6 +191,7 @@ def process_paid_session(session: Dict[str, Any]) -> Dict[str, Any]:
             logger.info("Appel du générateur d'audit officiel (Module 03)...")
             audit_result = audit_fn({
                 "business_name": business_name,
+                "address": business_address or "",
                 "email": customer_email,
                 "client_reference_id": client_ref,
             })

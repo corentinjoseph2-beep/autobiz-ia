@@ -49,6 +49,11 @@ def test_pipeline():
                 "key": "business_name",
                 "type": "text",
                 "text": {"value": "Cabinet Dentaire Opéra"},
+            },
+            {
+                "key": "business_address",
+                "type": "text",
+                "text": {"value": "12 Place de l'Opéra, 75009 Paris"},
             }
         ],
         "client_reference_id": "PROSPECT_DENTISTES_014",

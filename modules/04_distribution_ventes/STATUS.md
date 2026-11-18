@@ -1,12 +1,20 @@
 # Statut du Module 04 : Paiement Stripe & Livraison Automatique
 
-- **État général** : 🟢 Production Réelle Validée de Bout en Bout
+- **État général** : 🟢 Production 100% Autonome 24/7 (Cloud Render + Stripe Live)
 - **Responsable** : Agent Vente & Automatisation de Flux (Bloc 2)
 - **Objectif** : Encaissement autonome de 49 € via Stripe Payment Link et livraison immédiate (< 1 min) par email de l'audit PDF sans aucune intervention humaine.
 - **Lien de Paiement Stripe Actif (Production)** : `https://buy.stripe.com/5kQ5kDeuJ6BJ2js7YE8N201`
-- **Intégration Module 03 (Moteur d'Audit)** : ✅ Connecté & Validé (Génération PDF officielle en ~4,5s)
-- **Livraison Email** : ✅ Validée (Templates HTML/Texte + Pièce jointe PDF)
-- **Dernière mise à jour** : 2026-11-18 (Test de simulation bout-en-bout réussi avec succès)
+- **Produit Stripe** : `prod_VeWYmMCXIoRdVF` — *Audit Stratégique de Visibilité Google Maps (Prestation B2B)*
+- **Description Produit** : *Audit de performance locale, benchmark concurrentiel et plan d'action pour commerces, artisans et entreprises. Prestation de conseil déductible en frais professionnels.*
+- **Champs Obligatoires Configurés** :
+  1. `business_name` : "Nom de l'établissement ou lien Google Maps" (OBLIGATOIRE)
+  2. `business_address` : "Adresse complète et Ville de l'établissement" (OBLIGATOIRE)
+  3. `billing_address_collection` : "required" (Adresse postale de facturation OBLIGATOIRE)
+- **Serveur Webhook Cloud 24/7 (Render)** : `https://autobiz-ia-webhook.onrender.com/webhook`
+- **Webhook Endpoint Stripe ID** : `we_1UdExCGlJLwWRlFayDS1Chb0` (Événement : `checkout.session.completed`)
+- **Signature Cryptographique Stripe** : Configurée (`whsec_z2P01gRnpOLLSN8gZDPNPJXhfsbNupCx`)
+- **Intégration Module 03 (Audit PDF) & 07 (Facturation)** : ✅ Connectés & Validés en Cloud
+- **Dernière mise à jour** : 2026-11-18 (Liaison Render ↔ Stripe en production validée par test HTTP 200)
 
 ---
 

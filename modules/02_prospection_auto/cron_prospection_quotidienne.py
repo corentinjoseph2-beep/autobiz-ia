@@ -53,18 +53,54 @@ DATABASE_FILE = os.path.join(MODULE_DIR, "database_leads.json")
 OUTPUT_DIR = os.path.join(MODULE_DIR, "campagnes_quotidiennes")
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
-# Rotations cibles
+# Rotations cibles : Focus villes moyennes (20k - 90k hab) & préfectures à fort potentiel
+# Justification : Moins de concurrence, artisans non saturés de démarchage, ROI immédiat
 DEFAULT_CITIES = [
+    # Sud-Ouest & Occitanie (Zones très dynamiques, faible concurrence SEO)
+    "Angoulême",
+    "Périgueux",
+    "Agen",
+    "Albi",
+    "Montauban",
+    "Pau",
+    "Tarbes",
+    "Béziers",
+    "Narbonne",
+    "Carcassonne",
+    "Brive-la-Gaillarde",
+
+    # Ouest & Pays de la Loire / Bretagne / Normandie
+    "Cholet",
+    "Niort",
+    "La Roche-sur-Yon",
+    "Laval",
+    "Vannes",
+    "Saint-Brieuc",
+    "Quimper",
+    "Évreux",
+    "Chartres",
+
+    # Centre & Auvergne-Rhône-Alpes
+    "Bourges",
+    "Blois",
+    "Chalon-sur-Saône",
+    "Roanne",
+    "Valence",
+    "Chambéry",
+    "Nevers",
+
+    # Nord & Est
+    "Arras",
+    "Beauvais",
+    "Compiègne",
+    "Charleville-Mézières",
+    "Colmar",
+
+    # Métropoles régionales (en alternance)
     "Nantes",
     "Toulouse",
-    "Marseille",
-    "Montpellier",
-    "Lille",
     "Bordeaux",
-    "Lyon",
-    "Rennes",
-    "Strasbourg",
-    "Nice"
+    "Montpellier"
 ]
 
 DEFAULT_ACTIVITIES = [

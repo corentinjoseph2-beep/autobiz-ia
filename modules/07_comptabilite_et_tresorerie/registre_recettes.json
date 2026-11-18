@@ -58,5 +58,25 @@
     "marge_nette": 47.87,
     "fichier_pdf": "/Users/corentinjoseph/Documents/PERSO/automatisation d'un projet/modules/07_comptabilite_et_tresorerie/factures_emises/facture_fa_2026_003.pdf",
     "fichier_html": "/Users/corentinjoseph/Documents/PERSO/automatisation d'un projet/modules/07_comptabilite_et_tresorerie/factures_emises/facture_fa_2026_003.html"
+  },
+  {
+    "numero_facture": "FA-2026-004",
+    "date_paiement": "18/11/2026 à 21:29",
+    "date_iso": "2026-11-18T21:29:20.863297",
+    "client_nom": "Dr. Sophie Bernard",
+    "client_email": "contact@cabinet-opera.fr",
+    "client_etablissement": "Cabinet Dentaire Opéra",
+    "designation": "Audit Stratégique Complet & Plan d'Action Local — Google Business Profile",
+    "montant_ht": 49.0,
+    "montant_tva": 0.0,
+    "montant_ttc": 49.0,
+    "mode_reglement": "Carte Bancaire (Stripe)",
+    "reference_stripe": "cs_test_auto_987654321",
+    "frais_stripe": 0.98,
+    "cout_ia": 0.15,
+    "net_encaisse": 48.02,
+    "marge_nette": 47.87,
+    "fichier_pdf": "/Users/corentinjoseph/Documents/PERSO/automatisation d'un projet/modules/07_comptabilite_et_tresorerie/factures_emises/facture_fa_2026_004.pdf",
+    "fichier_html": "/Users/corentinjoseph/Documents/PERSO/automatisation d'un projet/modules/07_comptabilite_et_tresorerie/factures_emises/facture_fa_2026_004.html"
   }
 ]

@@ -22,6 +22,8 @@
   * `04_distribution_ventes` : Séquençage email, page de paiement Stripe, livraison automatisée.
   * `05_deploiement_et_lancement` : Configuration cloud 24/7 et batchs de prospects qualifiés.
   * `06_commercial_et_emails` : Agent commercial dédié, envoi via plugin Gmail (`vumavuma148@gmail.com`) et suivi des réponses prospects.
+  * `07_comptabilite_et_tresorerie` : Facturation légale conforme, livre des recettes URSSAF et jauge vers les 1 000 €.
+  * `08_page_systeme_auto` : Page vitrine interactive, explicative et démonstrateur visuel du système autonome.
   * `07_comptabilite_et_tresorerie` : Agent RAF / Facturation légale PDF automatique pour chaque vente Stripe (49 €) et tableau de bord financier de suivi des 1 000 € de CA à réinvestir.
 
 ---
