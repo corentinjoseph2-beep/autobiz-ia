@@ -9,8 +9,11 @@
 
 ---
 
-## 2. Règle du Hub & Sous-discussions
-* **Discussion Principale (Manager)** : Arbitrage stratégique, suivi des jalons, coordination globale.
+## 2. Règle du Hub & Rôle du Directeur (Discussion Manager)
+* **RÈGLE FONDAMENTALE D'OR : ZÉRO OPÉRATIONNEL DANS CETTE DISCUSSION**
+  * Cette discussion est le **Directeur Général**.
+  * Le Directeur **gère, arbitre, coordonne et délègue aux sous-discussions**, mais **ne produit JAMAIS d'opérationnel directement** (pas d'exécution de scripts de génération, pas de création directe de factures ou de rapports dans cette discussion).
+  * Chaque tâche opérationnelle DOIT obligatoirement être envoyée et exécutée dans sa sous-discussion respective via les agents dédiés.
 * **Règle Stricte d'Isolation** : Dès qu'un nouveau sujet ou besoin métier émerge (ex: support client, comptabilité, nouvelle offre, etc.), le Manager alerte immédiatement l'utilisateur pour qu'une **nouvelle discussion dédiée** soit créée dans l'interface, avec son propre sous-dossier et son brief.
 * **Sous-espaces / Modules Actuels** :
   * `01_niche_et_offre` : Définition de la cible B2B, proposition de valeur et pricing.

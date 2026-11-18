@@ -1,6 +1,6 @@
 # 📊 Tableau de Bord Commercial & Suivi des Emails — Bloc 6
 
-- **Dernière mise à jour** : 18/11/2026 20:17
+- **Dernière mise à jour** : 18/11/2026 20:22:08
 - **Opérateur IA** : Agent Commercial Bloc 6 (AutoBiz IA)
 - **Compte expéditeur connecté** : `vumavuma148@gmail.com` (Plugin Gmail Antigravity)
 - **Produit commercialisé** : Audit Visibilité Fiche Google Maps & Plan d'Action Local
@@ -48,3 +48,24 @@
 - **Heures idéales d'envoi** : Entre 07h15 et 08h30 le matin (avant départ sur les chantiers).
 - **Cadence d'envoi** : Par vagues de 5 emails espacés de 4 à 8 minutes, ou envoi manuel / semi-automatisé par l'opérateur directement depuis Gmail en vérifiant chaque fiche.
 - **Relances programmées** : J+3 (Vendredi midi) pour les non-répondants, J+7 pour le courriel de clôture courtoise.
+
+---
+
+## 🔄 Séquences de Relance Automatisées (Follow-up J+3 & J+7)
+- **Fichiers sources générés** : [`sequences_relances.json`](file:///Users/corentinjoseph/Documents/PERSO/automatisation%20d%27un%20projet/modules/06_commercial_et_emails/sequences_relances.json) et dossier [`relances/`](file:///Users/corentinjoseph/Documents/PERSO/automatisation%20d%27un%20projet/modules/06_commercial_et_emails/relances/).
+- **Séquence J+3 — Le Test du Smartphone** :
+  - **Objet** : `Re: Fiche Google {{nom_etablissement}} (remarque rapide)` *(Conserve le thread pour maximiser l'ouverture)*.
+  - **Contenu** : Invitation à faire le test depuis le smartphone sur la requête locale et comparaison avec les 3 premiers résultats Maps concurrents.
+- **Séquence J+7 — La Clôture Courtoise (Break-up)** :
+  - **Objet** : `Dernier message / {{nom_etablissement}}`
+  - **Contenu** : Clôture élégante, confirmation qu'aucun autre email ne sera envoyé, rappel de la disponibilité de l'audit complet à 49 €.
+
+---
+
+## 🛰️ Système de Détection des Réponses Prospects (Boîte Gmail)
+- **Script actif** : [`monitor_inbox.py`](file:///Users/corentinjoseph/Documents/PERSO/automatisation%20d%27un%20projet/modules/06_commercial_et_emails/monitor_inbox.py)
+- **Fonctionnement** : Scanne les 15 adresses cibles via le CLI Gmail Antigravity.
+- **Actions sur détection** :
+  1. Journalisation immédiate de l'email reçu dans `historique_echanges.md`.
+  2. Exclusion automatique du prospect des relances J+3 et J+7.
+  3. Alerte au Manager pour formulation de la réponse personnalisée vers le lien Stripe.

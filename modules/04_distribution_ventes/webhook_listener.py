@@ -72,6 +72,27 @@ def get_audit_generator_function():
     return None
 
 
+def get_invoice_generator_function():
+    """
+    Tente de charger dynamiquement le générateur de factures officielles du Module 07 via importlib.
+    Retourne la fonction callable ou None.
+    """
+    try:
+        import importlib.util
+        module_path = PROJECT_ROOT / "modules" / "07_comptabilite_et_tresorerie" / "generateur_facture.py"
+        if module_path.exists():
+            spec = importlib.util.spec_from_file_location("generateur_facture", str(module_path))
+            if spec and spec.loader:
+                mod = importlib.util.module_from_spec(spec)
+                spec.loader.exec_module(mod)
+                if hasattr(mod, "traiter_webhook_stripe_event"):
+                    return getattr(mod, "traiter_webhook_stripe_event")
+    except Exception as e:
+        logger.warning(f"Impossible de charger le module 07 (Facturation) : {e}")
+
+    return None
+
+
 def generate_fallback_pdf(business_name: str, client_email: str, score: int = 58) -> str:
     """
     Générateur de secours : crée un rapport PDF professionnel temporaire
@@ -190,12 +211,24 @@ def process_paid_session(session: Dict[str, Any]) -> Dict[str, Any]:
     )
     logger.info(f"Résultat envoi email : {email_result.get('detail')}")
 
+    # 3. Émission automatique de la Facture Légale B2B & Registre Recettes (Module 07)
+    invoice_fn = get_invoice_generator_function()
+    invoice_result = None
+    if invoice_fn:
+        try:
+            logger.info("Émission de la facture conforme via le Module 07 (Comptabilité)...")
+            invoice_result = invoice_fn(session)
+            logger.info(f"✅ Facture émise : {invoice_result.get('numero_facture')} (PDF: {invoice_result.get('pdf_path')})")
+        except Exception as e:
+            logger.error(f"Erreur lors de la génération de la facture : {e}")
+
     return {
         "status": "success",
         "customer_email": customer_email,
         "business_name": business_name,
         "pdf_path": pdf_path,
         "email_delivery": email_result,
+        "invoice": invoice_result,
     }
 
 

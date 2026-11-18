@@ -1,0 +1,82 @@
+{
+  "phone_765432100": {
+    "id": "lead_demo_3",
+    "name": "Dépannage 24/7 Nantes",
+    "city": "Nantes",
+    "category": "Plombier",
+    "phone": "07 65 43 21 00",
+    "primary_email": null,
+    "opportunity_score": 70,
+    "first_seen": "2026-11-18"
+  },
+  "phone_478221409": {
+    "id": "lead_demo_1",
+    "name": "Plombier Express Nantes Centre",
+    "city": "Nantes",
+    "category": "Plombier",
+    "phone": "04 78 22 14 09",
+    "primary_email": null,
+    "opportunity_score": 85,
+    "first_seen": "2026-11-18"
+  },
+  "phone_612345678": {
+    "id": "lead_demo_2",
+    "name": "Artisan Plombier & Fils",
+    "city": "Nantes",
+    "category": "Plombier",
+    "phone": "06 12 34 56 78",
+    "primary_email": null,
+    "opportunity_score": 35,
+    "first_seen": "2026-11-18"
+  },
+  "phone_285529708": {
+    "id": "lead_14_1795029698",
+    "name": "Le petit plombier nantes",
+    "city": "Nantes",
+    "category": "Plombier",
+    "phone": "02 85 52 97 08",
+    "primary_email": "contact@lepetitplombiernantes.fr",
+    "opportunity_score": 25,
+    "first_seen": "2026-11-18"
+  },
+  "phone_675868869": {
+    "id": "lead_4_1795029696",
+    "name": "Alya plomberie - Plombier Nantes",
+    "city": "Nantes",
+    "category": "Plombier",
+    "phone": "06 75 86 88 69",
+    "primary_email": "alya.plomberie44@gmail.com",
+    "opportunity_score": 0,
+    "first_seen": "2026-11-18"
+  },
+  "phone_773715101": {
+    "id": "lead_10_1795029698",
+    "name": "Plombier dépannage Nantes RG Services",
+    "city": "Nantes",
+    "category": "Plombier",
+    "phone": "07 73 71 51 01",
+    "primary_email": "votre@email.com",
+    "opportunity_score": 0,
+    "first_seen": "2026-11-18"
+  },
+  "phone_656692415": {
+    "id": "lead_12_1795029698",
+    "name": "PLOMBERIE SAINT FELIX",
+    "city": "Nantes",
+    "category": "Plombier",
+    "phone": "06 56 69 24 15",
+    "primary_email": "plomberiesaintfelix@gmail.com",
+    "opportunity_score": 0,
+    "first_seen": "2026-11-18"
+  },
+  "slug_servicedépannageplomberiechauffage_nantes": {
+    "id": "lead_7_1795029696",
+    "name": "Service Dépannage Plomberie Chauffage",
+    "city": "Nantes",
+    "category": "Plombier",
+    "phone": null,
+    "primary_email": "contact@serf-plomberie-chauffagiste.fr",
+    "opportunity_score": 15,
+    "first_seen": "2026-11-18"
+  }
+}

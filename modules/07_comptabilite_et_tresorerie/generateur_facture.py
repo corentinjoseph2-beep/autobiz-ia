@@ -23,6 +23,7 @@ FACTURES_DIR = CURRENT_DIR / "factures_emises"
 CONFIG_FILE = CURRENT_DIR / "config_comptable.json"
 REGISTRE_JSON = CURRENT_DIR / "registre_recettes.json"
 LIVRE_CSV = CURRENT_DIR / "livre_recettes.csv"
+REGISTRE_CSV = CURRENT_DIR / "registre_recettes.csv"
 
 FACTURES_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -99,8 +100,8 @@ def obtenir_prochain_numero_facture(config: dict) -> Tuple[str, int]:
     Détermine le numéro séquentiel d'après le registre et la configuration.
     """
     registre = charger_registre()
-    prefixe = config.get("sequence_facturation", {}).get("prefixe", "FAC-2026-")
-    longueur = config.get("sequence_facturation", {}).get("longueur_chiffres", 4)
+    prefixe = config.get("sequence_facturation", {}).get("prefixe", "FA-2026-")
+    longueur = config.get("sequence_facturation", {}).get("longueur_chiffres", 3)
     prochain_num_cfg = config.get("sequence_facturation", {}).get("prochain_numero", 1)
 
     max_num_existant = 0
@@ -120,43 +121,47 @@ def obtenir_prochain_numero_facture(config: dict) -> Tuple[str, int]:
 
 
 def initialiser_livre_recettes_si_necessaire() -> None:
-    """Crée le header CSV du livre des recettes officiel s'il n'existe pas."""
-    if not LIVRE_CSV.exists() or LIVRE_CSV.stat().st_size == 0:
-        with open(LIVRE_CSV, "w", newline="", encoding="utf-8") as f:
-            writer = csv.writer(f, delimiter=";")
-            writer.writerow([
-                "Date Encaissement",
-                "Numéro Facture",
-                "Nom Client / Raison Sociale",
-                "Nature Prestation",
-                "Montant HT (€)",
-                "TVA (€)",
-                "Montant TTC (€)",
-                "Mode Règlement",
-                "Réf. Transaction Stripe",
-                "Frais Stripe Estimés (€)",
-                "Net Encaissé (€)"
-            ])
+    """Crée l'en-tête CSV du livre/registre des recettes officiel s'il n'existe pas."""
+    entetes = [
+        "Date Encaissement",
+        "Numéro Facture",
+        "Nom Client / Raison Sociale",
+        "Nature Prestation",
+        "Montant HT (€)",
+        "TVA (€)",
+        "Montant TTC (€)",
+        "Mode Règlement",
+        "Réf. Transaction Stripe",
+        "Frais Stripe Estimés (€)",
+        "Net Encaissé (€)"
+    ]
+    for fichier_csv in [LIVRE_CSV, REGISTRE_CSV]:
+        if not fichier_csv.exists() or fichier_csv.stat().st_size == 0:
+            with open(fichier_csv, "w", newline="", encoding="utf-8") as f:
+                writer = csv.writer(f, delimiter=";")
+                writer.writerow(entetes)
 
 
 def enregistrer_dans_livre_recettes(recette: dict) -> None:
-    """Ajoute une ligne comptable au livre des recettes CSV."""
+    """Ajoute une ligne comptable au registre et au livre des recettes CSV."""
     initialiser_livre_recettes_si_necessaire()
-    with open(LIVRE_CSV, "a", newline="", encoding="utf-8") as f:
-        writer = csv.writer(f, delimiter=";")
-        writer.writerow([
-            recette.get("date_paiement", ""),
-            recette.get("numero_facture", ""),
-            recette.get("client_nom", ""),
-            recette.get("designation", ""),
-            f"{recette.get('montant_ht', 0.0):.2f}".replace(".", ","),
-            f"{recette.get('montant_tva', 0.0):.2f}".replace(".", ","),
-            f"{recette.get('montant_ttc', 0.0):.2f}".replace(".", ","),
-            recette.get("mode_reglement", "Carte Bancaire"),
-            recette.get("reference_stripe", ""),
-            f"{recette.get('frais_stripe', 0.0):.2f}".replace(".", ","),
-            f"{recette.get('net_encaisse', 0.0):.2f}".replace(".", ",")
-        ])
+    ligne = [
+        recette.get("date_paiement", ""),
+        recette.get("numero_facture", ""),
+        recette.get("client_nom", ""),
+        recette.get("designation", ""),
+        f"{recette.get('montant_ht', 0.0):.2f}".replace(".", ","),
+        f"{recette.get('montant_tva', 0.0):.2f}".replace(".", ","),
+        f"{recette.get('montant_ttc', 0.0):.2f}".replace(".", ","),
+        recette.get("mode_reglement", "Carte Bancaire"),
+        recette.get("reference_stripe", ""),
+        f"{recette.get('frais_stripe', 0.0):.2f}".replace(".", ","),
+        f"{recette.get('net_encaisse', 0.0):.2f}".replace(".", ",")
+    ]
+    for fichier_csv in [LIVRE_CSV, REGISTRE_CSV]:
+        with open(fichier_csv, "a", newline="", encoding="utf-8") as f:
+            writer = csv.writer(f, delimiter=";")
+            writer.writerow(ligne)
 
 
 def generer_facture(
@@ -280,6 +285,13 @@ def generer_facture(
         # Mise à jour de la séquence
         config["sequence_facturation"]["prochain_numero"] = prochain_seq + 1
         sauvegarder_config(config)
+
+        # Synchronisation automatique du tableau de bord
+        try:
+            from dashboard_tresorerie import synchroniser_dashboard
+            synchroniser_dashboard(afficher_console=False)
+        except Exception:
+            pass
 
     return {
         "success": True,

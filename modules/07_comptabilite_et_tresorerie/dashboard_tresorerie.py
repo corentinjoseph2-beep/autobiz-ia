@@ -20,6 +20,7 @@ CONFIG_FILE = CURRENT_DIR / "config_comptable.json"
 REGISTRE_JSON = CURRENT_DIR / "registre_recettes.json"
 DEPENSES_JSON = CURRENT_DIR / "depenses_engagees.json"
 STATUS_MD = CURRENT_DIR / "STATUS.md"
+TABLEAU_DE_BORD_MD = CURRENT_DIR / "tableau_de_bord_1000eur.md"
 DASHBOARD_HTML = CURRENT_DIR / "dashboard.html"
 
 
@@ -411,9 +412,11 @@ def synchroniser_dashboard(afficher_console: bool = True) -> Dict[str, Any]:
     data = charger_donnees()
     kpi = calculer_kpis(data)
 
-    # Écriture de STATUS.md
+    # Écriture de STATUS.md et tableau_de_bord_1000eur.md
     md_content = generer_markdown_status(kpi)
     with open(STATUS_MD, "w", encoding="utf-8") as f:
+        f.write(md_content)
+    with open(TABLEAU_DE_BORD_MD, "w", encoding="utf-8") as f:
         f.write(md_content)
 
     # Écriture de dashboard.html
@@ -438,7 +441,7 @@ def synchroniser_dashboard(afficher_console: bool = True) -> Dict[str, Any]:
             etat = "✅ DÉBLOQUÉ" if p["atteint"] else f"⏳ {p['pct_progression']}%"
             print(f"  • {p['seuil_ca']:.0f} € : {p['titre']} [{etat}] (~{p['allocation']:.0f} €)")
         print("=" * 65)
-        print(f"📄 Markdown généré : {STATUS_MD.name}")
+        print(f"📄 Markdown générés: {STATUS_MD.name} & {TABLEAU_DE_BORD_MD.name}")
         print(f"🌐 Dashboard Web   : {DASHBOARD_HTML.name}\n")
 
     return kpi

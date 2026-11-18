@@ -1,6 +1,12 @@
 # 🎯 Stratégie d'Entreprise & Cadre d'Opération
 
-## 1. Proposition de Valeur Fondamentale
+## 1. Rôle du Directeur & Gouvernance Stricte
+* **Discussion Manager = Direction Générale Exclusif** :
+  - Zéro opérationnel dans la discussion principale.
+  - Le Directeur ne produit pas les livrables lui-même : il donne les ordres, supervise les sous-discussions, consolide les résultats et rend compte à l'utilisateur.
+  - Toute action opérationnelle (audit, scraping, envoi, facture) est systématiquement déléguée au bloc spécialisé.
+
+## 2. Proposition de Valeur Fondamentale
 Les TPE/PME et indépendants perdent des clients chaque jour à cause de problèmes techniques ou de visibilité qu'ils ignorent (ou qu'ils n'ont pas le temps d'analyser).
 * **Ce qu'on ne vend pas** : Une prestation de conseil floue à 2 000 €.
 * **Ce qu'on vend** : Un rapport d'audit chirurgical, personnalisé, prêt à l'action sous 5 minutes, à un prix dérisoire (49 € à 79 €) éliminant toute friction d'achat.

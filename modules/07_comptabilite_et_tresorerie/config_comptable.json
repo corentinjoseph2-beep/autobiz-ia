@@ -17,7 +17,7 @@
   },
   "fiscalite": {
     "regime_tva": "franchise_en_base",
-    "mention_exoneration_tva": "TVA non applicable, art. 293 B du Code Général des Impôts (CGI)",
+    "mention_exoneration_tva": "TVA non applicable, art. 293 B du CGI",
     "taux_tva_pourcent": 0.0,
     "taux_penalites_retard": "Taux d'intérêt légal majoré de 10 points de pourcentage",
     "indemnite_forfaitaire_recouvrement_eur": 40.0
@@ -38,9 +38,9 @@
     "ventes_cibles": 21
   },
   "sequence_facturation": {
-    "prefixe": "FAC-2026-",
-    "prochain_numero": 2,
-    "longueur_chiffres": 4
+    "prefixe": "FA-2026-",
+    "prochain_numero": 4,
+    "longueur_chiffres": 3
   },
   "paliers_reinvestissement": [
     {

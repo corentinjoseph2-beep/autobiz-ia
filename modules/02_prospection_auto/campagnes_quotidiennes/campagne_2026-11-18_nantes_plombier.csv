@@ -1,0 +1,6 @@
+﻿name,opportunity_score,status_outbound,primary_email,phone,city,rating,reviews_count,main_hook,has_website,website
+Le petit plombier nantes,25,READY_FOR_SENDING,contact@lepetitplombiernantes.fr,02 85 52 97 08,Nantes,5.0,4,"avec seulement 4 avis clients, Google privilégie automatiquement vos confrères plus actifs dans le pack local",True,https://lepetitplombiernantes.fr/
+Alya plomberie - Plombier Nantes,0,READY_FOR_SENDING,alya.plomberie44@gmail.com,06 75 86 88 69,Nantes,5.0,22,l'optimisation de vos avis clients et du pack local Google Maps,True,https://alyaplomberie.com/
+Plombier dépannage Nantes RG Services,0,READY_FOR_SENDING,votre@email.com,07 73 71 51 01,Nantes,4.7,15,l'optimisation de vos avis clients et du pack local Google Maps,True,http://www.rg-plomberie-nantes.fr/
+PLOMBERIE SAINT FELIX,0,READY_FOR_SENDING,plomberiesaintfelix@gmail.com,06 56 69 24 15,Nantes,4.8,21,l'optimisation de vos avis clients et du pack local Google Maps,True,https://www.plomberiesaintfelix.fr/
+Service Dépannage Plomberie Chauffage,15,READY_FOR_SENDING,contact@serf-plomberie-chauffagiste.fr,,Nantes,5.0,107,l'optimisation de vos avis clients et du pack local Google Maps,True,https://serf-plomberie-chauffagiste.fr/

@@ -1,0 +1,207 @@
+[
+  {
+    "id": "lead_14_1795029698",
+    "name": "Le petit plombier nantes",
+    "category": "Plombier",
+    "rating": 5.0,
+    "reviews_count": 4,
+    "address": "5 Rue des Cordeliers",
+    "city": "Nantes",
+    "phone": "02 85 52 97 08",
+    "website": "https://lepetitplombiernantes.fr/",
+    "has_website": true,
+    "google_maps_url": "https://www.google.com/maps/place/Le+petit+plombier+nantes/data=!4m7!3m6!1s0x8fdc4f3e5939b561:0x2a58a9a65081da51!8m2!3d47.2187821!4d-1.5528841!16s%2Fg%2F11zzny0sn4!19sChIJYbU5WT5P3I8RUdqBUKapWCo?authuser=0&hl=fr&g_ep=EgoyMDI2MTExNi4wIJJjKgBIAVAD&rclk=1",
+    "scraped_at": "2026-11-18T19:21:38.291272Z",
+    "opportunity_score": 25,
+    "is_qualified_lead": false,
+    "weaknesses_count": 1,
+    "weaknesses": [
+      {
+        "code": "AVIS_QUASI_INEXISTANTS",
+        "titre": "Volume d'avis insuffisant (4 avis)",
+        "impact": "Google pénalise le référencement local des fiches avec peu de retours d'expérience récents.",
+        "urgence": "Élevée"
+      }
+    ],
+    "main_hook": "avec seulement 4 avis clients, Google privilégie automatiquement vos confrères plus actifs dans le pack local",
+    "fingerprint": "phone_285529708",
+    "emails_found": [
+      "contact@lepetitplombiernantes.fr"
+    ],
+    "primary_email": "contact@lepetitplombiernantes.fr",
+    "dirigeant": null,
+    "siret": null,
+    "siren": null,
+    "primary_channel": "EMAIL_COLD",
+    "outbound_status": "READY_TO_SEND",
+    "enriched_at": "2026-11-18T19:21:44.829561Z",
+    "email_preview": {
+      "subject": "Fiche Google Le petit plombier nantes (remarque rapide)",
+      "recipient_email": "contact@lepetitplombiernantes.fr",
+      "recipient_name": "Le petit plombier nantes",
+      "body": "Bonjour,\n\nEn regardant les fiches des plombiers sur Google Maps à Nantes, je suis tombé sur votre établissement Le petit plombier nantes.\n\nUn point précis a attiré mon attention : avec seulement 4 avis clients, Google privilégie automatiquement vos confrères plus actifs dans le pack local.\n\nVoici le diagnostic rapide en 3 constats :\n1. Sur smartphone, Google met en avant les 3 premiers résultats locaux. Votre configuration actuelle vous fait perdre entre 25% et 40% des appels au profit de vos confrères directs.\n2. Vos avis récents ne bénéficient pas d'une réponse optimisée selon les critères de l'algorithme Google (qui favorise les mots-clés d'intervention dans les réponses).\n3. Deux modifications simples dans vos paramètres de fiche permettraient de sécuriser votre position locale dès cette semaine.\n\nJ'ai compilé l'audit correctif complet de votre fiche (analyse concurrentielle à Nantes, plan d'action en 7 étapes et modèles de réponses prêts à l'emploi) :\n\n👉 Débloquer votre audit complet et votre plan d'action (49 €) :\nhttps://buy.stripe.com/5kQ5kDeuJ6BJ2js7YE8N201?ref=lead_14_1795029698\n\n(Rapport généré immédiatement après règlement, garanti satisfait ou remboursé sous 14 jours si vous n'obtenez pas de résultat concret).\n\nBien cordialement,\n\nCorentin — AutoBiz IA\nObservatoire de la Visibilité Locale\nP.S. : Si vous ne souhaitez plus recevoir nos analyses locales, répondez simplement \"Stop\"."
+    },
+    "status_outbound": "READY_FOR_SENDING",
+    "campagne_date": "2026-11-18"
+  },
+  {
+    "id": "lead_4_1795029696",
+    "name": "Alya plomberie - Plombier Nantes",
+    "category": "Plombier",
+    "rating": 5.0,
+    "reviews_count": 22,
+    "address": "27 Rue des Renards",
+    "city": "Nantes",
+    "phone": "06 75 86 88 69",
+    "website": "https://alyaplomberie.com/",
+    "has_website": true,
+    "google_maps_url": "https://www.google.com/maps/place/Alya+plomberie+-+Plombier+Nantes/data=!4m7!3m6!1s0x8b0fe8bf05ef93b7:0x825faae97bafae02!8m2!3d47.2554439!4d-1.5661769!16s%2Fg%2F11zbsx_1cv!19sChIJt5PvBb_oD4sRAq6ve-mqX4I?authuser=0&hl=fr&g_ep=EgoyMDI2MTExNi4wIJJjKgBIAVAD&rclk=1",
+    "scraped_at": "2026-11-18T19:21:36.355668Z",
+    "opportunity_score": 0,
+    "is_qualified_lead": false,
+    "weaknesses_count": 0,
+    "weaknesses": [],
+    "main_hook": "l'optimisation de vos avis clients et du pack local Google Maps",
+    "fingerprint": "phone_675868869",
+    "emails_found": [
+      "alya.plomberie44@gmail.com"
+    ],
+    "primary_email": "alya.plomberie44@gmail.com",
+    "dirigeant": null,
+    "siret": "61575268186226",
+    "siren": null,
+    "primary_channel": "EMAIL_COLD",
+    "outbound_status": "READY_TO_SEND",
+    "enriched_at": "2026-11-18T19:21:45.574914Z",
+    "email_preview": {
+      "subject": "Fiche Google Alya plomberie - Plombier Nantes (remarque rapide)",
+      "recipient_email": "alya.plomberie44@gmail.com",
+      "recipient_name": "Alya plomberie - Plombier Nantes",
+      "body": "Bonjour,\n\nEn regardant les fiches des plombiers sur Google Maps à Nantes, je suis tombé sur votre établissement Alya plomberie - Plombier Nantes.\n\nUn point précis a attiré mon attention : l'optimisation de vos avis clients et du pack local Google Maps.\n\nVoici le diagnostic rapide en 3 constats :\n1. Sur smartphone, Google met en avant les 3 premiers résultats locaux. Votre configuration actuelle vous fait perdre entre 25% et 40% des appels au profit de vos confrères directs.\n2. Vos avis récents ne bénéficient pas d'une réponse optimisée selon les critères de l'algorithme Google (qui favorise les mots-clés d'intervention dans les réponses).\n3. Deux modifications simples dans vos paramètres de fiche permettraient de sécuriser votre position locale dès cette semaine.\n\nJ'ai compilé l'audit correctif complet de votre fiche (analyse concurrentielle à Nantes, plan d'action en 7 étapes et modèles de réponses prêts à l'emploi) :\n\n👉 Débloquer votre audit complet et votre plan d'action (49 €) :\nhttps://buy.stripe.com/5kQ5kDeuJ6BJ2js7YE8N201?ref=lead_4_1795029696\n\n(Rapport généré immédiatement après règlement, garanti satisfait ou remboursé sous 14 jours si vous n'obtenez pas de résultat concret).\n\nBien cordialement,\n\nCorentin — AutoBiz IA\nObservatoire de la Visibilité Locale\nP.S. : Si vous ne souhaitez plus recevoir nos analyses locales, répondez simplement \"Stop\"."
+    },
+    "status_outbound": "READY_FOR_SENDING",
+    "campagne_date": "2026-11-18"
+  },
+  {
+    "id": "lead_10_1795029698",
+    "name": "Plombier dépannage Nantes RG Services",
+    "category": "Plombier",
+    "rating": 4.7,
+    "reviews_count": 15,
+    "address": "33 Rue Amédée Ménard",
+    "city": "Nantes",
+    "phone": "07 73 71 51 01",
+    "website": "http://www.rg-plomberie-nantes.fr/",
+    "has_website": true,
+    "google_maps_url": "https://www.google.com/maps/place/Plombier+d%C3%A9pannage+Nantes+RG+Services/data=!4m7!3m6!1s0x84c3ffff2f52b651:0xd1858560c05998e5!8m2!3d47.2361816!4d-1.5594561!16s%2Fg%2F11nv2dn8rc!19sChIJUbZSL___w4QR5ZhZwGCFhdE?authuser=0&hl=fr&g_ep=EgoyMDI2MTExNi4wIJJjKgBIAVAD&rclk=1",
+    "scraped_at": "2026-11-18T19:21:38.275359Z",
+    "opportunity_score": 0,
+    "is_qualified_lead": false,
+    "weaknesses_count": 0,
+    "weaknesses": [],
+    "main_hook": "l'optimisation de vos avis clients et du pack local Google Maps",
+    "fingerprint": "phone_773715101",
+    "emails_found": [
+      "votre@email.com",
+      "rgservices@rg-plomberie-nantes.fr"
+    ],
+    "primary_email": "votre@email.com",
+    "dirigeant": null,
+    "siret": null,
+    "siren": null,
+    "primary_channel": "EMAIL_COLD",
+    "outbound_status": "READY_TO_SEND",
+    "enriched_at": "2026-11-18T19:21:45.994645Z",
+    "email_preview": {
+      "subject": "Fiche Google Plombier dépannage Nantes RG Services (remarque rapide)",
+      "recipient_email": "votre@email.com",
+      "recipient_name": "Plombier dépannage Nantes RG Services",
+      "body": "Bonjour,\n\nEn regardant les fiches des plombiers sur Google Maps à Nantes, je suis tombé sur votre établissement Plombier dépannage Nantes RG Services.\n\nUn point précis a attiré mon attention : l'optimisation de vos avis clients et du pack local Google Maps.\n\nVoici le diagnostic rapide en 3 constats :\n1. Sur smartphone, Google met en avant les 3 premiers résultats locaux. Votre configuration actuelle vous fait perdre entre 25% et 40% des appels au profit de vos confrères directs.\n2. Vos avis récents ne bénéficient pas d'une réponse optimisée selon les critères de l'algorithme Google (qui favorise les mots-clés d'intervention dans les réponses).\n3. Deux modifications simples dans vos paramètres de fiche permettraient de sécuriser votre position locale dès cette semaine.\n\nJ'ai compilé l'audit correctif complet de votre fiche (analyse concurrentielle à Nantes, plan d'action en 7 étapes et modèles de réponses prêts à l'emploi) :\n\n👉 Débloquer votre audit complet et votre plan d'action (49 €) :\nhttps://buy.stripe.com/5kQ5kDeuJ6BJ2js7YE8N201?ref=lead_10_1795029698\n\n(Rapport généré immédiatement après règlement, garanti satisfait ou remboursé sous 14 jours si vous n'obtenez pas de résultat concret).\n\nBien cordialement,\n\nCorentin — AutoBiz IA\nObservatoire de la Visibilité Locale\nP.S. : Si vous ne souhaitez plus recevoir nos analyses locales, répondez simplement \"Stop\"."
+    },
+    "status_outbound": "READY_FOR_SENDING",
+    "campagne_date": "2026-11-18"
+  },
+  {
+    "id": "lead_12_1795029698",
+    "name": "PLOMBERIE SAINT FELIX",
+    "category": "Plombier",
+    "rating": 4.8,
+    "reviews_count": 21,
+    "address": "7 Rue Beethoven",
+    "city": "Nantes",
+    "phone": "06 56 69 24 15",
+    "website": "https://www.plomberiesaintfelix.fr/",
+    "has_website": true,
+    "google_maps_url": "https://www.google.com/maps/place/PLOMBERIE+SAINT+FELIX/data=!4m7!3m6!1s0x45b26841788f6fe3:0x93e047aee688fbf5!8m2!3d47.2393862!4d-1.5639771!16s%2Fg%2F11w23hbl37!19sChIJ42-PeEFoskUR9fuI5q5H4JM?authuser=0&hl=fr&g_ep=EgoyMDI2MTExNi4wIJJjKgBIAVAD&rclk=1",
+    "scraped_at": "2026-11-18T19:21:38.283635Z",
+    "opportunity_score": 0,
+    "is_qualified_lead": false,
+    "weaknesses_count": 0,
+    "weaknesses": [],
+    "main_hook": "l'optimisation de vos avis clients et du pack local Google Maps",
+    "fingerprint": "phone_656692415",
+    "emails_found": [
+      "plomberiesaintfelix@gmail.com"
+    ],
+    "primary_email": "plomberiesaintfelix@gmail.com",
+    "dirigeant": null,
+    "siret": "92253142100019",
+    "siren": null,
+    "primary_channel": "EMAIL_COLD",
+    "outbound_status": "READY_TO_SEND",
+    "enriched_at": "2026-11-18T19:21:47.075342Z",
+    "email_preview": {
+      "subject": "Fiche Google PLOMBERIE SAINT FELIX (remarque rapide)",
+      "recipient_email": "plomberiesaintfelix@gmail.com",
+      "recipient_name": "PLOMBERIE SAINT FELIX",
+      "body": "Bonjour,\n\nEn regardant les fiches des plombiers sur Google Maps à Nantes, je suis tombé sur votre établissement PLOMBERIE SAINT FELIX.\n\nUn point précis a attiré mon attention : l'optimisation de vos avis clients et du pack local Google Maps.\n\nVoici le diagnostic rapide en 3 constats :\n1. Sur smartphone, Google met en avant les 3 premiers résultats locaux. Votre configuration actuelle vous fait perdre entre 25% et 40% des appels au profit de vos confrères directs.\n2. Vos avis récents ne bénéficient pas d'une réponse optimisée selon les critères de l'algorithme Google (qui favorise les mots-clés d'intervention dans les réponses).\n3. Deux modifications simples dans vos paramètres de fiche permettraient de sécuriser votre position locale dès cette semaine.\n\nJ'ai compilé l'audit correctif complet de votre fiche (analyse concurrentielle à Nantes, plan d'action en 7 étapes et modèles de réponses prêts à l'emploi) :\n\n👉 Débloquer votre audit complet et votre plan d'action (49 €) :\nhttps://buy.stripe.com/5kQ5kDeuJ6BJ2js7YE8N201?ref=lead_12_1795029698\n\n(Rapport généré immédiatement après règlement, garanti satisfait ou remboursé sous 14 jours si vous n'obtenez pas de résultat concret).\n\nBien cordialement,\n\nCorentin — AutoBiz IA\nObservatoire de la Visibilité Locale\nP.S. : Si vous ne souhaitez plus recevoir nos analyses locales, répondez simplement \"Stop\"."
+    },
+    "status_outbound": "READY_FOR_SENDING",
+    "campagne_date": "2026-11-18"
+  },
+  {
+    "id": "lead_7_1795029696",
+    "name": "Service Dépannage Plomberie Chauffage",
+    "category": "Plombier",
+    "rating": 5.0,
+    "reviews_count": 107,
+    "address": "19 Rue Claude et Simone Millot",
+    "city": "Nantes",
+    "phone": null,
+    "website": "https://serf-plomberie-chauffagiste.fr/",
+    "has_website": true,
+    "google_maps_url": "https://www.google.com/maps/place/Service+D%C3%A9pannage+Plomberie+Chauffage/data=!4m7!3m6!1s0xa9df9e52cc880e8d:0xbf9deb11e0ea9589!8m2!3d47.2614248!4d-1.5153171!16s%2Fg%2F11m5z6p328!19sChIJjQ6IzFKe36kRiZXq4BHrnb8?authuser=0&hl=fr&g_ep=EgoyMDI2MTExNi4wIJJjKgBIAVAD&rclk=1",
+    "scraped_at": "2026-11-18T19:21:36.383151Z",
+    "opportunity_score": 15,
+    "is_qualified_lead": false,
+    "weaknesses_count": 1,
+    "weaknesses": [
+      {
+        "code": "TELEPHONE_MANQUANT",
+        "titre": "Numéro de téléphone direct non affiché",
+        "impact": "Impossibilité pour les utilisateurs mobiles de cliquer pour appeler en urgence.",
+        "urgence": "Critique"
+      }
+    ],
+    "main_hook": "l'optimisation de vos avis clients et du pack local Google Maps",
+    "fingerprint": "slug_servicedépannageplomberiechauffage_nantes",
+    "emails_found": [
+      "contact@serf-plomberie-chauffagiste.fr"
+    ],
+    "primary_email": "contact@serf-plomberie-chauffagiste.fr",
+    "dirigeant": null,
+    "siret": null,
+    "siren": null,
+    "primary_channel": "EMAIL_COLD",
+    "outbound_status": "READY_TO_SEND",
+    "enriched_at": "2026-11-18T19:21:48.673312Z",
+    "email_preview": {
+      "subject": "Fiche Google Service Dépannage Plomberie Chauffage (remarque rapide)",
+      "recipient_email": "contact@serf-plomberie-chauffagiste.fr",
+      "recipient_name": "Service Dépannage Plomberie Chauffage",
+      "body": "Bonjour,\n\nEn regardant les fiches des plombiers sur Google Maps à Nantes, je suis tombé sur votre établissement Service Dépannage Plomberie Chauffage.\n\nUn point précis a attiré mon attention : l'optimisation de vos avis clients et du pack local Google Maps.\n\nVoici le diagnostic rapide en 3 constats :\n1. Sur smartphone, Google met en avant les 3 premiers résultats locaux. Votre configuration actuelle vous fait perdre entre 25% et 40% des appels au profit de vos confrères directs.\n2. Vos avis récents ne bénéficient pas d'une réponse optimisée selon les critères de l'algorithme Google (qui favorise les mots-clés d'intervention dans les réponses).\n3. Deux modifications simples dans vos paramètres de fiche permettraient de sécuriser votre position locale dès cette semaine.\n\nJ'ai compilé l'audit correctif complet de votre fiche (analyse concurrentielle à Nantes, plan d'action en 7 étapes et modèles de réponses prêts à l'emploi) :\n\n👉 Débloquer votre audit complet et votre plan d'action (49 €) :\nhttps://buy.stripe.com/5kQ5kDeuJ6BJ2js7YE8N201?ref=lead_7_1795029696\n\n(Rapport généré immédiatement après règlement, garanti satisfait ou remboursé sous 14 jours si vous n'obtenez pas de résultat concret).\n\nBien cordialement,\n\nCorentin — AutoBiz IA\nObservatoire de la Visibilité Locale\nP.S. : Si vous ne souhaitez plus recevoir nos analyses locales, répondez simplement \"Stop\"."
+    },
+    "status_outbound": "READY_FOR_SENDING",
+    "campagne_date": "2026-11-18"
+  }
+]

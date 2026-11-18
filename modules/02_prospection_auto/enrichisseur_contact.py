@@ -41,7 +41,8 @@ BLACKLIST_DOMAINS = {
     "example.com", "domain.com", "votredomaine.fr", "wixpress.com",
     "sentry.io", "wordpress.org", "wix.com", "schema.org", "googleapis.com",
     "cloudflare.com", "bootstrap.com", "gravatar.com", "local.host",
-    "prestashop.com", "shopify.com", "google.com", "facebook.com"
+    "prestashop.com", "shopify.com", "google.com", "facebook.com",
+    "email.com", "yourdomain.com", "votresite.com", "votresite.fr"
 }
 
 BLACKLIST_EXTENSIONS = (

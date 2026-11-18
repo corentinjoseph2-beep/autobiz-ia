@@ -1,2 +1,4 @@
 Date Encaissement;Numéro Facture;Nom Client / Raison Sociale;Nature Prestation;Montant HT (€);TVA (€);Montant TTC (€);Mode Règlement;Réf. Transaction Stripe;Frais Stripe Estimés (€);Net Encaissé (€)
-18/11/2026 à 20:19;FAC-2026-0001;Boulangerie Saint-Honoré;Audit Stratégique Complet & Plan d'Action Local — Google Business Profile;49,00;0,00;49,00;Carte Bancaire (Stripe);cs_test_20261118201958;0,98;48,02
+18/11/2026 à 20:24;FA-2026-001;Boulangerie du Moulin;Audit Stratégique Complet & Plan d'Action Local — Google Business Profile;49,00;0,00;49,00;Carte Bancaire (Stripe);cs_live_20261118_moulin;0,98;48,02
+18/11/2026 à 20:27;FA-2026-002;Client Entreprise;Audit Stratégique Complet & Plan d'Action Local — Google Business Profile;49,00;0,00;49,00;Carte Bancaire (Stripe);cs_live_20261118202707;0,98;48,02
+18/11/2026 à 20:31;FA-2026-003;Dr. Jean Martin;Audit Stratégique Complet & Plan d'Action Local — Google Business Profile;49,00;0,00;49,00;Carte Bancaire (Stripe);cs_test_mock_123456;0,98;48,02
