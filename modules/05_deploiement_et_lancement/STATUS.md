@@ -1,7 +1,7 @@
 # 🚀 Statut du Module 05 : Déploiement Cloud & Lancement Réel
 
-- **État général** : 🟢 **Prêt au Lancement Opérationnel**
-- **Date de mise à jour** : 18/11/2026
+- **État général** : 🟡 **En attente de rotation de clé Stripe sur Render** / 🟢 **Infrastructure Cloud & Expéditeur Prêts**
+- **Date de mise à jour** : 19/11/2026 (Assainissement fuite de clé Stripe & Guide de renouvellement express)
 - **Responsable** : Agent Bloc 5 (Ingénieur DevOps & Déploiement Cloud)
 - **Budget engagé** : **0,00 € / 50,00 €** (Stratégie 100% Gratuite préservant la réserve intacte)
 
@@ -11,11 +11,12 @@
 
 | Composant | Fichier | Description | Statut |
 | :--- | :--- | :--- | :--- |
-| **Guide Déploiement 24/7** | `deploy_config.md` | Guide pas à pas de mise en ligne cloud gratuite (Render/Koyeb) en 3 minutes. | ✅ Terminé |
+| **Guide Déploiement 24/7** | `deploy_config.md` | Guide pas à pas de mise en ligne cloud gratuite (Render/Koyeb) — Assaini (clés remplacées par des placeholders). | ✅ Assaini |
 | **Infrastructure as Code** | `render.yaml` | Blueprint de déploiement automatisé en 1 clic pour Render.com. | ✅ Terminé |
 | **Conteneurisation Cloud** | `Dockerfile` | Image conteneur de production Python 3.11 avec Gunicorn multi-workers. | ✅ Terminé |
 | **Fichier Processus** | `Procfile` | Déclaration de commande de démarrage pour PaaS (Render, Railway, Fly). | ✅ Terminé |
-| **Fichier Variables** | `.env.example` | Template de configuration pour le webhook Stripe et le canal d'envoi. | ✅ Terminé |
+| **Fichier Variables** | `.env.example` | Template de configuration assaini pour le webhook Stripe et le canal d'envoi. | ✅ Assaini |
+| **Protocole Renouvellement Clés** | `PROTOCOLE_RENOUVELLEMENT_STRIPE.md` | Procédure express en 2 clics pour renouveler la clé Stripe et mettre à jour Render. | ✅ Disponible & Documenté |
 | **Expéditeur Réel** | `envoyeur_reel.py` | Script d'envoi sécurisé avec temporisation anti-spam (45-90s) et tracking. | ✅ Terminé & Testé |
 | **Base Prospects Batch 1** | `prospects_batch_1.json` | 15 prospects qualifiés (Bordeaux & Lyon) avec emails vérifiés et failles. | ✅ Terminé |
 | **Historique & Journalisation**| `envois_batch_1.log` | Traçabilité intégrale de chaque tentative et envoi. | ✅ Opérationnel |
@@ -28,7 +29,7 @@ Lien Stripe officiel injecté dans chaque email :
 `https://buy.stripe.com/5kQ5kDeuJ6BJ2js7YE8N201?client_reference_id={Réf}`
 
 | # | Entreprise | Ville | Métier | Email Cible | Note & Avis | Faille Google Maps Repérée | Réf Tracking Stripe | Statut |
-| :-: | :--- | :--- | :--- | :--- | :-: | :--- | :--- | :--- |
+| :-: | :--- | :--- | :--- | :--- | :--- | :-: | :--- | :--- | :--- |
 | 1 | **Bicycl'eau Plombier** | Bordeaux | Plombier | `contact@bicycleau.fr` | 4.9 (35) | Optimisation attributs & mots-clés d'intervention | `BATCH1_LEAD_01_BICYCLEAUPLO` | 🟡 Prêt à l'envoi |
 | 2 | **Napoléon Plomberie** | Bordeaux | Plombier Chauffagiste | `contact@napoleon-plomberie.com` | 4.9 (138) | Réponses sémantiques aux avis récents incomplètes | `BATCH1_LEAD_02_NAPOLONPLOMB` | 🟡 Prêt à l'envoi |
 | 3 | **Cafonso Serrurier** | Bordeaux | Serrurier | `caciano.afonso028@gmail.com` | 5.0 (23) | Volume d'avis sous le seuil critique Top 3 | `BATCH1_LEAD_03_CAFONSOSERRU` | 🟡 Prêt à l'envoi |
@@ -69,3 +70,26 @@ python3 modules/05_deploiement_et_lancement/envoyeur_reel.py --live
 - **Taux d'ouverture attendu** : > 50% (grâce à l'objet court et la personnalisation par ville).
 - **Objectif de conversion** : 1 à 2 ventes sur ce premier lot (**49 € à 98 € de CA initial**).
 - **Rentabilité** : Dépenses = 0 € -> Marge nette = 100%.
+
+---
+
+## 🛡️ 5. Registre des Incidents de Sécurité & Post-Mortem (19/11/2026)
+
+### 📌 Incident INC-2026-11-19-STRIPE-01
+- **Description** : Détection publique d'une clé API restreinte Stripe en clair (`rk_live_...dTcbQo`) dans les fichiers modèles de configuration (`modules/05_deploiement_et_lancement/.env.example` et `deploy_config.md`) via le commit initial `2ccc66b1`.
+- **Canal de détection** : Notification automatique de sécurité émise par Stripe vers l'adresse administrative (`vumavuma148@gmail.com`).
+- **Mesure de confinement immédiate Stripe** : Killswitch automatique appliqué par Stripe — la clé a été immédiatement désactivée et révoquée côté serveurs Stripe.
+- **Bilan d'impact & Analyse médico-légale** :
+  - **Pertes financières** : **0,00 €** (aucun détournement de fonds, aucun mouvement frauduleux).
+  - **Données sensibles** : Aucune exfiltration constatée (la clé restreinte ne donnait pas accès aux données bancaires brutes).
+  - **Disponibilité opérationnelle** : Le lien de paiement Stripe direct 49 € est 100% actif. Le webhook Render requiert l'injection de la nouvelle clé pour exécuter des requêtes Stripe authentifiées.
+- **Mesures d'assainissement appliquées** :
+  1. **Purge du code source** : Remplacement systématique de la clé exposée par le placeholder sécurisé `rk_live_votre_cle_ici`.
+  2. **Rédaction du protocole de renouvellement** : Fichier `PROTOCOLE_RENOUVELLEMENT_STRIPE.md` créé pour guider la Direction Générale (génération d'une nouvelle clé restreinte + mise à jour Render en 2 clics).
+  3. **Mise à jour documentaire** : Actualisation des statuts opérationnels des modules 04 et 05.
+  4. **Synchronisation Git** : Commit ciblé et push sécurisé vers la branche `main` sur GitHub.
+- **Procédure de reprise de service (RTO < 2 min)** :
+  1. Se connecter sur [dashboard.stripe.com/apikeys](https://dashboard.stripe.com/apikeys).
+  2. Cliquer sur **Créer une clé restreinte** (Permissions : Charges `Write`, Checkout Sessions `Write`, Webhook Endpoints `Read`).
+  3. Coller la nouvelle clé dans l'onglet **Environment** du service Webhook sur Render.com (`STRIPE_SECRET_KEY`).
+  4. Redémarrage automatique du service Render pris en compte.

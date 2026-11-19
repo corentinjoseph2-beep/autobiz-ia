@@ -50,7 +50,7 @@ Nous recommandons **Render.com** (référence mondiale, plan gratuit permanent a
    - **Instance Type** : `Free` (0 €/mois).
 
 5. Dans la section **Environment Variables**, ajoutez :
-   - `STRIPE_SECRET_KEY` = `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`
+   - `STRIPE_SECRET_KEY` = `rk_live_votre_cle_ici`
    - `FROM_EMAIL` = `AutoBiz IA <contact@autobiz-ia.fr>`
    - `SUPPORT_EMAIL` = `contact@autobiz-ia.fr`
    - *(Vos identifiants SMTP ou Resend pour l'expédition automatique du PDF)*
