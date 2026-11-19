@@ -90,6 +90,6 @@ python3 modules/05_deploiement_et_lancement/envoyeur_reel.py --live
   4. **Synchronisation Git** : Commit ciblé et push sécurisé vers la branche `main` sur GitHub.
 - **Procédure de reprise de service (RTO < 2 min)** :
   1. Se connecter sur [dashboard.stripe.com/apikeys](https://dashboard.stripe.com/apikeys).
-  2. Cliquer sur **Créer une clé restreinte** (Permissions : Charges `Write`, Checkout Sessions `Write`, Webhook Endpoints `Read`).
+  2. Cliquer sur **Créer une clé restreinte** (Permissions : Charges `Read`, Checkout Sessions `Read`, Webhook Endpoints `Read`).
   3. Coller la nouvelle clé dans l'onglet **Environment** du service Webhook sur Render.com (`STRIPE_SECRET_KEY`).
   4. Redémarrage automatique du service Render pris en compte.

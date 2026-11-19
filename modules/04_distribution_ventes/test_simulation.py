@@ -71,6 +71,38 @@ def test_pipeline():
     assert result["email_delivery"]["success"] is True
 
     print("\n==================================================")
+    print("🧪 TEST 3 : Validation de l'endpoint /webhook Flask avec Stripe-Signature")
+    print("==================================================")
+    import time, hmac, hashlib
+    from unittest.mock import patch
+    from webhook_listener import app
+    import webhook_listener
+
+    test_client = app.test_client()
+    dummy_secret = "whsec_test_secret_for_tests_123"
+    webhook_payload = json.dumps({
+        "id": "evt_test_webhook_123",
+        "type": "checkout.session.completed",
+        "data": {
+            "object": mock_session
+        }
+    }).encode("utf-8")
+    ts = int(time.time())
+    sig = hmac.new(dummy_secret.encode(), f"{ts}.".encode() + webhook_payload, hashlib.sha256).hexdigest()
+    sig_header = f"t={ts},v1={sig}"
+
+    with patch.object(webhook_listener, "WEBHOOK_SECRET", dummy_secret):
+        resp = test_client.post(
+            "/webhook",
+            data=webhook_payload,
+            headers={"Stripe-Signature": sig_header, "Content-Type": "application/json"}
+        )
+        assert resp.status_code == 200, f"Attendu 200, reçu {resp.status_code}: {resp.data}"
+        resp_data = resp.get_json()
+        assert resp_data.get("status") == "success"
+        print(f"✅ Webhook validé avec succès (HTTP 200, statut: {resp_data.get('status')})")
+
+    print("\n==================================================")
     print("🎉 TOUS LES TESTS SONT AU VERT ! Le pipeline est 100% prêt.")
     print("==================================================")
 

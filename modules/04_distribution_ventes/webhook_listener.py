@@ -131,6 +131,9 @@ def process_paid_session(session: Dict[str, Any]) -> Dict[str, Any]:
     2. Génère le rapport d'audit (Module 03 ou Fallback).
     3. Envoie l'email avec la pièce jointe.
     """
+    if hasattr(session, "to_dict"):
+        session = session.to_dict()
+
     customer_details = session.get("customer_details") or {}
     customer_email = customer_details.get("email") or session.get("customer_email")
     customer_name = customer_details.get("name") or "Client"
@@ -245,12 +248,24 @@ def process_paid_session(session: Dict[str, Any]) -> Dict[str, Any]:
 @app.route("/health", methods=["GET"])
 def health_check():
     """Vérification de l'état du serveur pour monitoring ou ping."""
+    stripe_configured = bool(
+        stripe.api_key
+        and not stripe.api_key.startswith(("sk_test_votre", "rk_live_votre"))
+        and "votre" not in stripe.api_key.lower()
+        and not stripe.api_key.endswith("...")
+    )
+    webhook_secret_set = bool(
+        WEBHOOK_SECRET
+        and not WEBHOOK_SECRET.startswith("whsec_votre")
+        and "votre" not in WEBHOOK_SECRET.lower()
+        and not WEBHOOK_SECRET.endswith("...")
+    )
     return jsonify({
         "status": "healthy",
         "service": "OptiLocal Webhook Listener",
         "module": "04_distribution_ventes",
-        "stripe_configured": bool(stripe.api_key and not stripe.api_key.startswith("sk_test_votre")),
-        "webhook_secret_set": bool(WEBHOOK_SECRET and not WEBHOOK_SECRET.startswith("whsec_votre")),
+        "stripe_configured": stripe_configured,
+        "webhook_secret_set": webhook_secret_set,
     }), 200
 
 
@@ -263,7 +278,12 @@ def stripe_webhook():
     event = None
 
     # Vérification cryptographique si le secret est configuré
-    if WEBHOOK_SECRET and not WEBHOOK_SECRET.startswith("whsec_votre"):
+    if (
+        WEBHOOK_SECRET
+        and not WEBHOOK_SECRET.startswith("whsec_votre")
+        and "votre" not in WEBHOOK_SECRET.lower()
+        and not WEBHOOK_SECRET.endswith("...")
+    ):
         try:
             event = stripe.Webhook.construct_event(
                 payload, sig_header, WEBHOOK_SECRET
@@ -281,6 +301,15 @@ def stripe_webhook():
         except Exception as e:
             logger.error(f"Impossible de parser le JSON en mode dev : {e}")
             return jsonify({"error": "Invalid JSON"}), 400
+
+    # Normalisation universelle de l'événement en dictionnaire Python
+    if hasattr(event, "to_dict"):
+        event = event.to_dict()
+    elif not isinstance(event, dict):
+        try:
+            event = dict(event)
+        except Exception:
+            pass
 
     event_type = event.get("type")
     logger.info(f"Événement Stripe reçu : {event_type}")
