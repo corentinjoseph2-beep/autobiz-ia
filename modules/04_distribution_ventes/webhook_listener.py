@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Serveur Webhook de Distribution & Vente — AutoBiz IA (Module 04).
+Serveur Webhook de Distribution & Vente — OptiLocal (Module 04).
 Écoute l'événement Stripe `checkout.session.completed`, déclenche la génération
 automatique de l'audit PDF (Module 03), et expédie le rapport par email au client.
 """
@@ -93,36 +93,35 @@ def get_invoice_generator_function():
     return None
 
 
-def generate_fallback_pdf(business_name: str, client_email: str, score: int = 58) -> str:
+def generate_fallback_pdf(business_name: str, client_email: str, score: int = 48) -> str:
     """
-    Générateur de secours : crée un rapport PDF professionnel temporaire
-    dans l'attente de la finalisation complète du Module 03 par l'agent Bloc 1.
+    Générateur autonome sécurisé : produit un rapport complet et dense de 4 pages
+    via le moteur autonome ReportLab. Élimine définitivement le risque de page blanche sur Render.
     """
-    from pypdf import PdfWriter
+    try:
+        from generateur_audit import generate_autonomous_pdf
+    except ImportError:
+        import sys
+        sys.path.insert(0, str(PROJECT_ROOT / "modules" / "03_moteur_audit_ia"))
+        from generateur_audit import generate_autonomous_pdf
 
     audits_dir = CURRENT_DIR / "generated_audits"
     audits_dir.mkdir(parents=True, exist_ok=True)
     
-    safe_slug = "".join(c if c.isalnum() else "_" for c in business_name).strip("_")
+    safe_slug = "".join(c if c.isalnum() else "_" for c in (business_name or "etablissement")).strip("_")[:50] or "etablissement"
     pdf_filename = f"Audit_Visibilite_{safe_slug}.pdf"
     pdf_path = audits_dir / pdf_filename
 
-    # Création d'un PDF minimaliste mais conforme aux specs
-    writer = PdfWriter()
-    # Ajout d'une page blanche avec métadonnées
-    page = writer.add_blank_page(width=595.27, height=841.89)  # Format A4
-    writer.add_metadata({
-        "/Title": f"Audit Stratégique Google Business - {business_name}",
-        "/Author": "AutoBiz IA",
-        "/Subject": f"Audit Local pour {business_name} ({client_email})",
-        "/Keywords": "Google Business Profile, SEO Local, Audit B2B",
-    })
-
-    with open(pdf_path, "wb") as f:
-        writer.write(f)
-
-    logger.info(f"Rapport d'audit temporaire généré avec succès : {pdf_path}")
-    return str(pdf_path)
+    logger.info(f"Génération du rapport autonome ReportLab pour '{business_name}'...")
+    res_path = generate_autonomous_pdf(
+        business_name=business_name or "Votre Établissement",
+        client_email=client_email or "",
+        audit_data=None,
+        score=score,
+        output_path=str(pdf_path),
+    )
+    logger.info(f"Rapport d'audit autonome généré avec succès : {res_path}")
+    return str(res_path)
 
 
 def process_paid_session(session: Dict[str, Any]) -> Dict[str, Any]:
@@ -139,7 +138,7 @@ def process_paid_session(session: Dict[str, Any]) -> Dict[str, Any]:
     # Extraction du nom d'établissement et de l'adresse depuis les custom_fields du Payment Link
     business_name = None
     business_address = None
-    custom_fields = session.get("custom_fields", [])
+    custom_fields = session.get("custom_fields") or []
     for field in custom_fields:
         key = field.get("key")
         val = field.get("text", {}).get("value")
@@ -248,7 +247,7 @@ def health_check():
     """Vérification de l'état du serveur pour monitoring ou ping."""
     return jsonify({
         "status": "healthy",
-        "service": "AutoBiz IA Webhook Listener",
+        "service": "OptiLocal Webhook Listener",
         "module": "04_distribution_ventes",
         "stripe_configured": bool(stripe.api_key and not stripe.api_key.startswith("sk_test_votre")),
         "webhook_secret_set": bool(WEBHOOK_SECRET and not WEBHOOK_SECRET.startswith("whsec_votre")),
@@ -298,7 +297,7 @@ def stripe_webhook():
 if __name__ == "__main__":
     import argparse
 
-    parser = argparse.ArgumentParser(description="AutoBiz IA Webhook Listener")
+    parser = argparse.ArgumentParser(description="OptiLocal Webhook Listener")
     parser.add_argument("--port", type=int, default=int(os.getenv("PORT", 5000)))
     parser.add_argument("--simulate", action="store_true", help="Simule un achat immédiatement sans lancer le serveur")
     args = parser.parse_args()

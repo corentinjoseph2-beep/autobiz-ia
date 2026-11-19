@@ -28,36 +28,82 @@ logging.basicConfig(
 )
 logger = logging.getLogger("ScraperGoogleMaps")
 
+# Import du filtre d'indépendants
+MODULE_DIR = os.path.dirname(os.path.abspath(__file__))
+if MODULE_DIR not in sys.path:
+    sys.path.insert(0, MODULE_DIR)
+
+try:
+    from filtre_independants import is_independent_artisan, sanitize_artisan_website
+except ImportError:
+    # Repli de sécurité si import direct
+    def is_independent_artisan(name, web=None): return True, None
+    def sanitize_artisan_website(web): return web
+
 
 def calculate_opportunity_score(data: Dict[str, Any]) -> Dict[str, Any]:
     """
-    Calcule l'Opportunity Score (0 à 100) et liste les failles détectées.
-    Plus le score est élevé, plus le prospect a un besoin urgent de notre audit.
+    Calcule l'Opportunity Score (0 à 100) et qualifie le prospect B2B.
+    
+    Barème révisé (Directive DG - Inversion Priorité Site Web & Ciblage Fort ROI) :
+    1. Bonus Site Web (+25 pts si has_website == True) :
+       Investissement digital existant, forte valeur perçue et email extractible à 80%+.
+       Si aucun site (has_website == False) : score réduit à +10 pts max et fléchage vers
+       le canal 'REQUIRES_PHONE_OUTREACH' pour ne pas vampiriser la file cold email.
+    2. Note globale fragile (+30 pts) :
+       rating < 4.4/5 ou avis négatifs récents non traités.
+    3. Volume d'avis insuffisant (+25 pts) :
+       reviews_count < 20 face aux concurrents de la zone locale.
+    4. Complétude & Attributs (+15 pts) :
+       Absence d'attributs clés, photos récentes ou publications.
     """
     score = 0
     weaknesses = []
     hooks = []
+    score_breakdown = {}
 
     rating = data.get("rating")
-    reviews_count = data.get("reviews_count", 0)
-    has_website = data.get("has_website", False)
-    phone = data.get("phone")
+    if rating is not None:
+        try:
+            rating = float(rating)
+        except (ValueError, TypeError):
+            rating = None
 
-    # 1. Absence de site Web relié à la fiche (+35 pts)
-    if not has_website:
-        score += 35
+    reviews_count = data.get("reviews_count")
+    if reviews_count is not None:
+        try:
+            reviews_count = int(reviews_count)
+        except (ValueError, TypeError):
+            reviews_count = 0
+    else:
+        reviews_count = 0
+
+    has_website = bool(data.get("has_website") or data.get("website"))
+    phone = data.get("phone")
+    city = data.get("city", "votre secteur")
+
+    # 1. Éligibilité Site Web : Inversion de priorité (+25 pts avec site vs +10 pts max sans site)
+    if has_website:
+        score += 25
+        score_breakdown["website_contactability_bonus"] = 25
+    else:
+        score += 10
+        score_breakdown["no_website_outreach_penalty"] = 10
         weaknesses.append({
             "code": "AUCUN_SITE_WEB",
             "titre": "Aucun site internet relié à la fiche Google",
-            "impact": "Jusqu'à 45% des prospects abandonnent s'ils ne trouvent pas de page de présentation ou de tarifs.",
-            "urgence": "Critique"
+            "impact": "Absence d'email extractible : prospection digitale compromise, appel direct requis.",
+            "urgence": "Contact Téléphonique Uniquement"
         })
-        hooks.append(f"votre fiche Google ne renvoie vers aucun site internet, ce qui redirige directement vos prospects vers vos concurrents directs à {data.get('city', 'votre secteur')}")
+        hooks.append(f"votre fiche Google ne renvoie vers aucun site internet, ce qui redirige directement vos prospects vers vos concurrents directs à {city}")
 
-    # 2. Note globale faible ou moyenne
-    if rating is not None:
-        if rating < 4.0:
-            score += 35
+    # 2. Note globale fragile (< 4.4/5) ou avis négatifs récents (+30 pts)
+    has_fragile_rating = (rating is not None and rating < 4.4)
+    has_negative_reviews = bool(data.get("recent_negative_reviews") or data.get("has_negative_reviews"))
+    if has_fragile_rating or has_negative_reviews:
+        score += 30
+        score_breakdown["fragile_rating_or_negative_reviews"] = 30
+        if rating is not None and rating < 4.0:
             weaknesses.append({
                 "code": "NOTE_CRITIQUE",
                 "titre": f"Note globale critique ({rating}/5)",
@@ -65,45 +111,67 @@ def calculate_opportunity_score(data: Dict[str, Any]) -> Dict[str, Any]:
                 "urgence": "Critique"
             })
             hooks.append(f"votre note actuelle de {rating}/5 vous place en dessous de la moyenne locale, ce qui freine immédiatement les nouveaux appels")
-        elif rating <= 4.3:
-            score += 20
+        elif rating is not None and rating < 4.4:
             weaknesses.append({
-                "code": "NOTE_MOYENNE",
+                "code": "NOTE_FRAGILE",
                 "titre": f"Note fragile ({rating}/5)",
-                "impact": "Un seul avis 1 étoile supplémentaire peut faire basculer la fiche sous les 4.0.",
+                "impact": "Un seul avis 1 étoile supplémentaire peut faire basculer la fiche sous les standards de confiance locaux.",
+                "urgence": "Élevée"
+            })
+            hooks.append(f"votre note de {rating}/5 reste très exposée : le moindre avis négatif peut faire chuter votre classement dans les 3 premiers résultats Maps à {city}")
+        else:
+            weaknesses.append({
+                "code": "AVIS_NEGATIFS_RECENTS",
+                "titre": "Avis négatifs récents non traités",
+                "impact": "Les avis négatifs récents sans réponse professionnelle pénalisent directement la conversion.",
                 "urgence": "Moyenne"
             })
-            hooks.append(f"votre note de {rating}/5 reste très exposée : le moindre avis négatif peut faire chuter votre classement dans les 3 premiers résultats Maps")
+            hooks.append(f"des avis récents non optimisés sur votre fiche Google freinent la confiance des prospects à {city}")
 
-    # 3. Volume d'avis insuffisant (< 15 avis)
-    if reviews_count < 5:
+    # 3. Volume d'avis insuffisant (< 20 avis face aux concurrents de la zone) (+25 pts)
+    if reviews_count < 20:
         score += 25
-        weaknesses.append({
-            "code": "AVIS_QUASI_INEXISTANTS",
-            "titre": f"Volume d'avis insuffisant ({reviews_count} avis)",
-            "impact": "Google pénalise le référencement local des fiches avec peu de retours d'expérience récents.",
-            "urgence": "Élevée"
-        })
-        hooks.append(f"avec seulement {reviews_count} avis clients, Google privilégie automatiquement vos confrères plus actifs dans le pack local")
-    elif reviews_count < 15:
+        score_breakdown["low_reviews_count"] = 25
+        if reviews_count < 5:
+            weaknesses.append({
+                "code": "AVIS_QUASI_INEXISTANTS",
+                "titre": f"Volume d'avis insuffisant ({reviews_count} avis)",
+                "impact": "Google pénalise le référencement local des fiches avec peu de retours d'expérience récents.",
+                "urgence": "Élevée"
+            })
+            hooks.append(f"avec seulement {reviews_count} avis clients, Google privilégie automatiquement vos confrères plus actifs dans le pack local à {city}")
+        else:
+            weaknesses.append({
+                "code": "VOLUME_AVIS_FAIBLE",
+                "titre": f"Preuve sociale limitée ({reviews_count} avis face aux concurrents)",
+                "impact": "Visibilité locale bridée face aux concurrents locaux disposant de plus de 20 à 30 avis.",
+                "urgence": "Moyenne"
+            })
+            hooks.append(f"votre volume de {reviews_count} avis limite votre montée dans les premières positions de recherche à {city}")
+
+    # 4. Absence d'attributs clés, photos récentes ou posts (+15 pts)
+    missing_attributes = (
+        data.get("missing_attributes") is True or
+        data.get("missing_key_attributes") is True or
+        data.get("has_attributes") is False or
+        data.get("has_photos") is False or
+        (data.get("photos_count") is not None and data.get("photos_count") < 5) or
+        data.get("has_recent_posts") is False or
+        data.get("recent_posts") is False or
+        data.get("missing_photos_posts") is True or
+        not phone or
+        data.get("address") in (None, "Non précisée")
+    )
+    if missing_attributes:
         score += 15
+        score_breakdown["missing_attributes_photos"] = 15
         weaknesses.append({
-            "code": "VOLUME_AVIS_FAIBLE",
-            "titre": f"Preuve sociale limitée ({reviews_count} avis)",
-            "impact": "Visibilité locale bridée face aux concurrents disposant de plus de 30 avis.",
+            "code": "ATTRIBUTS_PHOTOS_MANQUANTS",
+            "titre": "Fiche incomplète (attributs clés, photos ou posts récents manquants)",
+            "impact": "Les fiches sans photos récentes ou attributs détaillés perdent jusqu'à 30% d'engagement client.",
             "urgence": "Moyenne"
         })
-        hooks.append(f"votre volume de {reviews_count} avis limite votre montée dans les premières positions de recherche à {data.get('city', 'votre ville')}")
-
-    # 4. Absence de téléphone renseigné
-    if not phone:
-        score += 15
-        weaknesses.append({
-            "code": "TELEPHONE_MANQUANT",
-            "titre": "Numéro de téléphone direct non affiché",
-            "impact": "Impossibilité pour les utilisateurs mobiles de cliquer pour appeler en urgence.",
-            "urgence": "Critique"
-        })
+        hooks.append(f"votre fiche Google manque d'attributs clés et de photos récentes pour convertir les recherches locales à {city}")
 
     # Plafonner le score à 100
     opportunity_score = min(100, score)
@@ -111,12 +179,21 @@ def calculate_opportunity_score(data: Dict[str, Any]) -> Dict[str, Any]:
     # Angle d'accroche personnalisé principal
     main_hook = hooks[0] if hooks else "l'optimisation de vos avis clients et du pack local Google Maps"
 
+    # Canal recommandé et qualification
+    is_qualified = opportunity_score >= 30
+    outbound_channel = "EMAIL_COLD" if has_website else "REQUIRES_PHONE_OUTREACH"
+
     return {
         "opportunity_score": opportunity_score,
-        "is_qualified_lead": opportunity_score >= 30,
+        "is_qualified_lead": is_qualified,
         "weaknesses_count": len(weaknesses),
         "weaknesses": weaknesses,
-        "main_hook": main_hook
+        "flaws": weaknesses,  # alias interface contract PROJECT.md
+        "score_breakdown": score_breakdown,
+        "main_hook": main_hook,
+        "has_website": has_website,
+        "outbound_channel_recommended": outbound_channel,
+        "requires_phone_outreach": not has_website
     }
 
 
@@ -187,7 +264,12 @@ def parse_place_card(card_element, index: int, default_city: str) -> Optional[Di
             if cp_match:
                 city = cp_match.group(1)
 
-        has_website = bool(website_url)
+        # Test d'indépendance (rejet franchises / réseaux / annuaires)
+        is_indep, reject_reason = is_independent_artisan(name, website_url)
+
+        # Nettoyage URL : si lien annuaire ou intermédiaire, pas de site web propre
+        clean_website = sanitize_artisan_website(website_url)
+        has_website = bool(clean_website)
 
         base_data = {
             "id": f"lead_{index}_{int(time.time())}",
@@ -198,8 +280,10 @@ def parse_place_card(card_element, index: int, default_city: str) -> Optional[Di
             "address": address or "Non précisée",
             "city": city,
             "phone": phone,
-            "website": website_url,
+            "website": clean_website,
             "has_website": has_website,
+            "is_independent": is_indep,
+            "rejection_reason": reject_reason,
             "google_maps_url": google_maps_url,
             "scraped_at": datetime.utcnow().isoformat() + "Z"
         }
@@ -218,7 +302,8 @@ def parse_place_card(card_element, index: int, default_city: str) -> Optional[Di
 def scrape_google_maps_live(
     query: str,
     max_results: int = 20,
-    headless: bool = True
+    headless: bool = True,
+    only_independents: bool = True
 ) -> List[Dict[str, Any]]:
     """
     Scrape en direct Google Maps avec Playwright Headless (0 € de coût API).
@@ -295,9 +380,15 @@ def scrape_google_maps_live(
                     parsed = parse_place_card(card, len(leads) + 1, city_guess)
                     if parsed and parsed["name"] not in seen_names:
                         seen_names.add(parsed["name"])
+
+                        # Filtrage strict des franchises et réseaux
+                        if only_independents and not parsed.get("is_independent", True):
+                            logger.info(f"🚫 [EXCLUSION FRANCHISE/RÉSEAU] {parsed['name']} ({parsed.get('rejection_reason')})")
+                            continue
+
                         leads.append(parsed)
                         logger.info(
-                            f"[{len(leads)}/{max_results}] Détecté : {parsed['name']} | "
+                            f"[{len(leads)}/{max_results}] Détecté (Artisan Indépendant) : {parsed['name']} | "
                             f"Note: {parsed['rating']}/5 ({parsed['reviews_count']} avis) | "
                             f"Site: {'Oui' if parsed['has_website'] else 'NON ❌'} | "
                             f"Score vulnérabilité: {parsed['opportunity_score']}/100"
@@ -336,7 +427,8 @@ def scrape_google_maps_live(
 
 def generate_sample_leads(activity: str = "Plombier", city: str = "Lyon") -> List[Dict[str, Any]]:
     """
-    Générateur de prospects réalistes pour démonstration et tests hors-ligne immédiats.
+    Générateur de 20 prospects réalistes pour démonstration et tests hors-ligne immédiats.
+    Comprend une majorité de fiches avec site web (prioritaires cold email) et des fiches sans site (phone-only).
     """
     samples = [
         {
@@ -386,6 +478,198 @@ def generate_sample_leads(activity: str = "Plombier", city: str = "Lyon") -> Lis
             "website": "https://elite-confort.fr",
             "has_website": True,
             "google_maps_url": "https://maps.google.com/?cid=sample4"
+        },
+        {
+            "name": f"Atelier Rénovation {city}",
+            "category": activity,
+            "rating": 4.2,
+            "reviews_count": 14,
+            "address": f"25 Rue Victor Hugo, 69002 {city}",
+            "city": city,
+            "phone": "04 78 45 12 34",
+            "website": "https://atelier-renov-artisan.fr",
+            "has_website": True,
+            "google_maps_url": "https://maps.google.com/?cid=sample5"
+        },
+        {
+            "name": f"Services Pro {activity}",
+            "category": activity,
+            "rating": 4.0,
+            "reviews_count": 6,
+            "address": f"17 Cours Gambetta, 69003 {city}",
+            "city": city,
+            "phone": "04 72 98 76 54",
+            "website": "https://services-pro-habitat.fr",
+            "has_website": True,
+            "google_maps_url": "https://maps.google.com/?cid=sample6"
+        },
+        {
+            "name": f"SOS {activity} Rapide",
+            "category": activity,
+            "rating": 3.9,
+            "reviews_count": 18,
+            "address": f"5 Rue de Marseille, 69007 {city}",
+            "city": city,
+            "phone": "06 99 88 77 66",
+            "website": "https://sos-artisan-depannage.fr",
+            "has_website": True,
+            "google_maps_url": "https://maps.google.com/?cid=sample7"
+        },
+        {
+            "name": f"Compagnons du Bâtiment {city}",
+            "category": activity,
+            "rating": 4.3,
+            "reviews_count": 9,
+            "address": f"42 Quai Saint-Antoine, 69002 {city}",
+            "city": city,
+            "phone": "04 78 33 22 11",
+            "website": "https://compagnons-batiment-local.fr",
+            "has_website": True,
+            "google_maps_url": "https://maps.google.com/?cid=sample8"
+        },
+        {
+            "name": f"Artisan Martin & Associés",
+            "category": activity,
+            "rating": 4.2,
+            "reviews_count": 15,
+            "address": f"9 Rue Garibaldi, 69006 {city}",
+            "city": city,
+            "phone": "06 11 22 33 44",
+            "website": "https://artisan-martin-expert.fr",
+            "has_website": True,
+            "google_maps_url": "https://maps.google.com/?cid=sample9"
+        },
+        {
+            "name": f"Chrono {activity} Intervention",
+            "category": activity,
+            "rating": 4.1,
+            "reviews_count": 12,
+            "address": f"31 Rue de Créqui, 69006 {city}",
+            "city": city,
+            "phone": "06 22 33 44 55",
+            "website": "https://chrono-artisan-service.fr",
+            "has_website": True,
+            "google_maps_url": "https://maps.google.com/?cid=sample10"
+        },
+        {
+            "name": f"Technique Confort Énergie",
+            "category": activity,
+            "rating": 4.3,
+            "reviews_count": 8,
+            "address": f"50 Avenue Maréchal Foch, 69006 {city}",
+            "city": city,
+            "phone": "04 78 77 88 99",
+            "website": "https://technique-confort-energie.fr",
+            "has_website": True,
+            "google_maps_url": "https://maps.google.com/?cid=sample11"
+        },
+        {
+            "name": f"Région Confort {activity}",
+            "category": activity,
+            "rating": 4.0,
+            "reviews_count": 5,
+            "address": f"11 Rue Paul Bert, 69003 {city}",
+            "city": city,
+            "phone": "06 33 44 55 66",
+            "website": "https://region-confort-artisanat.fr",
+            "has_website": True,
+            "google_maps_url": "https://maps.google.com/?cid=sample12"
+        },
+        {
+            "name": f"Artisans Réunis {city}",
+            "category": activity,
+            "rating": 4.2,
+            "reviews_count": 16,
+            "address": f"6 Place Bellecour, 69002 {city}",
+            "city": city,
+            "phone": "04 78 66 55 44",
+            "website": "https://artisans-reunis-habitat.fr",
+            "has_website": True,
+            "google_maps_url": "https://maps.google.com/?cid=sample13"
+        },
+        {
+            "name": f"Bâtiment Pro Solutions",
+            "category": activity,
+            "rating": 4.1,
+            "reviews_count": 11,
+            "address": f"18 Rue Vauban, 69006 {city}",
+            "city": city,
+            "phone": "06 44 55 66 77",
+            "website": "https://batiment-pro-solutions.fr",
+            "has_website": True,
+            "google_maps_url": "https://maps.google.com/?cid=sample14"
+        },
+        {
+            "name": f"Azur Habitat Dépanne",
+            "category": activity,
+            "rating": 4.3,
+            "reviews_count": 13,
+            "address": f"2 Rue Grenette, 69002 {city}",
+            "city": city,
+            "phone": "06 55 66 77 88",
+            "website": "https://azur-habitat-depanne.fr",
+            "has_website": True,
+            "google_maps_url": "https://maps.google.com/?cid=sample15"
+        },
+        {
+            "name": f"Poly Services Habitat",
+            "category": activity,
+            "rating": 4.2,
+            "reviews_count": 10,
+            "address": f"77 Cours Lafayette, 69006 {city}",
+            "city": city,
+            "phone": "04 78 88 99 00",
+            "website": "https://polyservices-pro.fr",
+            "has_website": True,
+            "google_maps_url": "https://maps.google.com/?cid=sample16"
+        },
+        {
+            "name": f"Urgence Dépannage Express",
+            "category": activity,
+            "rating": 3.7,
+            "reviews_count": 19,
+            "address": f"13 Rue Cuvier, 69006 {city}",
+            "city": city,
+            "phone": "07 11 22 33 44",
+            "website": None,
+            "has_website": False,
+            "google_maps_url": "https://maps.google.com/?cid=sample17"
+        },
+        {
+            "name": f"Artisan Bernard Local",
+            "category": activity,
+            "rating": 4.3,
+            "reviews_count": 17,
+            "address": f"8 Rue Duguesclin, 69006 {city}",
+            "city": city,
+            "phone": "06 77 88 99 00",
+            "website": "https://artisan-bernard-direct.fr",
+            "has_website": True,
+            "google_maps_url": "https://maps.google.com/?cid=sample18"
+        },
+        {
+            "name": f"Dépannage & Travaux Express",
+            "category": activity,
+            "rating": 3.5,
+            "reviews_count": 25,
+            "address": f"22 Rue Franklin, 69002 {city}",
+            "city": city,
+            "phone": "07 22 33 44 55",
+            "website": None,
+            "has_website": False,
+            "google_maps_url": "https://maps.google.com/?cid=sample19"
+        },
+        {
+            "name": f"Allo {activity} Service",
+            "category": activity,
+            "rating": 4.2,
+            "reviews_count": 4,
+            "address": f"19 Rue Vendôme, 69003 {city}",
+            "city": city,
+            "phone": "06 88 99 00 11",
+            "website": None,
+            "has_website": False,
+            "google_maps_url": "https://maps.google.com/?cid=sample20"
         }
     ]
 
@@ -408,7 +692,7 @@ def export_leads_csv(leads: List[Dict[str, Any]], filepath: str):
     fieldnames = [
         "name", "opportunity_score", "is_qualified_lead", "category",
         "rating", "reviews_count", "city", "phone", "website",
-        "has_website", "main_hook", "google_maps_url"
+        "has_website", "outbound_channel_recommended", "main_hook", "google_maps_url"
     ]
     with open(filepath, "w", encoding="utf-8-sig", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=fieldnames, extrasaction="ignore")

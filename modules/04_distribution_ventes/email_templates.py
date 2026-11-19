@@ -13,7 +13,7 @@ def get_delivery_email(
     score: Optional[int] = 58,
     critical_flaws_count: int = 3,
     download_url: Optional[str] = None,
-    support_email: str = "contact@autobiz-ia.fr",
+    support_email: str = "contact@optilocal.fr",
 ) -> Dict[str, str]:
     """
     Génère le sujet, la version HTML et la version texte brut de l'email
@@ -31,7 +31,7 @@ Nous vous confirmons la bonne réception de votre commande pour l'Audit Stratég
 >> {safe_business}
 
 Votre rapport d'audit complet est généré et disponible :
-- Pièce jointe : vous trouverez le fichier PDF complet joint à cet email.
+- Pièce jointe : vous trouverez le fichier PDF complet de 4 pages joint à cet email.
 {f"- Lien de téléchargement direct sécurisé : {download_url}" if download_url else ""}
 
 RÉSUMÉ DU DIAGNOSTIC INITIAL :
@@ -42,17 +42,22 @@ RÉSUMÉ DU DIAGNOSTIC INITIAL :
 
 CE QUE VOUS DEVEZ FAIRE MAINTENANT :
 1. Ouvrez le rapport PDF en pièce jointe.
-2. Consultez la section "Plan d'action prioritaire sous 7 jours".
+2. Consultez la section "Plan d'action prioritaire sous 30 jours".
 3. Utilisez les modèles de réponses pré-rédigés pour vos avis clients.
+
+--------------------------------------------------
+GARANTIE SÉRÉNITÉ ARTISAN :
+Si cet audit ne vous apporte pas entière satisfaction, répondez simplement 'REMBOURSEMENT' à cet email. Vous êtes recrédité sous 2h sans aucune justification.
+--------------------------------------------------
 
 Une question ou besoin d'éclaircissements sur un point du rapport ?
 Répondez simplement directement à cet email ou contactez-nous à {support_email}.
 
 Merci pour votre confiance,
 
-L'équipe AutoBiz IA
-Service Automatisation & Performance Locale
-https://autobiz-ia.fr
+L'équipe OptiLocal
+Observatoire du Référencement Local
+https://optilocal.fr
 """
 
     # Version HTML Responsive Haute Valeur Perçue
@@ -185,7 +190,7 @@ https://autobiz-ia.fr
   <div class="wrapper">
     <div class="main-card">
       <div class="header">
-        <h1>AutoBiz IA — Audit & Croissance</h1>
+        <h1>OptiLocal — Observatoire du Référencement Local</h1>
         <p>Rapport d'audit de visibilité locale généré avec succès</p>
       </div>
       <div class="content">
@@ -206,13 +211,22 @@ https://autobiz-ia.fr
 
         <div class="highlight-box">
           <p style="margin: 0; font-size: 14px; line-height: 1.5;">
-            📎 <strong>Le rapport complet PDF de 6 pages est directement rattaché en pièce jointe</strong> à ce message. Vous pouvez également y accéder directement ci-dessous.
+            📎 <strong>Le rapport complet PDF de 4 pages est directement rattaché en pièce jointe</strong> à ce message. Vous pouvez également y accéder directement ci-dessous.
           </p>
         </div>
 
         {f'''<div class="cta-container">
           <a href="{download_url}" class="btn" target="_blank">📥 Télécharger mon rapport d'audit PDF</a>
         </div>''' if download_url else ''}
+
+        <div style="background-color: #f0fdf4; border: 1px solid #86efac; border-left: 4px solid #16a34a; border-radius: 8px; padding: 18px 20px; margin: 24px 0;">
+          <p style="margin: 0 0 6px; font-weight: 700; color: #15803d; font-size: 14px; text-transform: uppercase; letter-spacing: 0.5px;">
+            🛡️ Garantie Sérénité Artisan
+          </p>
+          <p style="margin: 0; font-size: 13px; line-height: 1.5; color: #166534;">
+            Si cet audit ne vous apporte pas entière satisfaction, répondez simplement <strong>&laquo;&nbsp;REMBOURSEMENT&nbsp;&raquo;</strong> à cet email. Vous êtes recrédité sous 2h sans aucune justification.
+          </p>
+        </div>
 
         <p style="font-size: 14px; font-weight: 600; margin-top: 24px; margin-bottom: 8px;">
           🚀 Vos 3 actions prioritaires pour cette semaine :
@@ -230,7 +244,7 @@ https://autobiz-ia.fr
 
       <div class="footer">
         <p style="margin: 0 0 6px;">
-          AutoBiz IA • Service d'optimisation de visibilité locale B2B
+          OptiLocal — Observatoire du Référencement Local • Diagnostic & Performance Locale
         </p>
         <p style="margin: 0;">
           Paiement sécurisé par Stripe • Reçu disponible sur votre espace bancaire • <a href="mailto:{support_email}">{support_email}</a>

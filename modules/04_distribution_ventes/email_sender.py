@@ -43,13 +43,13 @@ def send_delivery_email(
         business_name=business_name,
         score=score,
         download_url=download_url,
-        support_email=os.getenv("SUPPORT_EMAIL", "contact@autobiz-ia.fr"),
+        support_email=os.getenv("SUPPORT_EMAIL", "contact@optilocal.fr"),
     )
     
     subject = templates["subject"]
     text_content = templates["text"]
     html_content = templates["html"]
-    from_email = os.getenv("FROM_EMAIL", "AutoBiz IA <contact@autobiz-ia.fr>")
+    from_email = os.getenv("FROM_EMAIL", "OptiLocal <contact@optilocal.fr>")
 
     # 1. Vérification si Resend API est configurée
     resend_api_key = os.getenv("RESEND_API_KEY")

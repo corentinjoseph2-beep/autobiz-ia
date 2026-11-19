@@ -16,9 +16,9 @@ services:
       - key: STRIPE_WEBHOOK_SECRET
         sync: false
       - key: FROM_EMAIL
-        value: AutoBiz IA <contact@autobiz-ia.fr>
+        value: OptiLocal <contact@optilocal.fr>
       - key: SUPPORT_EMAIL
-        value: contact@autobiz-ia.fr
+        value: contact@optilocal.fr
       - key: SMTP_HOST
         sync: false
       - key: SMTP_PORT
